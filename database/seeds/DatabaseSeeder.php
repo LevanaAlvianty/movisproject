@@ -1,0 +1,102 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->call(UsersTableSeeder::class);
+        $this->call(PejabatsTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
+        $this->call(AgendaTableSeeder::class);
+        $this->call(AkunTableSeeder::class);
+        $this->call(Akun521211TableSeeder::class);
+        $this->call(AlbumTableSeeder::class);
+        $this->call(AnggaranTableSeeder::class);
+        $this->call(Anggaran2017TableSeeder::class);
+        $this->call(AnggaranCopyTableSeeder::class);
+        $this->call(AnggaranCopy1TableSeeder::class);
+        $this->call(BannerTableSeeder::class);
+        $this->call(BasiskegiatanTableSeeder::class);
+        $this->call(BeritaTableSeeder::class);
+        $this->call(CapaianTableSeeder::class);
+        $this->call(CitiesTableSeeder::class);
+        $this->call(CountriesTableSeeder::class);
+        $this->call(DetailanggaranTableSeeder::class);
+        $this->call(DirindikatorTableSeeder::class);
+        $this->call(DirkegiatanTableSeeder::class);
+        $this->call(Dirkegiatan1CopyTableSeeder::class);
+        $this->call(Dirkegiatan2018TableSeeder::class);
+        $this->call(DirkegiatanCopyTableSeeder::class);
+        $this->call(DirkegiatanCopy1TableSeeder::class);
+        $this->call(DirprogoperasionalTableSeeder::class);
+        $this->call(DirprogutamaTableSeeder::class);
+        $this->call(DirtujuanTableSeeder::class);
+        $this->call(DownloadTableSeeder::class);
+        $this->call(DukungpkTableSeeder::class);
+        $this->call(GalleryTableSeeder::class);
+        $this->call(HalamanstatisTableSeeder::class);
+        $this->call(HubungiTableSeeder::class);
+        $this->call(IdentitasTableSeeder::class);
+        $this->call(IndikatorTableSeeder::class);
+        $this->call(JeniskegiatanTableSeeder::class);
+        $this->call(JurbagnitpusTableSeeder::class);
+        $this->call(KabTableSeeder::class);
+        $this->call(KabkotTableSeeder::class);
+        $this->call(KabkotCopyTableSeeder::class);
+        $this->call(KatajelekTableSeeder::class);
+        $this->call(KategoriTableSeeder::class);
+        $this->call(KecTableSeeder::class);
+        $this->call(KecCopyTableSeeder::class);
+        $this->call(KegiatanTableSeeder::class);
+        $this->call(KelompokTableSeeder::class);
+        $this->call(KelompokCopyTableSeeder::class);
+        $this->call(KelompokanggaranTableSeeder::class);
+        $this->call(KeputusanTableSeeder::class);
+        $this->call(KomentarTableSeeder::class);
+        $this->call(LevelTableSeeder::class);
+        $this->call(LogKegiatanTableSeeder::class);
+        $this->call(MainmenuTableSeeder::class);
+        $this->call(MekanismeTableSeeder::class);
+        $this->call(Mekanisme1TableSeeder::class);
+        $this->call(ModulTableSeeder::class);
+        $this->call(MonevTableSeeder::class);
+        $this->call(PaguTableSeeder::class);
+        $this->call(Pagu2017TableSeeder::class);
+        $this->call(PegawaiTableSeeder::class);
+        $this->call(PolingTableSeeder::class);
+        $this->call(PropinsiTableSeeder::class);
+        $this->call(ProvTableSeeder::class);
+        $this->call(ProvCopyTableSeeder::class);
+        $this->call(RabTableSeeder::class);
+        $this->call(RefBarangTableSeeder::class);
+        $this->call(RekapKegiatanTableSeeder::class);
+        $this->call(RenstraTableSeeder::class);
+        $this->call(ReviewTableSeeder::class);
+        $this->call(ReviewKeuTableSeeder::class);
+        $this->call(ReviewValKeuTableSeeder::class);
+        $this->call(RunningtextTableSeeder::class);
+        $this->call(SatuanTableSeeder::class);
+        $this->call(SatuanbiayaTableSeeder::class);
+        $this->call(SatuanbiayaCopyTableSeeder::class);
+        $this->call(SatuanbiayaDraftAwalTableSeeder::class);
+        $this->call(SekilasinfoTableSeeder::class);
+        $this->call(ShoutboxTableSeeder::class);
+        $this->call(StandartbiayaTableSeeder::class);
+        $this->call(StandartbiayaCopyTableSeeder::class);
+        $this->call(StatesTableSeeder::class);
+        $this->call(StatistikTableSeeder::class);
+        $this->call(SubmenuTableSeeder::class);
+        $this->call(TagTableSeeder::class);
+        $this->call(TahunTableSeeder::class);
+        $this->call(TahunanggaranTableSeeder::class);
+        $this->call(TemplatesTableSeeder::class);
+        $this->call(TtdTableSeeder::class);
+    }
+}

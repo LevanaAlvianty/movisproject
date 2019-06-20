@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+
+class CreateTemplatesTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('templates', function(Blueprint $table)
+		{
+			$table->integer('id_templates', true);
+			$table->string('judul', 100);
+			$table->string('pembuat', 50);
+			$table->string('folder', 50);
+			$table->enum('aktif', array('Y','N'))->default('N');
+		});
+	}
+
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('templates');
+	}
+
+}
