@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -35,13 +36,7 @@ class LoginController extends Controller
      * @return void
      */
     public function __construct()
-    {
-        if (Auth::check() && Auth::user()->role->id == 1)
-        {
-            $this->redirectTo = route('admin.dashboard');
-        } else {
-            $this->redirectTo = route('spi.dashboard');
-        }
+    {                   
         $this->middleware('guest')->except('logout');
     }
 }

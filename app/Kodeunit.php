@@ -8,6 +8,10 @@ class Kodeunit extends Model
 {
     protected $table = 'jurbagnitpus';
     protected $fillable = [
-        'kode'
+        'jurbagnitpus','kode','warna'
     ];
+
+    public function kegiatanpo() {
+        return $this->hasMany('App\KegiatanPO');
+    }
 }

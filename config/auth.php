@@ -46,6 +46,11 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        
+        'pegawai'  => [
+            'driver'  => 'session',
+            'provider' => 'pegawai',
+        ],
     ],
 
     /*
@@ -75,6 +80,11 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        'pegawai' => [
+            'driver' => 'eloquent',
+            'model'  => App\Pegawai::class,
+        ],
     ],
 
     /*
@@ -95,6 +105,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'pegawai' => [
+            'provider' => 'pegawai',
             'table' => 'password_resets',
             'expire' => 60,
         ],

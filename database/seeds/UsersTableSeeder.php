@@ -20,7 +20,8 @@ class UsersTableSeeder extends Seeder
             0 => 
             array (
                 'username' => 'admin',
-                'password' => '38090b3ac6aaec9ced2b497f8e26888d',
+                'role_id' => '1',
+               'password' => bcrypt('admin123'),
                 'nama_lengkap' => 'Administrator',
                 'email' => 'admin@detik.com',
                 'no_telp' => '08238923848',
@@ -34,7 +35,7 @@ class UsersTableSeeder extends Seeder
             1 => 
             array (
                 'username' => 'perencanaan',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'polines',
                 'email' => 'perencanaan@polines.ac.id',
                 'no_telp' => '024',
@@ -48,7 +49,7 @@ class UsersTableSeeder extends Seeder
             2 => 
             array (
                 'username' => 'bakpk',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'polines',
                 'email' => 'bakpk@polines.ac.id',
                 'no_telp' => '024',
@@ -62,7 +63,7 @@ class UsersTableSeeder extends Seeder
             3 => 
             array (
                 'username' => 'UPTTIK',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'UPT-TIK',
                 'email' => 'upttik@polinesac.id',
                 'no_telp' => '024',
@@ -76,7 +77,7 @@ class UsersTableSeeder extends Seeder
             4 => 
             array (
                 'username' => 'UPTPP',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'UPTPP',
                 'email' => 'UPTpp@yahoo.com',
                 'no_telp' => '123',
@@ -90,7 +91,7 @@ class UsersTableSeeder extends Seeder
             5 => 
             array (
                 'username' => 'edi',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'edi waluyo',
                 'email' => 'edi@polines.ac.id',
                 'no_telp' => '024',
@@ -104,7 +105,7 @@ class UsersTableSeeder extends Seeder
             6 => 
             array (
                 'username' => 'jci',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Jurusan Teknik Sipil',
                 'email' => 'jci@polines.ac.id',
                 'no_telp' => '024',
@@ -118,7 +119,7 @@ class UsersTableSeeder extends Seeder
             7 => 
             array (
                 'username' => 'JME',
-                'password' => '9c6bd054e8eebbc99bb4d655caad4b3c',
+             'role_id' => '2',   'password' => '9c6bd054e8eebbc99bb4d655caad4b3c',
                 'nama_lengkap' => 'Jurusan Teknik Mesin',
                 'email' => 'jme@polines.ac.id',
                 'no_telp' => '024',
@@ -132,7 +133,7 @@ class UsersTableSeeder extends Seeder
             8 => 
             array (
                 'username' => 'jel',
-                'password' => '3f0062caa096feac56117e460aa91bdd',
+             'role_id' => '2',   'password' => '3f0062caa096feac56117e460aa91bdd',
                 'nama_lengkap' => 'jurusan teknik elektro',
                 'email' => 'jel@polines.ac.id',
                 'no_telp' => '024',
@@ -146,7 +147,7 @@ class UsersTableSeeder extends Seeder
             9 => 
             array (
                 'username' => 'jan',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'jurusan administrasi niaga',
                 'email' => 'jan@polines.ac.id',
                 'no_telp' => '024',
@@ -160,7 +161,7 @@ class UsersTableSeeder extends Seeder
             10 => 
             array (
                 'username' => 'p3m',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'pusat penelitian dan pengabdian pada masyarakat',
                 'email' => 'p3m@polines.ac.id',
                 'no_telp' => '024',
@@ -174,7 +175,7 @@ class UsersTableSeeder extends Seeder
             11 => 
             array (
                 'username' => 'ppp',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'pusat pengembangan pembelajaran',
                 'email' => 'ppp@polines.ac.id',
                 'no_telp' => '125',
@@ -188,7 +189,7 @@ class UsersTableSeeder extends Seeder
             12 => 
             array (
                 'username' => 'pmp',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'pusat penjaminan mutu pendidikan',
                 'email' => 'pmp@poline.ac.id',
                 'no_telp' => '024',
@@ -202,7 +203,7 @@ class UsersTableSeeder extends Seeder
             13 => 
             array (
                 'username' => 'bhs',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'upt bahasa ',
                 'email' => 'bhs@polines.ac.id',
                 'no_telp' => '024',
@@ -216,7 +217,7 @@ class UsersTableSeeder extends Seeder
             14 => 
             array (
                 'username' => 'pus',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'upt perpustakaan',
                 'email' => 'pus@polines.ac.id',
                 'no_telp' => '024',
@@ -230,7 +231,7 @@ class UsersTableSeeder extends Seeder
             15 => 
             array (
                 'username' => 'pps',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'upt perawatan & perbaikan sarana perbaikan',
                 'email' => 'pps@polines.ac.id',
                 'no_telp' => '024',
@@ -244,7 +245,7 @@ class UsersTableSeeder extends Seeder
             16 => 
             array (
                 'username' => 'pks',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'polines',
                 'email' => 'bakpk@polines.ac.id',
                 'no_telp' => '024',
@@ -258,7 +259,7 @@ class UsersTableSeeder extends Seeder
             17 => 
             array (
                 'username' => 'kui',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'kantor urusan internasional',
                 'email' => 'kui@polines.ac.id',
                 'no_telp' => '024',
@@ -272,7 +273,8 @@ class UsersTableSeeder extends Seeder
             18 => 
             array (
                 'username' => 'spi',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+                'role_id' => '2',
+              'password' => bcrypt('spi123'),
                 'nama_lengkap' => 'satuan pengawas internal',
                 'email' => 'spi@polines.ac.id',
                 'no_telp' => '024',
@@ -286,7 +288,7 @@ class UsersTableSeeder extends Seeder
             19 => 
             array (
                 'username' => 'sen',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'senat polines',
                 'email' => 'sen@polines.ac.id',
                 'no_telp' => '024',
@@ -300,7 +302,7 @@ class UsersTableSeeder extends Seeder
             20 => 
             array (
                 'username' => 'sak',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'bakpk-sub bagian akademi dan kemahasiswaan',
                 'email' => 'sak@polines.ac.id',
                 'no_telp' => '024',
@@ -314,7 +316,7 @@ class UsersTableSeeder extends Seeder
             21 => 
             array (
                 'username' => 'skj',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'bakpk sub bagian kerjasama',
                 'email' => 'skj@polines.ac.id',
                 'no_telp' => '024',
@@ -328,7 +330,7 @@ class UsersTableSeeder extends Seeder
             22 => 
             array (
                 'username' => 'spr',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'bakpk-sub bagian perencanaan ',
                 'email' => 'spr@polines.ac.id',
                 'no_telp' => '024',
@@ -342,7 +344,7 @@ class UsersTableSeeder extends Seeder
             23 => 
             array (
                 'username' => 'stu',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Budi Riyanto, S.E., M.M.',
                 'email' => 'stu@polines.ac.id',
                 'no_telp' => '024',
@@ -356,7 +358,7 @@ class UsersTableSeeder extends Seeder
             24 => 
             array (
                 'username' => 'skp',
-                'password' => '449d54a9352cf0cbbf829451b64509d7',
+             'role_id' => '2',   'password' => '449d54a9352cf0cbbf829451b64509d7',
                 'nama_lengkap' => 'BUK-Sub Bagian Kepegawaian',
                 'email' => 'kepegpolines@gmail.com; sangkodok67@gmail.com',
                 'no_telp' => '258',
@@ -370,7 +372,7 @@ class UsersTableSeeder extends Seeder
             25 => 
             array (
                 'username' => 'sku',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'buk-sub bagian keuangan',
                 'email' => 'sku@polines.ac.id',
                 'no_telp' => '024',
@@ -384,7 +386,7 @@ class UsersTableSeeder extends Seeder
             26 => 
             array (
                 'username' => 'phk',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'polines',
                 'email' => 'bakpk@polines.ac.id',
                 'no_telp' => '024',
@@ -398,7 +400,7 @@ class UsersTableSeeder extends Seeder
             27 => 
             array (
                 'username' => 'pls',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'polines',
                 'email' => 'bakpk@polines.ac.id',
                 'no_telp' => '024',
@@ -412,7 +414,7 @@ class UsersTableSeeder extends Seeder
             28 => 
             array (
                 'username' => 'jak',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'jurusan akuntansi',
                 'email' => 'jak@polines.ac.id',
                 'no_telp' => '024',
@@ -426,7 +428,7 @@ class UsersTableSeeder extends Seeder
             29 => 
             array (
                 'username' => 'uhi',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Unit Hubungan Industri',
                 'email' => 'uhi@polines.ac.id',
                 'no_telp' => '024',
@@ -440,7 +442,7 @@ class UsersTableSeeder extends Seeder
             30 => 
             array (
                 'username' => 'sakm',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'BIdang III Kemahasiswaan',
                 'email' => 'sakm@polines.ac.id',
                 'no_telp' => '024',
@@ -454,7 +456,7 @@ class UsersTableSeeder extends Seeder
             31 => 
             array (
                 'username' => 'bid1',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Bidang 1 Prioritas',
                 'email' => 'bid1@polines.ac.id',
                 'no_telp' => '024',
@@ -468,7 +470,7 @@ class UsersTableSeeder extends Seeder
             32 => 
             array (
                 'username' => 'bid4',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Bidang 4 Prioritas',
                 'email' => 'bid4@polines.ac.id',
                 'no_telp' => '024',
@@ -482,7 +484,7 @@ class UsersTableSeeder extends Seeder
             33 => 
             array (
                 'username' => 'rudi',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Rudi Handoyono, S.E., M.Si.',
                 'email' => 'rudi@polines.ac.id',
                 'no_telp' => '123',
@@ -496,7 +498,7 @@ class UsersTableSeeder extends Seeder
             34 => 
             array (
                 'username' => 'tutik',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Dra. Tutik Dwi K, S.E, M.Si.',
                 'email' => 'polines@polines.ac.id',
                 'no_telp' => '024',
@@ -510,7 +512,7 @@ class UsersTableSeeder extends Seeder
             35 => 
             array (
                 'username' => 'yusuf',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Dr. Yusuf Dewantoro H, S.T.,M.T.',
                 'email' => 'yusuf@polines.ac.id',
                 'no_telp' => '024',
@@ -524,7 +526,7 @@ class UsersTableSeeder extends Seeder
             36 => 
             array (
                 'username' => 'rochadi',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Ir. Mochammad Tri Rochadi, M.T.',
                 'email' => 'polines@polines.ac.id',
                 'no_telp' => '024',
@@ -538,7 +540,7 @@ class UsersTableSeeder extends Seeder
             37 => 
             array (
                 'username' => 'mutmainah',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Siti Mutmainah, S.E., M.Si.',
                 'email' => 'polines@polines.ac.id',
                 'no_telp' => '024',
@@ -552,7 +554,7 @@ class UsersTableSeeder extends Seeder
             38 => 
             array (
                 'username' => 'mardiyono',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Mardiyono, S.Kom. M.Sc.',
                 'email' => 'mardiyono@polines.ac.id',
                 'no_telp' => '024',
@@ -566,7 +568,7 @@ class UsersTableSeeder extends Seeder
             39 => 
             array (
                 'username' => 'Rois',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Muhammad Rois, S.E., M.Sc.',
                 'email' => 'polines@polines.ac.id',
                 'no_telp' => '024',
@@ -580,7 +582,7 @@ class UsersTableSeeder extends Seeder
             40 => 
             array (
                 'username' => 'lsp',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'LSP ',
                 'email' => 'lsp@polines.ac.id',
                 'no_telp' => '024',
@@ -594,7 +596,7 @@ class UsersTableSeeder extends Seeder
             41 => 
             array (
                 'username' => 'utami',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Utami S',
                 'email' => 'polines@polines.ac.id',
                 'no_telp' => '024',
@@ -608,7 +610,7 @@ class UsersTableSeeder extends Seeder
             42 => 
             array (
                 'username' => 'reviewer',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'reviewer spi',
                 'email' => 'reviewer@polines.ac.id',
                 'no_telp' => '024',
@@ -622,7 +624,7 @@ class UsersTableSeeder extends Seeder
             43 => 
             array (
                 'username' => 'keuangan',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Supantp, S.E.,M.Si.',
                 'email' => 'edi@polines.ac.id',
                 'no_telp' => '024',
@@ -636,7 +638,7 @@ class UsersTableSeeder extends Seeder
             44 => 
             array (
                 'username' => 'adminspi',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Admin SPI',
                 'email' => 'adminspi@polines.ac.id',
                 'no_telp' => '024',
@@ -650,7 +652,7 @@ class UsersTableSeeder extends Seeder
             45 => 
             array (
                 'username' => 'direktur',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Ir. Supriyadi, M.T.',
                 'email' => 'direktur@polines.ac.id',
                 'no_telp' => '024',
@@ -664,7 +666,7 @@ class UsersTableSeeder extends Seeder
             46 => 
             array (
                 'username' => 'adminpsi',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Admin Perencanaan dan Sistem Informasi',
                 'email' => 'psi@polines.ac.id',
                 'no_telp' => '024',
@@ -678,7 +680,7 @@ class UsersTableSeeder extends Seeder
             47 => 
             array (
                 'username' => 'adminkeuangan',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Supanto, S.E., M.Si.',
                 'email' => 'supanto@gmail.com',
                 'no_telp' => '',
@@ -692,7 +694,7 @@ class UsersTableSeeder extends Seeder
             48 => 
             array (
                 'username' => 'adminsbu',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Admin SBU',
                 'email' => 'adminsbu@polines.ac.id',
                 'no_telp' => '024',
@@ -706,7 +708,7 @@ class UsersTableSeeder extends Seeder
             49 => 
             array (
                 'username' => 'suyanti',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'suyanti',
                 'email' => 'suyanti@polines.ac.id',
                 'no_telp' => '024',
@@ -720,7 +722,7 @@ class UsersTableSeeder extends Seeder
             50 => 
             array (
                 'username' => 'ratna',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Rr. Ratna N',
                 'email' => 'ratna@polines.ac.id',
                 'no_telp' => '024',
@@ -734,7 +736,7 @@ class UsersTableSeeder extends Seeder
             51 => 
             array (
                 'username' => 'etty',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'etty P',
                 'email' => 'etty@polines.ac.id',
                 'no_telp' => '024',
@@ -748,7 +750,7 @@ class UsersTableSeeder extends Seeder
             52 => 
             array (
                 'username' => 'mugiyono',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'mugiyono',
                 'email' => 'mugiyono@polines.ac.id',
                 'no_telp' => '024',
@@ -762,7 +764,7 @@ class UsersTableSeeder extends Seeder
             53 => 
             array (
                 'username' => 'bid2',
-                'password' => '394d5184c9e483b34d416b0338c5b524',
+             'role_id' => '2',   'password' => '394d5184c9e483b34d416b0338c5b524',
                 'nama_lengkap' => 'Wakil Direktur Bidang Umum dan Keuangan',
                 'email' => 'bid2@polines.ac.id',
                 'no_telp' => '024',

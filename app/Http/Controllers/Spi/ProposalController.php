@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use App\Pegawai;
 use App\Kodeunit;
+use App\Renstra;
 use App\KelAnggaran;
 use App\DetailAnggaran;
 use App\StandartBiaya;
@@ -25,7 +26,17 @@ class ProposalController extends Controller
     {   
         $biaya = StandartBiaya::all();
         $anggaran = KelAnggaran::all();
-        return view('spi.proposal.proposal', compact('biaya','anggaran'));
+        $renstra = Renstra::all();
+        $pegawai = Pegawai::all();
+        $kodeunit = Kodeunit::all();
+        
+        //mengambil nilai bulan
+        $getMonth = ['Januari','Februari','Maret','April','Mei','Juni','July','Agustus','September','Oktober','November','Desember'];
+        // foreach (range(1, 12) as $m) {
+        //     $getMonth[] = date('F', mktime(0, 0, 0, $m, 1));
+        // }
+
+        return view('spi.proposal.proposal', compact('biaya','anggaran','renstra','pegawai','kodeunit','getMonth'));
     }
 
     public function daftar()
@@ -146,6 +157,24 @@ class ProposalController extends Controller
         foreach ($queries as $query)
         {
             $results[] = ['id' => $query->id_jurbagnitpus, 'value' => $query->kode];
+        }
+        return Response::json($results);
+    }
+
+    public function Unitpelaksana(Request $request)
+    {
+        $term = $request->get('name');
+        
+        $results = array();
+        
+        $queries = DB::table('jurbagnitpus')
+            ->where('id_jurbagnitpus', 'LIKE', '%'.$term.'%')
+            ->orWhere('kode', 'LIKE', '%'.$term.'%')
+            ->take(10)->get();
+        
+        foreach ($queries as $query)
+        {
+            $results[] = ['id' => $query->id_jurbagnitpus, 'value' => $query->jurbagnitpus];
         }
         return Response::json($results);
     }

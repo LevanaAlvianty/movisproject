@@ -27,6 +27,6 @@ class HomeController extends Controller
     }
     public function coba()
     {
-        return view('layouts.logintemplate');
+        return view('proposal.proposal');
     }
 }

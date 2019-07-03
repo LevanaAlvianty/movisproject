@@ -18,7 +18,8 @@ class CreatePegawaiTable extends Migration {
 			$table->string('nip', 25)->nullable();
 			$table->string('nama', 150)->nullable();
 			$table->string('golongan', 7)->nullable();
-			$table->string('jabatab', 150)->nullable();
+			$table->string('jabatan', 150)->nullable();
+			$table->string('password', 191);
 		});
 	}
 

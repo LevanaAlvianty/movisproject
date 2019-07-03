@@ -15,8 +15,9 @@ class CreateUsersTable extends Migration {
 	{
 		Schema::create('users', function(Blueprint $table)
 		{
-		
-			$table->string('username', true);
+			$table->integer('id',true)->increments();
+			$table->string('username');
+			$table->unsignedInteger('role_id')->default('2');
 			$table->string('password', 191);
 			$table->string('nama_lengkap', 191);
 			$table->string('email', 191);
@@ -27,7 +28,7 @@ class CreateUsersTable extends Migration {
 			$table->integer('id_jurbagnitpus')->nullable();
 			$table->string('reviewer', 50)->nullable();
 			$table->string('reviewer_keu', 50)->nullable();
-			// $table->primary(['id','username']);
+			// $table->primary('username');
 		});
 	}
 
