@@ -10,7 +10,7 @@
 
 <div class="row justify-content-center">
     <div class="col-sm-6 mb-2">
-        <input type="text" class="form-control form-control-sm" id="judul" placeholder="Masukkan Judul Kegiatan">
+        <input type="text" class="form-control form-control-sm" id="judulprop" placeholder="Masukkan Judul Kegiatan">
     </div>
 </div><br><br>
 
@@ -59,13 +59,13 @@
         <?php
             $thn_skr = date('Y');
         ?>
-        <input style="width:85px;" type="text" class="form-control form-control-sm" id="tahun" value="<?php echo $thn_skr ?>" placeholder="Tahun" disabled>
+        <input style="width:85px;" type="text" class="form-control form-control-sm" id="tahunang" value="<?php echo $thn_skr ?>" placeholder="Tahun" disabled>
     </div>
 </div>
 
 @push('js')
 <script>
-$(document).ready(function(){
+
     //kodeunit
     $( "#kodeunit" ).autocomplete({
         minLength: 1,
@@ -104,7 +104,7 @@ $(document).ready(function(){
             return false;
         }
     });
-});
+
 </script>
 @endpush()
                        

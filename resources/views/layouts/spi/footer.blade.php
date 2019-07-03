@@ -10,8 +10,12 @@
         <!-- Page specific javascripts-->
         <script type="text/javascript" src="{{asset('/vali_admin/docs/js/plugins/chart.js')}}"></script>
 
+        <!-- Data table plugin-->
+        <script type="text/javascript" src="{{asset('/vali_admin/docs/js/plugins/jquery.dataTables.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('/vali_admin/docs/js/plugins/dataTables.bootstrap.min.js')}}"></script>
+
         <!-- AutoComplete -->
-        <script src="{{ asset('js/movis/jquery.min.js')}}"></script>
+        <!-- <script src="{{ asset('js/movis/jquery.min.js')}}"></script> -->
         <script src="{{ asset('/vali_admin/plugins/jqueryui/jquery-ui.min.js')}}"></script>
         
         <!-- TinyMCE -->

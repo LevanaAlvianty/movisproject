@@ -6,7 +6,31 @@
             </div>
         </div>
         <ul class="app-menu">
-        @if(Request::is('spi*'))
+        @php
+            $admin = Auth::guard('pegawai')->user()->isAdmin();
+            $pic = Auth::guard('pegawai')->user()->isPic();
+        @endphp
+        <!-- Admin -->
+        @if($admin == 1)
+            <li class="treeview">
+                <a class="app-menu__item " href="#" data-toggle="treeview">
+                    <i class="app-menu__icon fa fa-group"></i><span class="app-menu__label">Pegawai</span>
+                    <i class="treeview-indicator fa fa-angle-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a class="treeview-item " href=""><i class="icon fa fa-circle-o"></i> Manage Pegawai</a></li>
+                    <li><a class="treeview-item " href=""><i class="icon fa fa-circle-o"></i> Setting Pegawai</a></li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="app-menu__item {{ Request::is('adminperencanaan/kegiatanpo*') ? 'active':  '' }}" href="{{ route('kegiatanpo.index') }}">
+                    <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Kegiatan PO</span>
+                </a>
+            </li>
+        @endif
+
+        <!-- PIC --> 
+        @if($pic == 1)
             <li class="">
                 <a class="app-menu__item {{ Request::is('spi/dashboard') ? 'active' : '' }}" href="{{ route('spi.dashboard') }}">
                     <i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span>
@@ -18,8 +42,8 @@
                     <i class="treeview-indicator fa fa-angle-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a class="treeview-item {{ Request::routeIs('spi.proposal.index') ? 'active':  '' }}" href="{{ route('spi.proposal.index') }}"><i class="icon fa fa-circle-o"></i> Buat Proposal</a></li>
-                    <li><a class="treeview-item {{ Request::routeIs('spi.proposal.daftar') ? 'active':  '' }}" href="{{ route('spi.proposal.daftar') }}"><i class="icon fa fa-circle-o"></i> Daftar Proposal</a></li>
+                    <li><a class="treeview-item {{ Request::routeIs('proposal.index') ? 'active':  '' }}" href="{{ route('proposal.index') }}"><i class="icon fa fa-circle-o"></i> Buat Proposal</a></li>
+                    <li><a class="treeview-item {{ Request::routeIs('proposal.daftar') ? 'active':  '' }}" href="{{ route('proposal.daftar') }}"><i class="icon fa fa-circle-o"></i> Daftar Proposal</a></li>
                 </ul>
             </li>
             <li class="treeview">

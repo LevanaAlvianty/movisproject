@@ -1,6 +1,94 @@
 @extends('layouts.spi.master')
 @section('title', 'Edit Proposal')
 
+@push('css')
+<style>
+    /*custom font*/
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+  
+    /*form styles*/
+    #msform {
+    width: auto;
+	margin: 10px auto;
+	/* text-align: center; */
+	position: relative;
+   }
+
+    #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 2px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 20px;
+        box-sizing: border-box;
+        width: 100%;
+	    
+        /*stacking fieldsets above each other*/
+        position: relative;
+        display:table-cell; 
+    }
+
+    /*Hide all except first fieldset*/
+    #msform fieldset:not(:first-of-type) {
+        display: none;
+    }
+    
+    /*progressbar*/
+    #progressbar {
+        margin-bottom: 30px;
+        overflow: hidden;
+        /*CSS counters to number the steps*/
+        counter-reset: step;
+        
+    }
+    #progressbar li {
+        list-style-type: none;
+        color: black;
+        text-transform: uppercase;
+        text-align:center;
+        font-size: 0.75vw;
+        width: 10%;
+        position: relative;
+        float: left;
+    }
+    #progressbar li:before {
+        content: counter(step);
+        counter-increment: step;
+        width: 35px;
+        line-height: 35px;
+        display: block;
+        font-size: 15px;
+        text-align:center;
+        color: #333;
+        background: lightgrey;
+        border-radius: 50%;
+        margin: 0 auto 5px auto; 
+    }
+    /*progressbar connectors*/
+    #progressbar li:after {
+        content: '';
+        width: 78%;
+        height: 2px;
+        background: lightgrey;
+        position: absolute;
+        left: -35%;
+        top: 15px;
+        z-index: 1; /*put it behind the numbers*/
+    }
+    #progressbar li:first-child:after {
+        /*connector not needed before the first step*/
+        content: none; 
+    }
+    /*marking active/completed steps green*/
+    /*The number of the step and the connector before it = green*/
+    #progressbar li.active:before,  #progressbar li.active:after{
+        background: #27AE60;
+        color: white;
+    }
+
+</style>
+@endpush()
+
 @section('judulapp')
     <div>
           <h1><i class="fa fa-file-text-o"></i> Proposal</h1>
@@ -307,91 +395,6 @@
 @endsection()
 
 @push('js')
-<style>
-    /*custom font*/
-    @import url(https://fonts.googleapis.com/css?family=Montserrat);
-  
-    /*form styles*/
-    #msform {
-    width: auto;
-	margin: 10px auto;
-	/* text-align: center; */
-	position: relative;
-   }
-
-    #msform fieldset {
-        background: white;
-        border: 0 none;
-        border-radius: 2px;
-        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-        padding: 20px 20px;
-        box-sizing: border-box;
-        width: 100%;
-	    
-        /*stacking fieldsets above each other*/
-        position: relative;
-        display:table-cell; 
-    }
-
-    /*Hide all except first fieldset*/
-    #msform fieldset:not(:first-of-type) {
-        display: none;
-    }
-    
-    /*progressbar*/
-    #progressbar {
-        margin-bottom: 30px;
-        overflow: hidden;
-        /*CSS counters to number the steps*/
-        counter-reset: step;
-        
-    }
-    #progressbar li {
-        list-style-type: none;
-        color: black;
-        text-transform: uppercase;
-        text-align:center;
-        font-size: 0.75vw;
-        width: 10%;
-        position: relative;
-        float: left;
-    }
-    #progressbar li:before {
-        content: counter(step);
-        counter-increment: step;
-        width: 35px;
-        line-height: 35px;
-        display: block;
-        font-size: 15px;
-        text-align:center;
-        color: #333;
-        background: lightgrey;
-        border-radius: 50%;
-        margin: 0 auto 5px auto; 
-    }
-    /*progressbar connectors*/
-    #progressbar li:after {
-        content: '';
-        width: 78%;
-        height: 2px;
-        background: lightgrey;
-        position: absolute;
-        left: -35%;
-        top: 15px;
-        z-index: 1; /*put it behind the numbers*/
-    }
-    #progressbar li:first-child:after {
-        /*connector not needed before the first step*/
-        content: none; 
-    }
-    /*marking active/completed steps green*/
-    /*The number of the step and the connector before it = green*/
-    #progressbar li.active:before,  #progressbar li.active:after{
-        background: #27AE60;
-        color: white;
-    }
-
-</style>
 
 <script>
 //jQuery time

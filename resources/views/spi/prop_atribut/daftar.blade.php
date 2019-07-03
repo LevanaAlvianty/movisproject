@@ -40,8 +40,8 @@
                                     <span class="badge badge-pill badge-success">Approve</span>
                                 </td>
                                 <td>
-                                    <a href="{{route('spi.proposal.editproposal')}}" class="btn btn-sm btn-info"><i class="icon fa fa-edit fa-lg"></i></a>
-                                    <a href="{{route('spi.proposal.penilaian')}}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye fa-lg"></i></a>
+                                    <a href="{{route('proposal.editproposal')}}" class="btn btn-sm btn-info"><i class="icon fa fa-edit fa-lg"></i></a>
+                                    <a href="{{route('proposal.penilaian')}}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye fa-lg"></i></a>
                                     <a href="" class="btn btn-sm btn-success"><i class="icon fa fa-download fa-lg"></i></a>
                                 </td>
                             </tr>
@@ -54,8 +54,8 @@
                                     <span class="badge badge-pill badge-danger">Revisi</span>
                                 </td>
                                 <td>
-                                    <a href="{{route('spi.proposal.editproposal')}}" class="btn btn-sm btn-info"><i class="fa fa-edit fa-lg"></i></a>
-                                    <a href="{{route('spi.proposal.penilaian')}}" class="btn btn-sm btn-warning"><i class="fa fa-eye fa-lg"></i></a>
+                                    <a href="{{route('proposal.editproposal')}}" class="btn btn-sm btn-info"><i class="fa fa-edit fa-lg"></i></a>
+                                    <a href="{{route('proposal.penilaian')}}" class="btn btn-sm btn-warning"><i class="fa fa-eye fa-lg"></i></a>
                                     <a href="" class="btn btn-sm btn-success"><i class="icon fa fa-download fa-lg"></i></a>
                                 </td>
                             </tr>

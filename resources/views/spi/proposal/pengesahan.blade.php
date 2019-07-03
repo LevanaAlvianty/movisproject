@@ -7,7 +7,7 @@
                                 <label for="" class="">1. Judul</label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control form-control-sm" id="judul" placeholder="Judul Kegiatan">
+                                <input type="text" class="form-control form-control-sm" id="judulprop" placeholder="Judul Kegiatan">
                             </div>
                         </div>
 
@@ -16,11 +16,11 @@
                                 <label for="" class="">2. Acuan</label>
                             </div>
                             <div class="col-sm-8">
-                                <select class="custom-select custom-select-sm" id="acuan">
-                                    <option selected>Program utama dalam Renstra yang diacu</option>
-                                    <option value="RM">RM</option>
-                                    <option value="BOPTN">BOPTN</option>
-                                    <option value="PNBP">PNBP</option>
+                                <select class="custom-select custom-select-sm" id="renstra">
+                                    <option class="active">Program utama dalam Renstra yang diacu</option>
+                                    @foreach($renstra as $r)
+                                        <option value="{{ $r->id_renstra}}"> {{ $r->renstra }}</option>
+                                    @endforeach -->/option>
                                 </select>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                                     <label for="" class="ml-sm-3">b. MAK</label>
                                 </div>
                                 <div class="col-sm-8 ">
-                                    <input type="text" class="form-control form-control-sm" id="paguyang" placeholder="MAK">
+                                    <input type="text" class="form-control form-control-sm" id="mak" placeholder="MAK">
                                 </div>
                             </div>
 
@@ -50,13 +50,12 @@
                                     <label for="" class="ml-sm-3">c. Anggaran</label>
                                 </div>
                                 <div class="col-sm-8 ">
-                                <input type="text" class="form-control form-control-sm" id="anggaran" placeholder="RM/BOPTN/PNBP">
-                                    <!-- <select class="custom-select custom-select-sm" id="anggaran">
-                                        <option selected >RM/BOPTN/PNBP</option>
-                                        <option value="RM">RM</option>
-                                        <option value="BOPTN">BOPTN</option>
-                                        <option value="PNBP">PNBP</option>
-                                    </select> -->
+                                    <select class="custom-select custom-select-sm" id="kelanggaran">
+                                        <option class="active">RM/BOPTN/PNBP</option>
+                                        @foreach($anggaran as $a)
+                                            <option value="{{ $a->id_kelang}}"> {{ $a->kelompokanggaran }}</option>
+                                        @endforeach -->/option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +67,7 @@
                                     <label for="" class="ml-sm-3">a. Nama</label>
                                 </div>
                                 <div class="col-sm-8 ">
-                                    <input type="text" class="form-control form-control-sm" id="nama" placeholder="Nama Ketua Pelaksana">
+                                    <input type="text" class="form-control form-control-sm" id="ketuplak" placeholder="Nama Ketua Pelaksana">
                                 </div>
                             </div>
 
@@ -102,7 +101,7 @@
                                     <label for="" class="ml-sm-3">d. Jabatan Struktural</label>
                                 </div>
                                 <div class="col-sm-8 ">
-                                    <input type="text" class="form-control form-control-sm" id="JS" placeholder="Jabatan Struktural">
+                                    <input type="text" class="form-control form-control-sm" id="jabstruk" placeholder="Jabatan Struktural">
                                 </div>
                             </div>
                             
@@ -111,7 +110,7 @@
                                     <label for="" class="ml-sm-3">e. Jabatan Fungsional</label>
                                 </div>
                                 <div class="col-sm-8 ">
-                                    <input type="text" class="form-control form-control-sm" id="JF" placeholder="Jabatan Fungsional">
+                                    <input type="text" class="form-control form-control-sm" id="jabfung" placeholder="Jabatan Fungsional">
                                 </div>
                             </div>
 
@@ -120,7 +119,7 @@
                                     <label for="" class="ml-sm-3">f. Unit Pelaksana</label>
                                 </div>
                                 <div class="col-sm-8 ">
-                                    <input type="text" class="form-control form-control-sm" id="UP" placeholder="Unit Pelaksana">
+                                    <input type="text" class="form-control form-control-sm" id="unitpel" placeholder="Unit Pelaksana">
                                 </div>
                             </div>
                         </div>
@@ -132,9 +131,21 @@
                                     <label for="" class="ml-sm-3">a. Bulan/Minggu</label>
                                 </div>
                                 <div class="form-inline col-sm-8">
-                                    <input type="text" class="form-control form-control-sm mr-sm-3" id="bln" placeholder="">
-                                    <label for="" class="mr-sm-3">s.d</label>
-                                    <input type="text" class="form-control form-control-sm" id="bln1" placeholder="">
+                                    <select class="custom-select custom-select-sm" id="bln1">    
+                                        @foreach($getMonth as $month)
+                                            <option>
+                                                {!! $month!!}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <label for="" class="ml-3 mr-3">s.d</label>
+                                    <select class="custom-select custom-select-sm" id="bln2">    
+                                        @foreach($getMonth as $month)
+                                            <option>
+                                                {!! $month!!}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 
@@ -291,7 +302,8 @@
                                     <input type="text" class="form-control form-control-sm" id="NIP_Dir" placeholder="NIP">
                                 </div>
                             </div>
-                        </div>
+                        </div>         
+</section> 
 
-              
-</section>                   
+@push('js')
+@endpush
