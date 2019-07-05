@@ -52,15 +52,12 @@
                 
                 <a href="/kegiatan/export_excel" class="btn btn-sm btn-info pull-right mr-2" target="_blank"><i class="icon fa fa-download"></i></a>
                 
-                    <table class="table-responsive table table-hover table-bordered" id="tabelkegiatan">
+                    <table class="table table-hover table-bordered" id="tabelkegiatan">
                         <thead class="thead-dark">
                             <tr>
                                 <th class="text-center align-middle">No</th>
                                 <th class="text-center align-middle">Nama Kegiatan</th> 
                                 <th class="text-center align-middle">Unit Pelaksana</th>
-                                <th class="text-center align-middle">PIC</th>
-                                <th class="text-center align-middle">Reviewer SPI</th>
-                                <th class="text-center align-middle">Reviewer Anggaran</th>
                                 <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
@@ -70,15 +67,11 @@
                                 <td>{{$kpo->id}}</td>
                                 <td>{{$kpo->nama_kegiatan}}</td> 
                                 <td>{{$kpo->kode}}</td>
-                                <td>{{$kpo->nip_pic}}</td>
-                                <td>{{$kpo->reviewer_spi}}</td>
-                                <td>{{$kpo->reviewer_ang}}</td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i></button>
-                                    <a href="#" value="{{ action('AdminPerencanaan\KegiatanPOController@show',['id'=> $kpo->id]) }}" class="btn btn-sm btn-warning waves-effect modalMd" data-toggle="modal" title="Detail Kegiatan PO" data-target="#modalMd">
-                                    <i class="icon fa fa-eye"></i></a>
-                                    
-                                    <button class="btn btn-sm btn-danger"><i class="icon fa fa-trash"></i></button>
+                                    <a href="{{ route('kegiatanpo.edit', $kpo->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i></a>
+                                    <a href="{{ route('kegiatanpo.show', $kpo->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i></a>
+                                    <button class="btn btn-sm btn-danger" data-kegid="{{$kpo->id}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i></button>
+                                  
                                 </td>
                             </tr>
                         @endforeach
@@ -88,7 +81,36 @@
             </div>
         </div>
     </div>
-</div>      
+</div> 
+
+<!-- Modal Delete -->
+<div class="modal fade" id="deleteData" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header bg-primary">
+            <h5 class="modal-title text-center">Hapus Data Kegiatan PO</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div> 
+        <form method="POST" action="{{route('kegiatanpo.destroy','test')}}">
+            {{ method_field('DELETE') }} 
+            {{ csrf_field() }}
+            <div class="modal-body">
+                <p>Apakah Anda yakin untuk menghapus data ini?</p>
+                <input type="hidden" name="kegiatan_id" id="keg_id" />
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Batal</button>
+            </div> 
+        </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 @endsection
 
 @push('js')
@@ -103,6 +125,14 @@
             "autoWidth" : true,
             'LengthChange' : true
         });
+    });
+
+    $('#deleteData').on('show.bs.modal', function(event){
+        var button = $(event.relatedTarget) // Button yg memicu modal
+        var keg_id = button.data('kegid'); //mengambil info dari atribut data-*
+        var modal = $(this)
+
+        modal.find('.modal-body #keg_id').val(keg_id);
     });
 </script>
 

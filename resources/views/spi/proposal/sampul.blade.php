@@ -70,7 +70,7 @@
     $( "#kodeunit" ).autocomplete({
         minLength: 1,
         source: function(request, response) {
-            $.getJSON("kodeunit", {
+            $.getJSON("/kodeunit", {
                 name: request.term,
             }, function(data) {
                 response(data);
@@ -88,7 +88,7 @@
 
     //ketuapelaksana
     $('#ketuplak').autocomplete({
-        source: "ketuapelaksana",
+        source: "/ketuapelaksana",
         minLength: 2,
         focus: function(event, ui) {
             // prevent autocomplete from updating the textbox

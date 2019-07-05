@@ -67,7 +67,7 @@
                                     <label for="" class="ml-sm-3">a. Nama</label>
                                 </div>
                                 <div class="col-sm-8 ">
-                                    <input type="text" class="form-control form-control-sm" id="ketuplak" placeholder="Nama Ketua Pelaksana">
+                                    <input type="text" class="form-control form-control-sm" id="ketuplak1" placeholder="Nama Ketua Pelaksana">
                                 </div>
                             </div>
 
@@ -92,7 +92,7 @@
                                     <label for="" class="ml-sm-3">c. NIP</label>
                                 </div>
                                 <div class="col-sm-8 ">
-                                    <input type="text" class="form-control form-control-sm" id="nip" placeholder="Nomor Induk Pegawai (NIP)">
+                                    <input type="text" class="form-control form-control-sm" id="nip1" placeholder="Nomor Induk Pegawai (NIP)">
                                 </div>
                             </div>
 

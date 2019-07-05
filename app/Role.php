@@ -10,7 +10,7 @@ class Role extends Model
 
     protected $primaryKey = 'id';
    
-    public function users() {
+    public function pegawai() {
     	return $this->belongsToMany('App\Pegawai','pegawai_role', 'role_id', 'pegawai_id');
     }
 }

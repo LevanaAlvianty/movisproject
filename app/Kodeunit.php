@@ -8,7 +8,7 @@ class Kodeunit extends Model
 {
     protected $table = 'jurbagnitpus';
     protected $fillable = [
-        'jurbagnitpus','kode','warna'
+        'id_jurbagnitpus','jurbagnitpus','kode','warna'
     ];
 
     public function kegiatanpo() {

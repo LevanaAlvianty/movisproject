@@ -16,4 +16,9 @@ class KegiatanPO extends Model
     public function kodeunit() {
         return $this->belongsTo('App\Kodeunit');
     }
+
+    public function pegawai() {
+        return $this->belongsto('App\Pegawai','id_pegawai');
+    }
+
 }

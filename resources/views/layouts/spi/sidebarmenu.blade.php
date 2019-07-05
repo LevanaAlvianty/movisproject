@@ -1,8 +1,8 @@
     <aside class="app-sidebar">
         <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
             <div>
-            <p class="app-sidebar__user-name">John Doe</p>
-            <p class="app-sidebar__user-designation">Frontend Developer</p>
+            <p class="app-sidebar__user-name">{{ Auth::guard('pegawai')->user()->username}}</p>
+            <p class="app-sidebar__user-designation">{{ Auth::guard('pegawai')->user()->jabatan }}</p>
             </div>
         </div>
         <ul class="app-menu">
@@ -12,15 +12,10 @@
         @endphp
         <!-- Admin -->
         @if($admin == 1)
-            <li class="treeview">
-                <a class="app-menu__item " href="#" data-toggle="treeview">
-                    <i class="app-menu__icon fa fa-group"></i><span class="app-menu__label">Pegawai</span>
-                    <i class="treeview-indicator fa fa-angle-right"></i>
+            <li class="">
+                <a class="app-menu__item {{ Request::is('admin/pegawai*') ? 'active':  '' }}" href="{{ route('pegawai.index') }}">
+                    <i class="app-menu__icon fa fa-group"></i><span class="app-menu__label">User</span>
                 </a>
-                <ul class="treeview-menu">
-                    <li><a class="treeview-item " href=""><i class="icon fa fa-circle-o"></i> Manage Pegawai</a></li>
-                    <li><a class="treeview-item " href=""><i class="icon fa fa-circle-o"></i> Setting Pegawai</a></li>
-                </ul>
             </li>
             <li class="">
                 <a class="app-menu__item {{ Request::is('adminperencanaan/kegiatanpo*') ? 'active':  '' }}" href="{{ route('kegiatanpo.index') }}">

@@ -17,7 +17,9 @@
         <!-- AutoComplete -->
         <!-- <script src="{{ asset('js/movis/jquery.min.js')}}"></script> -->
         <script src="{{ asset('/vali_admin/plugins/jqueryui/jquery-ui.min.js')}}"></script>
-        
+
+        <!-- Select2 -->
+        <script src="{{asset('js/movis/select2.min.js')}}"></script>
         <!-- TinyMCE -->
         <script src="{{asset('/vali_admin/plugins/tinymce/js/tinymce/tinymce.min.js')}}"></script>
         

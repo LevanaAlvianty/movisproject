@@ -7,10 +7,13 @@ use App\Http\Controllers\Controller;
 use App\Imports\KegiatanpoImport;
 use App\Exports\KegiatanpoExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Input;
 use App\KegiatanPO;
 use App\Kodeunit;
+use App\Pegawai;
 use DB;
 use Session;
+use Response;
 use App\Jobs\ImportJob;
 
 class KegiatanPOController extends Controller
@@ -38,7 +41,12 @@ class KegiatanPOController extends Controller
     public function create()
     {
         $kodeunit = Kodeunit::all();
-        return view('adm-perencanaan.kegiatanpo.create',compact('kodeunit'));
+        $pegawai = DB::table('pegawai')
+                ->select('pegawai.*')
+                ->where('pegawai.nama','!=','')
+                ->get();
+        // dd($kodeunit);
+        return view('adm-perencanaan.kegiatanpo.create',compact('kodeunit','pegawai'));
     }
 
     /**
@@ -49,14 +57,13 @@ class KegiatanPOController extends Controller
      */
     public function store(Request $request)
     {   
-        $kodeunit = Kodeunit::where('kode', $request->id_jurbagnitpus)->first();
         $kegiatanpo = new KegiatanPO();
         $kegiatanpo->nama_kegiatan = $request->nama_kegiatan;
+        $kegiatanpo->id_jurbagnitpus = $request->id_jurbagnitpus;
         $kegiatanpo->nip_pic = $request->nip_pic;
         $kegiatanpo->reviewer_spi = $request->reviewer_spi;
         $kegiatanpo->reviewer_ang = $request->reviewer_ang;
         $kegiatanpo->save();
-        $kegiatanpo->kodeunit()->associate($kodeunit);
         return redirect()->route('kegiatanpo.index');
     }
 
@@ -69,12 +76,16 @@ class KegiatanPOController extends Controller
     public function show($id)
     {
         $kegiatanpo= KegiatanPO::find($id);
-        // $jurbagnitpus= DB::table('kegiatanpo')
-        //             ->join('jurbagnitpus','jurbagnitpus.id_jurbagnitpus','=','kegiatanpo.id_jurbagnitpus')
-        //             ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode')
-        //             ->orderBy('kegiatanpo.id','desc')
-        //             ->first(); 
-        return view('adm-perencanaan.kegiatanpo.show', compact('kegiatanpo'));
+        $kodeunit = Kodeunit::all();
+        $pegawai = Pegawai::all();
+        return view('adm-perencanaan.kegiatanpo.lihat', compact('kegiatanpo','kodeunit','pegawai'));
+        // $kegiatanpo = DB::table('kegiatanpo')
+        //             ->join('jurbagnitpus', 'jurbagnitpus.id_jurbagnitpus', '=', 'kegiatanpo.id_jurbagnitpus')
+        //             ->join('pegawai', 'pegawai.nip', '=', 'kegiatanpo.nip_pic')
+        //             ->select('kegiatanpo.*', 'jurbagnitpus.id_jurbagnitpus as idj','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nip','pegawai.nama')
+        //             ->where('kegiatanpo.id', '=', $id)
+        //             ->first();
+		// return response()->json($kegiatanpo);
     }
 
     /**
@@ -85,7 +96,14 @@ class KegiatanPOController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kegiatanpo = KegiatanPO::find($id);
+        $kodeunit = Kodeunit::all();
+        // $pegawai = DB::table('pegawai')
+        //         ->select('pegawai.*')
+        //         ->where('pegawai.nama','!=','')
+        //         ->get();
+        $pegawai = Pegawai::all();
+        return view('adm-perencanaan.kegiatanpo.edit',compact('kegiatanpo','kodeunit','pegawai'));
     }
 
     /**
@@ -97,7 +115,14 @@ class KegiatanPOController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $kegiatanpo = KegiatanPO::find($id);
+        $kegiatanpo->nama_kegiatan = $request->nama_kegiatan;
+        $kegiatanpo->id_jurbagnitpus = $request->id_jurbagnitpus;
+        $kegiatanpo->nip_pic = $request->nip_pic;
+        $kegiatanpo->reviewer_spi = $request->reviewer_spi;
+        $kegiatanpo->reviewer_ang = $request->reviewer_anggaran;
+        $kegiatanpo->update();
+        return redirect()->route('kegiatanpo.index');
     }
 
     /**
@@ -106,9 +131,11 @@ class KegiatanPOController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $kegiatanpo = KegiatanPO::findOrfail($request->kegiatan_id);
+        $kegiatanpo->delete();
+        return redirect()->route('kegiatanpo.index');
     }
 
     public function export_excel()
@@ -126,25 +153,38 @@ class KegiatanPOController extends Controller
         if ($request->hasFile('file')) {
             //GET FILE
             $file = $request->file('file');
-
-            //MEMBUAT FILENAME DENGAN MENGAMBIL EKSTENSI DARI FILE YANG DI-UPLOAD
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-
             
-            //FILE TERSEBUT DISIMPAN KEDALAM FOLDER
-            // STORAGE > APP > PUBLIC > FILE_KEGIATANPO
-            //DENGAN MENGGUNAKAN METHOD storeAs()
-            $file->storeAs(
-                'public/file_kegiatanpo/', $filename
-            );
-            
-            //MEMBUAT JOBS DENGAN MENGIRIMKAN PARAMETER FILENAME
-            //MEMBUAT INSTRUKSI JOB QUEUE
-            ImportJob::dispatch($filename);
+            $filename = rand().$file->getClientOriginalName();
+ 
+            // upload ke folder file_siswa di dalam folder public
+            $file->move('file_kegiatanpo',$filename);
+ 
+            // import data
+		    Excel::import(new KegiatanpoImport, public_path('file_kegiatanpo/'.$filename));
+           //MENGHAPUS FILE EXCEL YANG TELAH DI-UPLOAD
+        
             //REDIRECT DENGAN FLASH MESSAGE BERHASIL
             return redirect()->back()->with(['success' => 'Upload success']);
         }  
         return redirect()->back()->with(['error' => 'Please choose file before']);
         
-	}
+    }
+    
+    public function pic()
+    {
+        $term = Input::get('term');
+        
+        $results = array();
+        
+        $queries = DB::table('pegawai')
+            ->where('nip', 'LIKE', '%'.$term.'%')
+            ->orWhere('nama', 'LIKE', '%'.$term.'%')
+            ->take(5)->get();
+        
+        foreach ($queries as $query)
+        {
+            $results[] = [ 'id' => $query->nip, 'label' =>$query->nama, 'value' =>$query->nip];
+        }
+        return Response::json($results);
+    }
 }

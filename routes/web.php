@@ -36,27 +36,7 @@ Route::get('unitpelaksana', 'Spi\ProposalController@Unitpelaksana');
 Route::resource('/perencanaan/kegiatanpo','AdminPerencanaan\KegiatanPOController');
 Route::post('/kegiatan/import_excel', 'AdminPerencanaan\KegiatanPOController@import_excel');
 Route::get('/kegiatan/export_excel', 'AdminPerencanaan\KegiatanPOController@export_excel');
+Route::get('pic', 'AdminPerencanaan\KegiatanPOController@pic');
 
-/* Route::get('/', function () {
-    return view('auth/login');
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/logintemplate', 'HomeController@coba')->name('logintemplate');
-Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function(){
-    Route::get('dashboard','DashboardController@index')->name('dashboard');
-});
-
-Route::group(['as'=>'spi.','prefix'=>'spi','namespace'=>'Spi','middleware'=>['auth','spi']], function(){
-    Route::get('dashboard','DashboardController@index')->name('dashboard');
-    Route::resource('proposal','ProposalController');
-    Route::get('daftarproposal','ProposalController@daftar')->name('proposal.daftar');
-    Route::get('penilaianproposal','ProposalController@penilaian')->name('proposal.penilaian');
-    Route::get('editproposal','ProposalController@editproposal')->name('proposal.editproposal');
-    Route::get('ketuapelaksana', 'ProposalController@KetuaPelaksana');
-    Route::get('kodeunit', 'ProposalController@Kodeunit');
-    Route::get('unitpelaksana', 'ProposalController@Unitpelaksana');
-}); */
+//Admin
+Route::resource('/pegawai','Admin\PegawaiController');

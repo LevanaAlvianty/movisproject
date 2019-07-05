@@ -9,9 +9,8 @@ use Illuminate\Contracts\Queue\ShouldQueue; //IMPORT SHOUDLQUEUE
 use Maatwebsite\Excel\Concerns\WithChunkReading; //IMPORT CHUNK READING
 use Maatwebsite\Excel\Imports\HeadingRowFormatter;
 
-class KegiatanpoImport implements ToModel, WithHeadingRow , WithChunkReading, ShouldQueue
+class KegiatanpoImport implements ToModel, WithHeadingRow 
 {
-    
     /**
     * @param array $row
     *
@@ -22,16 +21,17 @@ class KegiatanpoImport implements ToModel, WithHeadingRow , WithChunkReading, Sh
     {
         return new KegiatanPO([
             'nama_kegiatan' => $row['nama_kegiatan'],
-            'id_jurbagnitus' => $row['unit_pelaksana'],
+            'id_jurbagnitpus' => $row['pelaksana'],
             'nip_pic' => $row['pic'],
             'reviewer_spi' => $row['reviewer_spi'],
             'reviewer_ang' => $row['reviewer_anggaran']
         ]);
     }
 
+
     //LIMIT CHUNKSIZE
-    public function chunkSize(): int
-    {
-        return 1000; //ANGKA TERSEBUT PERTANDA JUMLAH BARIS YANG AKAN DIEKSEKUSI
-    }
+    // public function chunkSize(): int
+    // {
+    //     return 1000; //ANGKA TERSEBUT PERTANDA JUMLAH BARIS YANG AKAN DIEKSEKUSI
+    // }
 }
