@@ -17,6 +17,7 @@ class CreateKegiatanpoTable extends Migration
             $table->bigIncrements('id')->increments();
             $table->text('nama_kegiatan');
             $table->unsignedInteger('id_jurbagnitpus');
+            $table->string('pimpinan')->nullable();
             $table->string('nip_pic')->nullable();
             $table->string('reviewer_spi')->nullable();
             $table->string('reviewer_ang')->nullable();

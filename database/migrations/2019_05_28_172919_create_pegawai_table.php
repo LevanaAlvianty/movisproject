@@ -20,6 +20,11 @@ class CreatePegawaiTable extends Migration {
 			$table->string('golongan', 7)->nullable();
 			$table->string('jabatan', 150)->nullable();
 			$table->string('password', 191);
+			$table->string('email')->unique();
+            $table->string('username')->default('User');
+			$table->string('image')->default('default.png');
+			$table->rememberToken();
+            $table->timestamps();
 		});
 	}
 
