@@ -13,6 +13,8 @@
         <!-- Data table plugin-->
         <script type="text/javascript" src="{{asset('/vali_admin/docs/js/plugins/jquery.dataTables.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('/vali_admin/docs/js/plugins/dataTables.bootstrap.min.js')}}"></script>
+        <script src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
         <!-- AutoComplete -->
         <!-- <script src="{{ asset('js/movis/jquery.min.js')}}"></script> -->
@@ -20,11 +22,16 @@
 
         <!-- Select2 -->
         <script src="{{asset('js/movis/select2.min.js')}}"></script>
+
         <!-- TinyMCE -->
         <script src="{{asset('/vali_admin/plugins/tinymce/js/tinymce/tinymce.min.js')}}"></script>
         
         <!-- Animate Easing -->
         <script src="{{ asset('/js/movis/jquery.easing.min.js')}}"></script>
+
+        <!-- Toastr-->
+        <script src="{{asset('js/toastr.min.js')}}"></script>
+        {!! Toastr::message() !!}
         @stack('js')
     </body>
 </html>

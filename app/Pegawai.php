@@ -18,13 +18,13 @@ class Pegawai extends Authenticatable
     protected $primaryKey = 'id_pegawai';
 
     protected $fillable = [
-        'nip', 'nama', 'password'
+        'nip', 'nama', 'password','username', 'photo'
     ];
 
     protected $hidden = [
         'password','remember_token'
     ];
-
+    public $timestamps = false;
      /**
      * The attributes that should be cast to native types.
      *
@@ -33,7 +33,6 @@ class Pegawai extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
 
     public function roles() {
         return $this->belongsToMany('App\Role','pegawai_role','pegawai_id','role_id');
@@ -91,6 +90,20 @@ class Pegawai extends Authenticatable
 
     public function isReviewerang(){
         if ($this->roles()->where('name', 'reviewer_ang')->first()) {
+            return true;
+        }
+        return false;
+    }
+
+    public function isAdminspi(){
+        if ($this->roles()->where('name', 'admin_spi')->first()) {
+            return true;
+        }
+        return false;
+    }
+
+    public function isAdminperencanaan(){
+        if ($this->roles()->where('name', 'admin_perencanaan')->first()) {
             return true;
         }
         return false;

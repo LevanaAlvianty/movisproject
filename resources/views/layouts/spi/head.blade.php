@@ -14,9 +14,16 @@
     <!-- Pretty Checkbox CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('/css/pretty-checkbox.min.css')}}">
 
-    <!-- Pretty Checkbox CSS-->
+    <!-- Autocomplete-->
     <link rel="stylesheet" type="text/css" href="{{ asset('/vali_admin/plugins/jqueryui/jquery-ui.min.css')}}">
     
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="{{asset('/vali_admin/plugins/font-awesome/css/font-awesome.min.css')}}">
+
+    <!-- Toastr-->
+    <link rel="stylesheet" type="text/css" href="{{asset('css/toastr.min.css')}}">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" type="text/css" href="{{asset('css/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/select2-bootstrap.min.css')}}">
   </head>
