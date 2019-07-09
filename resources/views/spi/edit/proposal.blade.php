@@ -86,6 +86,12 @@
         color: white;
     }
 
+    .textarea-none-resize{
+        width: 200px;
+        height: 220px;
+        resize: none;
+    }
+
 </style>
 @endpush()
 
@@ -137,7 +143,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea></td>
+                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm textarea-none-resize"></textarea></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -162,7 +168,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea></td>
+                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm textarea-none-resize"></textarea></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -188,7 +194,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea></td>
+                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm textarea-none-resize"></textarea></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -215,7 +221,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea></td>
+                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm textarea-none-resize"></textarea></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -242,7 +248,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea></td>
+                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm textarea-none-resize"></textarea></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -269,7 +275,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea></td>
+                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm textarea-none-resize"></textarea></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -296,7 +302,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea></td>
+                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm textarea-none-resize"></textarea></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -323,7 +329,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea></td>
+                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm textarea-none-resize"></textarea></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -350,7 +356,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea></td>
+                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm textarea-none-resize"></textarea></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -377,7 +383,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm"></textarea></td>
+                                            <td><textarea name="" id="" cols="30" rows="10" class="form-control form-control-sm textarea-none-resize"></textarea></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -387,8 +393,10 @@
                     <br>
                     <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
                     <button id="next" class="btn btn-success btn-sm submit" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
+                    <a href="" class="btn btn-danger btn-sm mr-2" style="float:right;"><i class="fa fa-floppy-o fa-lg"></i> Simpan</a>
                 </fieldset>
             </form> 
+            <a href="{{route('kegiatan.index')}}" class="btn btn-danger btn-sm" style="float:right;"><i class=""></i> Kembali</a> 
         </div>
     </div>
 </div>

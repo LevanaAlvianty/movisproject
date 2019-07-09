@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Pimpinan;
+namespace App\Http\Controllers\Adminspi;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -8,9 +8,8 @@ use App\KegiatanPO;
 use App\Kodeunit;
 use App\Pegawai;
 use DB;
-use Auth;
 
-class KegiatanPimpinanController extends Controller
+class KegiatanAdminSpiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,20 +18,17 @@ class KegiatanPimpinanController extends Controller
      */
     public function index()
     {
-        $data= Auth::guard('pegawai')->user()->nip;
-        $data= DB::table('kegiatanpo')
+        $kegiatanpo= DB::table('kegiatanpo')
                     ->join('jurbagnitpus','jurbagnitpus.id_jurbagnitpus','=','kegiatanpo.id_jurbagnitpus')
                     ->join('pegawai','pegawai.nip','=','kegiatanpo.pimpinan')
-                    ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nip','pegawai.nama')
-                    ->where('kegiatanpo.pimpinan','=',$data)
+                    ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nama')
+                    ->orderBy('kegiatanpo.id','desc')
                     ->get(); 
-                    // dd($data);
-        $kegiatanpo = KegiatanPO::all();
         $pegawai = DB::table('pegawai')
                     ->select('pegawai.*')
                     ->where('pegawai.nama','!=','')
-                    ->get();  
-        return view('pimpinan.kegiatanpo.index',compact('data','pegawai','kegiatanpo'));
+                    ->get(); 
+        return view('adminspi.kegiatanpo.index',compact('kegiatanpo','pegawai'));
     }
 
     /**
@@ -67,7 +63,7 @@ class KegiatanPimpinanController extends Controller
         $kegiatanpo= KegiatanPO::find($id);
         $kodeunit = Kodeunit::all();
         $pegawai = Pegawai::all();
-        return view('pimpinan.kegiatanpo.lihat', compact('kegiatanpo','kodeunit','pegawai'));
+        return view('adminspi.kegiatanpo.lihat', compact('kegiatanpo','kodeunit','pegawai'));
     }
 
     /**
@@ -83,7 +79,7 @@ class KegiatanPimpinanController extends Controller
                 ->select('pegawai.*')
                 ->where('pegawai.nama','!=','')
                 ->get();
-        return view('pimpinan.kegiatanpo.edit',compact('kegiatanpo','pegawai'));
+        return view('adminspi.kegiatanpo.edit',compact('kegiatanpo','pegawai'));
     }
 
     /**
@@ -96,9 +92,10 @@ class KegiatanPimpinanController extends Controller
     public function update(Request $request, $id)
     {
         $kegiatanpo = KegiatanPO::find($id);
-        $kegiatanpo->nip_pic = $request->pic;
+        $kegiatanpo->reviewer_spi = $request->reviewer_spi;
+        $kegiatanpo->reviewer_ang = $request->reviewer_ang;
         $kegiatanpo->update();
-        return redirect()->route('kegiatanpimpinan.index')->with("success","Data Berhasil Diperbarui !");
+        return redirect()->route('kegiatanadminspi.index')->with("success","Data Berhasil Diperbarui !");
     }
 
     /**

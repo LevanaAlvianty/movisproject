@@ -10,7 +10,7 @@ class KegiatanPO extends Model
     protected $guarded = [];
 
     protected $fillable = [
-        'nama_kegiatan', 'id_jurbagnitpus','nip_pic','reviewer_spi','reviewer_ang'
+        'nama_kegiatan', 'id_jurbagnitpus','pimpinan','nip_pic','reviewer_spi','reviewer_ang'
     ];
 
     public function kodeunit() {

@@ -51,3 +51,6 @@ Route::resource('/pegawai','Admin\PegawaiController');
 
 //Pimpinan
 Route::resource('/pimpinan/kegiatanpimpinan','Pimpinan\KegiatanPimpinanController');
+
+//Pimpinan
+Route::resource('/adminspi/kegiatanadminspi','Adminspi\KegiatanAdminSpiController');

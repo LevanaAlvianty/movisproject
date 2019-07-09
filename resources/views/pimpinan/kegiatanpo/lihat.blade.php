@@ -87,7 +87,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <a href="{{ route('kegiatanpo.index')}}" class="btn btn-sm btn-info">Kembali</a>
+                        <a href="{{ route('kegiatanpimpinan.index')}}" class="btn btn-sm btn-info">Kembali</a>
                     </div>
                     <!-- /.box-footer -->
                 </div>

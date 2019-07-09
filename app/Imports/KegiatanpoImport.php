@@ -22,6 +22,7 @@ class KegiatanpoImport implements ToModel, WithHeadingRow
         return new KegiatanPO([
             'nama_kegiatan' => $row['nama_kegiatan'],
             'id_jurbagnitpus' => $row['pelaksana'],
+            'pimpinan' => $row['pimpinan'],
             'nip_pic' => $row['pic'],
             'reviewer_spi' => $row['reviewer_spi'],
             'reviewer_ang' => $row['reviewer_anggaran']

@@ -19,29 +19,37 @@
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    <table class="table table-hover table-bordered dt-responsive" id="tabelkegpimpinan">
+                    <table class="table table-hover table-bordered dt-responsive" id="tabelkegiatanspi">
                         <thead class="thead-dark">
                             <tr>
                                 <th class="text-center align-middle">No</th>
                                 <th class="text-center align-middle">Nama Kegiatan</th> 
-                                <th class="text-center align-middle">PIC</th>
+                                <th class="text-center align-middle">Unit Pelaksana</th>
+                                <th class="text-center align-middle">Reviewer SPI</th>
+                                <th class="text-center align-middle">Reviewer Anggaran</th>
                                 <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach ($data as $d )
+                        @foreach ($kegiatanpo as $d )
                             <tr>
                                 <td>{{$d->id}}</td>
                                 <td>{{$d->nama_kegiatan}}</td>  
+                                <td>{{$d->kode}}</td>
                                 <td> @foreach ($pegawai as $p)
-                                        @if($p->nip == $d->nip_pic)
+                                        @if($p->nip == $d->reviewer_spi)
                                             {{ $p->nama }}       
                                         @endif
                                     @endforeach
                                 </td>
+                                <td> @foreach ($pegawai as $p)
+                                        @if($p->nip == $d->reviewer_ang)
+                                            {{ $p->nama }}       
+                                        @endif
+                                    @endforeach
                                 <td>
-                                    <a href="{{ route('kegiatanpimpinan.edit', $d->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Assign PIC</a>
-                                    <a href="{{ route('kegiatanpimpinan.show', $d->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
+                                    <a href="{{ route('kegiatanadminspi.edit', $d->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Assign</a>
+                                    <a href="{{ route('kegiatanadminspi.show', $d->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -58,7 +66,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#tabelkegpimpinan').DataTable({
+        $('#tabelkegiatanspi').DataTable({
             "paging"    : true,
             "ordering"  : true,
             "info"      : false,

@@ -1,104 +1,7 @@
 @extends('layouts.spi.master')
 @section('title', 'Proposal')
 
-@section('judulapp')
-    <div>
-          <h1><i class="fa fa-file-text-o"></i> Proposal</h1>
-          <p>Tahap Pembuatan Proposal</p>
-    </div>
-    <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item"><a href="#">Proposal</a></li>
-        <li class="breadcrumb-item"><a href="#">Buat Proposal</a></li>
-    </ul>
-@endsection
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <!-- progressbar -->
-            <form id="msform">
-                <!-- progressbar -->
-                <ul id="progressbar" style="padding-left:0px">
-                    <li class="active">Sampul Depan</li>
-                    <li>Halaman Pengesahan</li>
-                    <li>Latar Belakang</li>
-                    <li>Tujuan</li>
-                    <li>Mekanisme Kegiatan</li>
-                    <li>Personil</li>
-                    <li>Luaran</li>
-                    <li>Jadwal Kegiatan</li>
-                    <li>Anggaran</li>
-                    <li>Penutup</li>
-                </ul>
-                
-                <!-- fieldsets -->
-                <fieldset>
-                    @include('spi.proposal.sampul')
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-                
-                <fieldset>
-                    @include('spi.proposal.pengesahan')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-                
-                <fieldset>
-                    @include('spi.proposal.latar')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-
-                <fieldset>
-                    @include('spi.proposal.tujuan')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-
-                <fieldset>
-                    @include('spi.proposal.mekanisme')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-
-                <fieldset>
-                    @include('spi.proposal.personil')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-
-                 <fieldset>
-                    @include('spi.proposal.luaran')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-
-                <fieldset>
-                    @include('spi.proposal.jadwal')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-
-                <fieldset>
-                    @include('spi.proposal.anggaran')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-
-                 <fieldset>
-                    @include('spi.proposal.penutup')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-success btn-sm submit" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-            </form> 
-        </div>
-    </div>
-</div>
-@endsection()
-
-@push('js')
+@push('css')
 <style>
     /*custom font*/
     @import url(https://fonts.googleapis.com/css?family=Montserrat);
@@ -161,8 +64,8 @@
         border-radius: 50%;
         margin: 0 auto 5px auto; 
     }
-    /*progressbar connectors*/
-    #progressbar li:after {
+     /*progressbar connectors*/
+     #progressbar li:after {
         content: '';
         width: 50%;
         height: 2px;
@@ -182,9 +85,110 @@
         background: #27AE60;
         color: white;
     }
-
 </style>
+@endpush()
 
+@section('judulapp')
+    <div>
+          <h1><i class="fa fa-file-text-o"></i> Proposal</h1>
+          <p>Tahap Pembuatan Proposal</p>
+    </div>
+    <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item"><a href="#">Proposal</a></li>
+        <li class="breadcrumb-item"><a href="#">Buat Proposal</a></li>
+    </ul>
+@endsection
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- progressbar -->
+            <form id="msform">
+                <!-- progressbar -->
+                <ul id="progressbar" style="padding-left:0px">
+                    <li class="active">Sampul Depan</li>
+                    <li>Halaman Pengesahan</li>
+                    <li>Latar Belakang</li>
+                    <li>Tujuan</li>
+                    <li>Mekanisme Kegiatan</li>
+                    <li>Personil</li>
+                    <li>Luaran</li>
+                    <li>Jadwal Kegiatan</li>
+                    <li>Anggaran</li>
+                    <li>Penutup</li>
+                </ul>
+                
+                <!-- fieldsets -->
+                <fieldset>
+                    @include('spi.proposal.sampul')
+                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                    <a href="" class="btn btn-primary btn-sm mr-2" style="float:right;"><i class="fa fa-plus fa-lg"></i> Data SERENA</a>
+                </fieldset>
+                
+                <fieldset>
+                    @include('spi.proposal.pengesahan')<br>
+                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                </fieldset>
+                
+                <fieldset>
+                    @include('spi.proposal.latar')<br>
+                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                </fieldset>
+
+                <fieldset>
+                    @include('spi.proposal.tujuan')<br>
+                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                </fieldset>
+
+                <fieldset>
+                    @include('spi.proposal.mekanisme')<br>
+                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                </fieldset>
+
+                <fieldset>
+                    @include('spi.proposal.personil')<br>
+                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                </fieldset>
+
+                 <fieldset>
+                    @include('spi.proposal.luaran')<br>
+                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                </fieldset>
+
+                <fieldset>
+                    @include('spi.proposal.jadwal')<br>
+                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                </fieldset>
+
+                <fieldset>
+                    @include('spi.proposal.anggaran')<br>
+                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                </fieldset>
+
+                 <fieldset>
+                    @include('spi.proposal.penutup')<br>
+                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                    <button id="next" class="btn btn-success btn-sm submit" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
+                    <a href="" class="btn btn-danger btn-sm mr-2" style="float:right;"><i class="fa fa-floppy-o fa-lg"></i> Simpan</a>
+                </fieldset>
+            </form>
+            <a href="{{route('kegiatan.index')}}" class="btn btn-danger btn-sm" style="float:right;"><i class=""></i> Kembali</a> 
+        </div>
+    </div>
+</div>
+@endsection()
+
+@push('js')
 <script>
 //jQuery time
     var current_fs, next_fs, previous_fs; //fieldsets

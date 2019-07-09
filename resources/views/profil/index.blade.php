@@ -48,10 +48,9 @@
                                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab_3">Change Password</a></li>
                             </ul>
                             <div class="tab-content">
-                                
                                 <div class="tab-pane active" id="tab_1"><br>
                                 @if(Auth::guard('pegawai')->user()->photo == NULL)
-                                    <img src="{{asset('gambar/default.jpg')}}" width="150px" height="150px" class="img-fluid rounded-circle">
+                                    <img src="{{asset('gambar/profil/default.jpg')}}" width="150px" height="150px" class="img-fluid rounded-circle">
                                 @else
                                     <img src="{{asset('gambar/profil/'. Auth::guard('pegawai')->user()->photo)}}" width="150px" height="150px" class="img-fluid rounded-circle">
                                 @endif
@@ -176,8 +175,8 @@
                                         {{csrf_field()}}
                                         <div class="box-body">
                                             <div class="form-group row {{ $errors->has('current-password') ? ' has-error' : '' }}">
-                                                <label class="col-sm-2">Current Password</label>
-                                                <div class="col-sm-6">
+                                                <label class="col-sm-3">Current Password</label>
+                                                <div class="col-sm-5">
                                                     <input id="current-password" type="password" class="form-control" value="" required name="current-password">
                                                     @if ($errors->has('current-password'))
                                                         <span class="help-block">
@@ -187,8 +186,8 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row {{ $errors->has('new-password') ? ' has-error' : '' }}">
-                                                <label class="col-sm-2">New Password</label>
-                                                <div class="col-sm-6">
+                                                <label class="col-sm-3">New Password</label>
+                                                <div class="col-sm-5">
                                                     <input id="new-password"  type="password" class="form-control" value="" name="new-password" required>
                                                     @if ($errors->has('new-password'))
                                                         <span class="help-block">
@@ -198,8 +197,8 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2">Confirm New Password</label>
-                                                <div class="col-sm-6">
+                                                <label class="col-sm-3">Confirm New Password</label>
+                                                <div class="col-sm-5">
                                                     <input id="new-password-confirm" type="password" class="form-control" value="" name="new-password_confirmation" required>
                                                 </div>
                                             </div>

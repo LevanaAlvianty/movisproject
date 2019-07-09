@@ -21,20 +21,47 @@
                 <div class="tile-body">
                     <form action="{{ route('kegiatanpo.store') }}" class="form-horizontal" method="POST">
                     {{ csrf_field() }}
+
+                    @if(count($errors)>0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error )
+                                <li>{{ $error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                               
+                    @if(Session::has('success'))
+                        <div class="alert alert-success">
+                            {{Session::get('success')}}
+                        </div>
+                    @endif
                     <div class="box-body">
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Nama Kegiatan</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="nama_kegiatan" placeholder="Nama Kegiatan" value="">
+                                <input type="text" class="form-control" name="nama_kegiatan" placeholder="Nama Kegiatan" value="" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Unit Pelaksana</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="id_jurbagnitpus" id="unitpelaksana" placeholder="Kode Unit">
+                                <select class="form-control" name="id_jurbagnitpus" id="unitpelaksana" placeholder="Kode Unit" required> 
                                     <option class="active">Pilih Unit Pelaksana</option>
                                         @foreach ($kodeunit as $k)
                                             <option value="{{ $k->id_jurbagnitpus }}">{{ $k->jurbagnitpus }} ({{ $k->kode }})</option>
+                                        @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Penanggungjawab</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="pimpinan" id="pimpinan"placeholder="Penanggungjawab">
+                                    <option class="active">Pilih Penanggungjawab</option>
+                                        @foreach ($pegawai as $p)
+                                            <option value="{{ $p->nip }}"> {{ $p->nama }}</option>
                                         @endforeach
                                 </select>
                             </div>
@@ -48,7 +75,6 @@
                                             <option value="{{ $p->nip }}"> {{ $p->nama }}</option>
                                         @endforeach
                                 </select>
-                                <!-- <input type="text" class="form-control" id="nip_pic" name="nip_pic" placeholder="PIC" value="" > -->
                             </div>
                         </div>
                         <div class="form-group row">
@@ -90,9 +116,7 @@
 @endsection()
   
 @push('js')
- 
 <script>
-
 $(document).ready(function() {
     //search unit pelaksana
     $(document).ready(function() {
@@ -100,7 +124,7 @@ $(document).ready(function() {
             width: '100%',
             placeholder: 'Pilih Unit Pelaksana',
             allowClear: true,
-            selectOnClose: false,
+            theme: "bootstrap",
         });
         $(window).resize(function() {
             $('#unitpelaksana').css('width', "100%");
@@ -113,12 +137,26 @@ $(document).ready(function() {
             width: '100%',
             placeholder: 'Pilih PIC',
             allowClear: true,
-            selectOnClose: false,
             minimumInputLength: 2,
+            theme: "bootstrap",
         });
         
         $(window).resize(function() {
             $('#nip_pic').css('width', "100%");
+        });
+    });
+
+    //search unit pelaksana
+    $(document).ready(function() {
+        $("#pimpinan").select2({
+            width: '100%',
+            placeholder: 'Pilih Penanggungjawan',
+            allowClear: true,
+            selectOnClose: false,
+            theme: "bootstrap",
+        });
+        $(window).resize(function() {
+            $('#pimpinan').css('width', "100%");
         });
     });
     
@@ -128,8 +166,8 @@ $(document).ready(function() {
             width: '100%',
             placeholder: 'Pilih Reviewer SPI',
             allowClear: true,
-            selectOnClose: false,
             minimumInputLength: 2,
+            theme: "bootstrap",
         });
         
         $(window).resize(function() {
@@ -143,17 +181,18 @@ $(document).ready(function() {
             width: '100%',
             placeholder: 'Pilih Reviewer Anggaran',
             allowClear: true,
-            selectOnClose: false,
             minimumInputLength: 2,
+            theme: "bootstrap"
         });
         
         $(window).resize(function() {
             $('#rev_anggaran').css('width', "100%");
         });
     });
-
 });
 
+$('.alert').delay(3000).slideUp(400);
 </script>
+
 
 @endpush()

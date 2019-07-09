@@ -19,6 +19,22 @@
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
+                    @if(count($errors)>0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error )
+                                <li>{{ $error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                               
+                    @if(Session::has('success'))
+                        <div class="alert alert-success">
+                            {{Session::get('success')}}
+                        </div>
+                    @endif
+
                     <form action="{{ route('kegiatanpo.update', $kegiatanpo->id) }}" class="form-horizontal" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
@@ -40,6 +56,22 @@
                                             selected
                                         @endif
                                         >{{ $kode->jurbagnitpus }} ({{ $kode->kode }})
+                                    </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Penanggungjawab</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="pimpinan" id="pimpinan" placeholder="Pilih Penanggungjawab">
+                                    @foreach ($pegawai as $p)
+                                    <option 
+                                        value="{{ $p->nip }}"
+                                        @if($p->nip == $kegiatanpo->pimpinan)
+                                            selected
+                                        @endif
+                                        >{{ $p->nama }}
                                     </option>
                                     @endforeach
                                 </select>
@@ -84,8 +116,7 @@
                             <div class="col-sm-10">
                                 <select class="form-control" name="reviewer_anggaran" id="reviewer_anggaran" placeholder="Pilih Reviewer Anggaran">
                                         @foreach ($pegawai as $p)
-                                        <option 
-                                            value="{{ $p->nip }} {{ ( $p->nip == $kegiatanpo->reviewer_ang ) ? 'selected' : '' }}" >
+                                        <option value="{{ $p->nip }} {{ ( $p->nip == $kegiatanpo->reviewer_ang ) ? 'selected' : '' }}" >
                                             {{ $p->nama }}
                                         </option>
                                     @endforeach
@@ -116,7 +147,7 @@ $(document).ready(function() {
             width: '100%',
             placeholder: 'Pilih Unit Pelaksana',
             allowClear: true,
-            selectOnClose: false,
+            theme: "bootstrap",
         });
         $(window).resize(function() {
             $('#jurbagnitpus').css('width', "100%");
@@ -130,11 +161,26 @@ $(document).ready(function() {
             placeholder: 'Pilih PIC',
             allowClear: true,
             minimumInputLength: 2,
-            selectOnClose: false,
+            theme: "bootstrap",
         });
         
         $(window).resize(function() {
             $('#pic').css('width', "100%");
+        });
+    });
+
+    //search pimpinan
+    $(document).ready(function() {
+        $("#pimpinan").select2({
+            width: '100%',
+            placeholder: 'Pilih Penanggungjawab',
+            allowClear: true,
+            minimumInputLength: 2,
+            theme: "bootstrap",
+        });
+        
+        $(window).resize(function() {
+            $('#pimpinan').css('width', "100%");
         });
     });
     
@@ -145,7 +191,7 @@ $(document).ready(function() {
             placeholder: 'Pilih Reviewer SPI',
             allowClear: true,
             minimumInputLength: 2,
-            selectOnClose: false,
+            theme: "bootstrap",
         });
         
         $(window).resize(function() {
@@ -160,14 +206,14 @@ $(document).ready(function() {
             placeholder: 'Pilih Reviewer Anggaran',
             allowClear: true,
             minimumInputLength: 2,
-            selectOnClose: false,
+            theme: "bootstrap",
         });
         
         $(window).resize(function() {
             $('#reviewer_anggaran').css('width', "100%");
         });
-    });
-    
+    }); 
 });
+$('.alert').delay(3000).slideUp(400);
 </script>
 @endpush()

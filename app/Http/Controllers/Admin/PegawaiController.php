@@ -17,11 +17,14 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        $pegawai= $users = DB::table('pegawai_role')
+        $pegawai= DB::table('pegawai_role')
                 ->join('pegawai', 'pegawai.id_pegawai', '=', 'pegawai_role.pegawai_id')
                 ->join('roles', 'roles.id', '=', 'pegawai_role.role_id')
-                ->select('pegawai.*', 'roles.name')
+                ->select('pegawai.*', 'roles.name','roles.id as role')
+                ->groupBy('pegawai.nama')
                 ->get();
+                // dd($pegawai);
+                
         return view('admin.user.index',compact('pegawai'));
     }
 

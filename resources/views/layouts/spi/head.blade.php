@@ -25,5 +25,6 @@
 
     <!-- Select2 -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/select2.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/select2-bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/select2-bootstrap.css')}}">
+    
   </head>

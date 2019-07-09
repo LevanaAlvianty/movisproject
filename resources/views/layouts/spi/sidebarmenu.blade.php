@@ -1,8 +1,8 @@
     <aside class="app-sidebar">
-        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
+        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar img-fluid rounded-circle" width="60px" height="60px" src="{{asset('gambar/profil/'. Auth::guard('pegawai')->user()->photo)}}" alt="User Image">
             <div>
             <p class="app-sidebar__user-name">{{ Auth::guard('pegawai')->user()->username}}</p>
-            <p class="app-sidebar__user-designation">{{ Auth::guard('pegawai')->user()->jabatan }}</p>
+            <p class="app-sidebar__user-designation"></p>
             </div>
         </div>
         <ul class="app-menu">
@@ -59,6 +59,14 @@
             @if($pimpinan == 1)
             <li class="">
                 <a class="app-menu__item {{ Request::is('pimpinan/kegiatanpimpinan*') ? 'active':  '' }}" href="{{ route('kegiatanpimpinan.index') }}">
+                    <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Kegiatan PO</span>
+                </a>
+            </li>
+            @endif
+
+            @if($adminspi == 1)
+            <li class="">
+                <a class="app-menu__item {{ Request::is('adminspi/kegiatanadminspi*') ? 'active':  '' }}" href="{{ route('kegiatanadminspi.index') }}">
                     <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Kegiatan PO</span>
                 </a>
             </li>

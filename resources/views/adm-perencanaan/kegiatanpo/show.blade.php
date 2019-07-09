@@ -50,6 +50,16 @@
                                 <label for="input" class="col-sm-2 col-form-label">PIC</label>
                                 <div class="col-sm-10">
                                     @foreach ($pegawai as $p)
+                                        @if($p->nip == $kegiatanpo->pimpinan)
+                                            <input type="text" class="form-control" name="pimpinan" placeholder="Penanggungjawab" value="{{ $p->nama}}" disabled>
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="input" class="col-sm-2 col-form-label">PIC</label>
+                                <div class="col-sm-10">
+                                    @foreach ($pegawai as $p)
                                         @if($p->nip == $kegiatanpo->nip_pic)
                                             <input type="text" class="form-control" name="nip_pic" placeholder="PIC" value="{{ $p->nama}}" disabled>
                                         @endif
@@ -59,13 +69,21 @@
                             <div class="form-group row">
                                 <label for="input" class="col-sm-2 col-form-label">Reviewer SPI</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="reviewer_spi" placeholder="Reviewer SPI" value="{{ $kegiatanpo->reviewer_spi}}" disabled>
+                                    @foreach ($pegawai as $p)
+                                        @if($p->nip == $kegiatanpo->reviewer_spi)
+                                            <input type="text" class="form-control" name="reviewer_spi" placeholder="Reviewer SPI" value="{{ $kegiatanpo->reviewer_spi}}" disabled>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="input" class="col-sm-2 col-form-label">Reviewer Anggaran</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="reviewer_ang" placeholder="Reviewer Anggaran" value="{{ $kegiatanpo->reviewer_ang}}" disabled>
+                                    @foreach ($pegawai as $p)
+                                        @if($p->nip == $kegiatanpo->reviewer_spi)
+                                            <input type="text" class="form-control" name="reviewer_ang" placeholder="Reviewer Anggaran" value="{{ $kegiatanpo->reviewer_ang}}" disabled>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
