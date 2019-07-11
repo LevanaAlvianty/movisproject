@@ -22,7 +22,8 @@ class ProfilController extends Controller
      */
     public function index()
     {
-        return view('profil.index');
+        $pegawai = Pegawai::all();
+        return view('profil.index',compact('pegawai'));
     }
 
     /**
@@ -98,7 +99,7 @@ class ProfilController extends Controller
         }
         $profil = Pegawai::find($id);
         $profil->update($data);
-        return redirect()->route('profil.index')->with("success","Profil changed successfully !");
+        return redirect()->route('profil.index')->with("success","Profil updated successfully !");
     }
 
     public function changePassword(Request $request){
@@ -123,7 +124,7 @@ class ProfilController extends Controller
         $user->password = bcrypt($request->get('new-password'));
         $user->save();
 
-        return redirect()->route('profil.index')->with("success","Password changed successfully !");
+        return redirect()->route('profil.index')->with("success","Password updated successfully !");
 
     }
  

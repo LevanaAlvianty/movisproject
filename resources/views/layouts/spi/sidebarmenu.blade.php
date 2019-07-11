@@ -15,6 +15,12 @@
             $adminspi = Auth::guard('pegawai')->user()->isAdminspi();
             $adminperencanaan = Auth::guard('pegawai')->user()->isAdminperencanaan();
         @endphp
+
+        <li class="">
+            <a class="app-menu__item {{ Request::routeIs('pegawai.home') ? 'active':  '' }}" href="{{ route('pegawai.home') }}">
+                <i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span>
+            </a>
+        </li>
         <!-- Admin -->
         @if($admin == 1)
             <li class="">
@@ -32,11 +38,6 @@
 
         <!-- PIC --> 
         @if($pic == 1)
-            <li class="">
-                <a class="app-menu__item {{ Request::is('spi/dashboard') ? 'active' : '' }}" href="{{ route('spi.dashboard') }}">
-                    <i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span>
-                </a>
-            </li>
             <li class="">
                 <a class="app-menu__item {{ Request::is('spi/kegiatan*') ? 'active':  '' }} 
                 {{ Request::routeIs('proposal.index') ? 'active':  '' }} {{ Request::routeIs('proposal.editproposal') ? 'active':  '' }} " 

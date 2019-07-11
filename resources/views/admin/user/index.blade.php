@@ -19,12 +19,26 @@
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                @if(Session::has('success'))
-                    <div class="alert alert-success">
-                        <button type="button" class="close" data-dismiss="alert"></button>
-                        {{Session::get('success')}}
+                    @if(count($errors)>0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error )
+                                <li>{{ $error}}</li>
+                            @endforeach
+                        </ul>
                     </div>
-                @endif
+                    @endif
+                               
+                    @if(Session::has('success'))
+                        <div class="alert alert-success">
+                            {{Session::get('success')}}
+                        </div>
+                    @endif
+                    @if(Session::has('error'))
+                        <div class="alert alert-danger">
+                            {{Session::get('error')}}
+                        </div>
+                    @endif
                     <!-- Box -->
                     <div class="box">
                         <div class="bs-component">
@@ -38,21 +52,31 @@
                                     <table class="table table-bordered table-striped dt-responsive " id="tabeluser">
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>Nama</th>
-                                                <th>NIP</th>
-                                                <th>Options</th>
+                                                <th class="text-center">Nama</th>
+                                                <th class="text-center">NIP</th>
+                                                <th class="text-center">Role</th>
+                                                <th class="text-center">Options</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($pegawai as $p )
                                             <tr>
                                                 <td>{{$p->nama}}</td>
-                                                <td>{{$p->nip}}</td> 
+                                                <td class="text-center">{{$p->nip}}</td> 
+                                                <td>
+                                                    @if(!empty($p->roles))
+                                                        @foreach($p->roles as $r)
+                                                            <label class="badge badge-success">{{ $r->name }}</label>
+                                                        @endforeach
+                                                    @endif
+                                                </td>
                                                 <td>
                                                     <a href="{{ route('pegawai.edit', $p->id_pegawai) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i></a>
-                                                    <a href="#" value="" class="btn btn-sm btn-warning waves-effect modalMd" data-toggle="modal" title="Detail Kegiatan PO" data-target="#modalMd">
-                                                    <i class="icon fa fa-eye"></i></a>
+                                                    <a href="{{ route('pegawai.show', $p->id_pegawai) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i></a>
                                                     <button class="btn btn-sm btn-danger" data-userid="{{$p->id_pegawai}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i></button>
+                                                    <!-- <a href="{{ route('pegawai.assign', $p->id_pegawai) }}" class="btn btn-sm btn-info">Assign Role</a> -->
+                                                     <!-- <a href="#" value="" class="btn btn-sm btn-warning waves-effect modalMd" data-toggle="modal" title="Detail Kegiatan PO" data-target="#modalMd">
+                                                    <i class="icon fa fa-eye"></i></a> -->
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -76,6 +100,12 @@
                                                 <label class="col-sm-2">Nama</label>
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-control" name="nama">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2">Username</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" name="username">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -174,8 +204,8 @@
         $('#tabeluser').DataTable({
             "paging"    : true,
             "ordering"  : true,
-            "info"      : false,
-            "searching" : false,
+            "info"      : true,
+            "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
             "responsive":true
@@ -189,6 +219,9 @@
 
         modal.find('.modal-body #user_id').val(user_id);
     });
+</script>
+<script>
+$('.alert').delay(3000).slideUp(300);
 </script>
 
 @endpush()

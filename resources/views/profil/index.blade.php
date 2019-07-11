@@ -89,6 +89,17 @@
                                                     <td width="20px"> : </td>
                                                     <td>{{Auth::guard('pegawai')->user()->email}}</td>
                                                 </tr>
+                                                <tr>
+                                                    <td width="150px">Roles</td>
+                                                    <td width="20px"> : </td>
+                                                    <td>
+                                                        @if(!empty(Auth::guard('pegawai')->user()->roles))
+                                                            @foreach(Auth::guard('pegawai')->user()->roles as $r)
+                                                                <label class="badge badge-success">{{ $r->name }}</label>
+                                                            @endforeach
+                                                        @endif
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
