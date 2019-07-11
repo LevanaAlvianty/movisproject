@@ -1,15 +1,15 @@
 @extends('layouts.spi.master')
-@section('title', 'Data User')
+@section('title', 'Data Pegawai')
 
 @section('judulapp')
     <div>
-          <h1><i class="fa fa-group"></i> User</h1>
-          <p>Data User</p>
+          <h1><i class="fa fa-group"></i> Pegawai</h1>
+          <p>Data Pegawai</p>
     </div>
     <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item"><a href="#">User</a></li>
-        <li class="breadcrumb-item"><a href="#">Data User</a></li>
+        <li class="breadcrumb-item"><a href="#">Pegawai</a></li>
+        <li class="breadcrumb-item"><a href="#">Data Pegawai</a></li>
     </ul>
 @endsection
 
@@ -74,7 +74,7 @@
                                                     <a href="{{ route('pegawai.edit', $p->id_pegawai) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i></a>
                                                     <a href="{{ route('pegawai.show', $p->id_pegawai) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i></a>
                                                     <button class="btn btn-sm btn-danger" data-userid="{{$p->id_pegawai}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i></button>
-                                                    <!-- <a href="{{ route('pegawai.assign', $p->id_pegawai) }}" class="btn btn-sm btn-info">Assign Role</a> -->
+                                                    <!-- <a href="#" class="btn btn-sm btn-info">Assign Role</a> -->
                                                      <!-- <a href="#" value="" class="btn btn-sm btn-warning waves-effect modalMd" data-toggle="modal" title="Detail Kegiatan PO" data-target="#modalMd">
                                                     <i class="icon fa fa-eye"></i></a> -->
                                                 </td>

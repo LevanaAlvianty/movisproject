@@ -1,15 +1,15 @@
 @extends('layouts.spi.master')
-@section('title', 'Update User')
+@section('title', 'Update Pegawai')
 
 @section('judulapp')
     <div>
-          <h1><i class="fa fa-group"></i> User</h1>
-          <p>Update User</p>
+          <h1><i class="fa fa-group"></i> Pegawai</h1>
+          <p>Update Pegawai</p>
     </div>
     <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item"><a href="#">User</a></li>
-        <li class="breadcrumb-item"><a href="#">Update User</a></li>
+        <li class="breadcrumb-item"><a href="#">Pegawai</a></li>
+        <li class="breadcrumb-item"><a href="#">Update Pegawai</a></li>
     </ul>
 @endsection
 

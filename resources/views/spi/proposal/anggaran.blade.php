@@ -9,7 +9,7 @@
                                         <th width="30%" colspan="3" class="text-center">Volume</th>
                                         <th width="15%" rowspan="2" class="text-center align-middle">Biaya Satuan</th>
                                         <th width="15%" rowspan="2" class="text-center align-middle">Biaya</th>
-                                        <th width="5%" rowspan="2" class="text-center align-middle"><a href="#" class="btn btn-sm btn-success addRow"><i class="fa fa-lg fa-plus"></i></a></th>
+                                        <th width="5%" rowspan="2" class="text-center align-middle">Option</th>
                                     </tr>
                                     <tr>
                                         <th width="" class="text-center">Jumlah 1</th>
@@ -17,7 +17,7 @@
                                         <th width="" class="text-center">Jumlah 3</th>
                                     </tr>
                                 </thead>
-                                <tbody id="anggaran">
+                                <tbody class="anggaran">
                                     <tr>
                                         <td width="" ><input id="namabarang" name="namabarang[]" class="form-control form-control-sm namabarang" /></td>
                                         <td width="" ><input name="jml1[]" class="form-control form-control-sm jml1" /></td>
@@ -37,8 +37,7 @@
                                     <td><b>Total</b></td> 
                                     <td><b class="tot"></b></td> 
                                     <td width="15%" class="text-center">
-                                        <!-- <button class="btn btn-sm btn-success" onclick="addanggaran(); return false"><i class="glyphicon glyphicon-plus"></i></button> -->
-                                        <!-- <button class="btn btn-sm btn-success addRow"><i class="glyphicon glyphicon-plus"></i></button> -->
+                                    <a href="#" id="add" class="btn btn-sm btn-success addRow"><i class="fa fa-lg fa-plus"></i></a>
                                     </td> 
                                 </tr>
                             </tfoot>
@@ -49,14 +48,14 @@
 @push('js')
 <!-- </script> -->
 <script type="text/javascript">
-    $('tbody').delegate('.namabarang','change',function(){
+    $('.anggaran').delegate('.namabarang','change',function(){
         var tr = $(this).parent().parent();
         tr.find('.jml1').focus();
     });
 
     // 
 
-    $('tbody').delegate('.jml1, .jml2, .jml3, .hrg', 'keyup',function(){
+    $('.anggaran').delegate('.jml1, .jml2, .jml3, .hrg', 'keyup',function(){
         var tr = $(this).parent().parent();
         var jml1 = tr.find('.jml1').val();
         var jml2 = tr.find('.jml2').val();
@@ -94,9 +93,7 @@
         tot();
     });
 
-    $('.addRow').on('click',function(){
-        addRow();
-    });
+    
 
     //--------------------------------create function by user------------------------------------
     function tot()
@@ -125,9 +122,9 @@
     };
     //------------------------------------------------------------------------------------------
 
-    function addRow()
-    {
-        var tr = '<tr>'+
+    $('#add').click(function(){  
+           i++; 
+        var tr = '<tr id="row'+i+'" class="dynamic-added">'+
                         '<td width="" >'+
                         '<input name="namabarang[]" id="namabarang" class="form-control form-control-sm namabarang" />'+
                         '</td>'+
@@ -135,23 +132,29 @@
                         '<td width="" ><input name="jml1[]" class="form-control form-control-sm jml1" /></td>'+
                         '<td width="" ><input name="jml2[]" class="form-control form-control-sm jml2" /></td>'+
                         '<td width="" ><input name="jml3[]" class="form-control form-control-sm jml3" /></td>'+
-                        '<td width="" ><input id="hrg" name="hrg[]" class="form-control form-control-sm hrg" disable="true"/></td>'+
+                        '<td width="" ><input name="hrg[]" class="form-control form-control-sm hrg" /></td>'+
                         '<td width="" ><input name="total[]" class="form-control form-control-sm total" /></td>'+
-                        '<td width="5%" class="text-center"><a href="#" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>'+
+                        '<td width="5%" class="text-center"><a href="#" name="remove" id="'+i+'" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>'+
                     '</tr>';
-        $('tbody').append(tr);
-    };
+        $('.anggaran').append(tr);
+     
+    });  
     //------------------------------end create function by user-----------------------------------
 
-    $('.remove').live('click',function(){
-        var l= $('tbody tr').length;
-        if (l==1)
-        {
-            alert('You cannot remove last one');
-        } else{
-            $(this).parent().parent().remove();
-        } 
-    });
+    // $('.remove').live('click',function(){
+    //     var l= $('tbody tr').length;
+    //     if (l==1)
+    //     {
+    //         alert('You cannot remove last one');
+    //     } else{
+    //         $(this).parent().parent().remove();
+    //     } 
+    // });
+
+    $(document).on('click', '.remove', function(){  
+           var button_id = $(this).attr("id");   
+           $('#row'+button_id+'').remove();  
+      });
 </script>
 
 <script type="text/javascript">

@@ -69,7 +69,7 @@ class PegawaiController extends Controller
         $pegawai->roles()->attach($role_pegawai);
 
         return redirect()->route('pegawai.index')
-                    ->with('success','User created successfully');
+                    ->with('success','Pegawai created successfully');
     }
    
     /**
@@ -131,7 +131,7 @@ class PegawaiController extends Controller
             $pegawai->roles()->attach($value);
         }
         return redirect()->route('pegawai.index')
-                        ->with('success','User updated successfully');
+                        ->with('success','Pegawai updated successfully');
     }
     
     /**
@@ -144,6 +144,7 @@ class PegawaiController extends Controller
     {
         $pegawai = Pegawai::findOrfail($request->user_id);
         $pegawai->delete();
-        return redirect()->route('pegawai.index')->with('success','User deleted successfully');;
+        DB::table('pegawai_role')->where('pegawai_id', $request->user_id)->delete();
+        return redirect()->route('pegawai.index')->with('success','Pegawai deleted successfully');;
     }
 }
