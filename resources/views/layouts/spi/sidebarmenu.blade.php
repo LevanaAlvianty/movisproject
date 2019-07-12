@@ -25,12 +25,47 @@
         @if($admin == 1)
             <li class="">
                 <a class="app-menu__item {{ Request::is('admin/pegawai*') ? 'active':  '' }}" href="{{ route('pegawai.index') }}">
-                    <i class="app-menu__icon fa fa-group"></i><span class="app-menu__label">User</span>
+                    <i class="app-menu__icon fa fa-group"></i><span class="app-menu__label">Master Pegawai</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="app-menu__item {{ Request::is('admin/role*') ? 'active':  '' }}" href="{{ route('role.index') }}">
+                    <i class="app-menu__icon fa fa-group"></i><span class="app-menu__label">Master Roles</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="app-menu__item {{ Request::is('admin/pejabat*') ? 'active':  '' }}" href="{{ route('pejabat.index') }}">
+                    <i class="app-menu__icon fa fa-group"></i><span class="app-menu__label">Master Pejabat</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="app-menu__item {{ Request::is('admin/kelompokanggaran*') ? 'active':  '' }}" href="{{ route('kelang.index') }}">
+                    <i class="app-menu__icon fa fa-book"></i><span class="app-menu__label">Master Kel. Anggaran</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="app-menu__item {{ Request::is('admin/akun*') ? 'active':  '' }}" href="{{ route('akun.index') }}">
+                    <i class="app-menu__icon fa fa-calculator"></i><span class="app-menu__label">Master Akun</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="app-menu__item {{ Request::is('admin/satuan*') ? 'active':  '' }}" href="{{ route('satuan.index') }}">
+                    <i class="app-menu__icon fa fa-calculator"></i><span class="app-menu__label">Master Satuan</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="app-menu__item {{ Request::is('admin/renstra*') ? 'active':  '' }}" href="{{ route('renstra.index') }}">
+                    <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Master Renstra</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="app-menu__item {{ Request::is('admin/programutama*') ? 'active':  '' }}" href="{{ route('programutama.index') }}">
+                    <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Master Program</span>
                 </a>
             </li>
             <li class="">
                 <a class="app-menu__item {{ Request::is('adminperencanaan/kegiatanpo*') ? 'active':  '' }}" href="{{ route('kegiatanpo.index') }}">
-                    <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Kegiatan PO</span>
+                    <i class="app-menu__icon fa fa-file-text-o"></i><span class="app-menu__label">Kegiatan PO</span>
                 </a>
             </li>
             
@@ -44,16 +79,6 @@
                 href="{{ route('kegiatan.index') }}">
                     <i class="app-menu__icon fa fa-file-text-o"></i><span class="app-menu__label">Daftar Kegiatan</span>
                 </a>
-            </li>
-            <li class="treeview">
-                <a class="app-menu__item" href="#" data-toggle="treeview">
-                    <i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">Laporan</span>
-                    <i class="treeview-indicator fa fa-angle-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Buat Laporan</a></li>
-                    <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i> Daftar Laporan</a></li>
-                </ul>
             </li>
             @endif
 

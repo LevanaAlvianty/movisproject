@@ -85,6 +85,12 @@
         background: #27AE60;
         color: white;
     }
+
+    .textarea-none-resize{
+        width: 100px;
+        height: 50px;
+        resize: none;
+    }
 </style>
 @endpush()
 

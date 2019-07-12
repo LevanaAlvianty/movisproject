@@ -25,12 +25,12 @@
         </thead>
         <tbody id="jadwallist">
             <tr>
-                <td width="59%"><input name="nama_kegiatan[0]" class="" /></td>
+                <td width="59%"><input name="nama_kegiatan[0]" class="form-control form-control-sm" /></td>
                 <td width="3%"><input type="checkbox" name="januari[0]" class="" /></td>
                 <td width="3%"><input type="checkbox" name="febuari[0]" class="" /></td>
                 <td width="3%"><input type="checkbox" name="maret[0]" class="" /></td>
                 <td width="3%"><input type="checkbox" name="april[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="mei1i[0]" class="" /></td>
+                <td width="3%"><input type="checkbox" name="mei[0]" class="" /></td>
                 <td width="3%"><input type="checkbox" name="jun[0]" class="" /></td>
                 <td width="3%"><input type="checkbox" name="juli[0]" class="" /></td>
                 <td width="3%"><input type="checkbox" name="agustus[0]" class="" /></td>
@@ -97,8 +97,8 @@ function addjadwal() {
 //membuat element input
     var nama_kegiatan = document.createElement('input');
     nama_kegiatan.setAttribute('name', 'nama_kegiatan[' + i + ']');
-    nama_kegiatan.setAttribute('class', '');
-    // nama_kegiatan.setAttribute('class', 'form-control form-control-sm');
+    nama_kegiatan.setAttribute('class', 'form-control form-control-sm');
+   
 
     var januari = document.createElement('input');
     januari.setAttribute('name', 'januari[' + i + ']');

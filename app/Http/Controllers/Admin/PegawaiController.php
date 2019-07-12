@@ -24,7 +24,6 @@ class PegawaiController extends Controller
      
     public function index(Request $request)
     {
-        
         $pegawai=Pegawai::all();         
         return view('admin.user.index',compact('pegawai'));
     }
@@ -145,6 +144,6 @@ class PegawaiController extends Controller
         $pegawai = Pegawai::findOrfail($request->user_id);
         $pegawai->delete();
         DB::table('pegawai_role')->where('pegawai_id', $request->user_id)->delete();
-        return redirect()->route('pegawai.index')->with('success','Pegawai deleted successfully');;
+        return redirect()->route('pegawai.index')->with('success','Pegawai deleted successfully');
     }
 }

@@ -1,17 +1,5 @@
 <h5 style="text-align:left"><b>D. Personil</b></h5>
 <p>Adapun susunan panitia yang terlibat dalam kegiatan ini adalah sebagai berikut : </p>
-<!-- <div class="form-inline">
-        <div class="col-sm-4">
-            <label for="" class="">Masukkan Jumlah Baris yang diinginkan : </label>
-        </div>
-        <div class="col-sm-2">
-            <input type="text" class="form-control form-control-sm" id="jumbar" placeholder="">
-        </div>
-        <div class="col-sm-2">
-            <button type="button" class="btn btn-sm btn-default" id="tambar" placeholder="">Create</button>
-        </div>
-    </div><br> -->
-
     <div class="table-responsive">
         <table class="table table-striped table-hover">
             <thead class="thead-dark">

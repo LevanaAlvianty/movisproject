@@ -47,10 +47,17 @@ Route::get('/kegiatan/export_excel', 'AdminPerencanaan\KegiatanPOController@expo
 Route::get('pic', 'AdminPerencanaan\KegiatanPOController@pic');
 
 //Admin
-Route::resource('/pegawai','Admin\PegawaiController');
+Route::resource('/admin/pegawai','Admin\PegawaiController');
+Route::resource('/admin/programutama','Admin\ProgramUtamaController');
+Route::resource('/admin/renstra','Admin\RenstraController');
+Route::resource('/admin/pejabat','Admin\PejabatController');
+Route::resource('/admin/kelang','Admin\KelompokAnggaranController');
+Route::resource('/admin/akun','Admin\AkunController');
+Route::resource('/admin/role','Admin\RolesController');
+Route::resource('/admin/satuan','Admin\SatuanController');
 
 //Pimpinan
 Route::resource('/pimpinan/kegiatanpimpinan','Pimpinan\KegiatanPimpinanController');
 
-//Pimpinan
+//AdminSPI
 Route::resource('/adminspi/kegiatanadminspi','Adminspi\KegiatanAdminSpiController');

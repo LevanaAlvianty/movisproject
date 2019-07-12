@@ -1,5 +1,4 @@
 <section>
-                    
                         <h5 style="text-align:center"><b>Halaman Pengesahan</b></h5><br>
                         
                         <div class="row mb-2">
@@ -175,12 +174,7 @@
                                     <label for="" class="ml-sm-3">b. Dampak yang timbul</label>
                                 </div>
                                 <div class="col-sm-8 ">
-                                    <select class="custom-select custom-select-sm" id="dampak">
-                                        <option selected >Indikator kerja</option>
-                                        <option value="RM">RM</option>
-                                        <option value="BOPTN">BOPTN</option>
-                                        <option value="PNBP">PNBP</option>
-                                    </select>
+                                    <textarea class="form-control form-control-sm" style="resize:none" id="" rows="4" cols="1" placeholder="Dampak yang timbul"></textarea>
                                 </div>
                             </div>
                         </div><br>
