@@ -4,23 +4,23 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Indikator;
 use App\ProgramUtama;
 use App\Renstra;
 use DB;
 
-class ProgramUtamaController extends Controller
+class IndikatorController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * 
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        $renstra = Renstra::all();
+    {
         $program = ProgramUtama::all();
-        return view('admin.programutama.index',compact('renstra','program'));
+        $indikator = Indikator::all();
+        return view('admin.indikator-kerja.index',compact('indikator','program'));
     }
 
     /**
@@ -42,18 +42,18 @@ class ProgramUtamaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'dirprogutama' => 'required',
-            'id_renstra' => 'required',
+            'dirkegiatan' => 'required',
+            'id_dirprogutama' => 'required',
         ]);
 
-        $program = new ProgramUtama();
-        $program->dirprogutama = $request->dirprogutama;
-        $program->id_renstra = $request->id_renstra;
-        $program->tahun_penetapan = $request->tahun_penetapan;
-        $program->status = $request->status;
-        $program->save();
+        $indikator = new Indikator();
+        $indikator->dirkegiatan = $request->dirkegiatan;
+        $indikator->id_dirprogutama = $request->id_dirprogutama;
+        $indikator->tahun_penetapan = $request->tahun_penetapan;
+        $indikator->status = $request->status;
+        $indikator->save();
 
-        return redirect()->route('programutama.index')
+        return redirect()->route('indikator.index')
                     ->with('success','Data created successfully');
     }
 
@@ -65,9 +65,9 @@ class ProgramUtamaController extends Controller
      */
     public function show($id)
     {
-        $program = ProgramUtama::where('id_dirprogutama',$id)->first();
-        $renstra = Renstra::all();
-        return view('admin.programutama.show', compact('program','renstra'));
+        $indikator = Indikator::where('id_dirkegiatan',$id)->first();
+        $program = ProgramUtama::all();
+        return view('admin.indikator-kerja.show', compact('program','indikator'));
     }
 
     /**
@@ -78,9 +78,9 @@ class ProgramUtamaController extends Controller
      */
     public function edit($id)
     {
-        $program = ProgramUtama::where('id_dirprogutama',$id)->first();
-        $renstra = Renstra::all();
-        return view('admin.programutama.edit', compact('program','renstra'));
+        $indikator = Indikator::where('id_dirkegiatan',$id)->first();
+        $program = ProgramUtama::all();
+        return view('admin.indikator-kerja.edit', compact('program','indikator'));
     }
 
     /**
@@ -93,13 +93,13 @@ class ProgramUtamaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'dirprogutama' => 'required',
-            'id_renstra' => 'required',
+            'dirkegiatan' => 'required',
+            'id_dirprogutama' => 'required',
         ]);
 
         $input = request()->except(['_token','_method']);
-        $program = ProgramUtama::where('id_dirprogutama',$id)->update($input);
-        return redirect()->route('programutama.index')->with("success","Data Updated Successfully!");
+        $indikator = Indikator::where('id_dirkegiatan',$id)->update($input);
+        return redirect()->route('indikator.index')->with("success","Data Updated Successfully!");
     }
 
     /**
@@ -109,9 +109,9 @@ class ProgramUtamaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request)
-    {   
-        $program = DB::table('dirprogutama')->where('id_dirprogutama',$request->prog_id);
-        $program->delete();
-        return redirect()->route('programutama.index')->with("success","Data Deleted Successfully!");
+    {
+        $indikator = DB::table('dirkegiatan')->where('id_dirkegiatan',$request->kegiatan_id);
+        $indikator->delete();
+        return redirect()->route('indikator.index')->with("success","Data Deleted Successfully!");
     }
 }

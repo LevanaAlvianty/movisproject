@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\ProgramUtama;
-use App\Renstra;
+use App\KelompokAkun;
+use App\Akun;
 use DB;
 
-class ProgramUtamaController extends Controller
+class KelompokAkunController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,9 @@ class ProgramUtamaController extends Controller
      */
     public function index()
     { 
-        $renstra = Renstra::all();
-        $program = ProgramUtama::all();
-        return view('admin.programutama.index',compact('renstra','program'));
+        $kelompok = KelompokAkun::all();
+        $akun = Akun::all();
+        return view('admin.kelompok-akun.index',compact('kelompok','akun'));
     }
 
     /**
@@ -42,18 +42,16 @@ class ProgramUtamaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'dirprogutama' => 'required',
-            'id_renstra' => 'required',
+            'kelompok' => 'required',
+            'id_akun' => 'required',
         ]);
 
-        $program = new ProgramUtama();
-        $program->dirprogutama = $request->dirprogutama;
-        $program->id_renstra = $request->id_renstra;
-        $program->tahun_penetapan = $request->tahun_penetapan;
-        $program->status = $request->status;
-        $program->save();
+        $kelompok = new KelompokAkun();
+        $kelompok->kelompok = $request->kelompok;
+        $kelompok->id_akun = $request->id_akun;
+        $kelompok->save();
 
-        return redirect()->route('programutama.index')
+        return redirect()->route('kelompok-akun.index')
                     ->with('success','Data created successfully');
     }
 
@@ -65,9 +63,9 @@ class ProgramUtamaController extends Controller
      */
     public function show($id)
     {
-        $program = ProgramUtama::where('id_dirprogutama',$id)->first();
-        $renstra = Renstra::all();
-        return view('admin.programutama.show', compact('program','renstra'));
+        $kelompok = KelompokAkun::where('id_kelompok',$id)->first();
+        $akun = Akun::all();
+        return view('admin.kelompok-akun.show', compact('kelompok','akun'));
     }
 
     /**
@@ -78,9 +76,9 @@ class ProgramUtamaController extends Controller
      */
     public function edit($id)
     {
-        $program = ProgramUtama::where('id_dirprogutama',$id)->first();
-        $renstra = Renstra::all();
-        return view('admin.programutama.edit', compact('program','renstra'));
+        $kelompok = KelompokAkun::where('id_kelompok',$id)->first();
+        $akun = Akun::all();
+        return view('admin.kelompok-akun.edit', compact('kelompok','akun'));
     }
 
     /**
@@ -93,13 +91,13 @@ class ProgramUtamaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'dirprogutama' => 'required',
-            'id_renstra' => 'required',
+            'kelompok' => 'required',
+            'id_akun' => 'required',
         ]);
 
         $input = request()->except(['_token','_method']);
-        $program = ProgramUtama::where('id_dirprogutama',$id)->update($input);
-        return redirect()->route('programutama.index')->with("success","Data Updated Successfully!");
+        $kelompok = KelompokAkun::where('id_kelompok',$id)->update($input);
+        return redirect()->route('kelompok-akun.index')->with("success","Data Updated Successfully!");
     }
 
     /**
@@ -110,8 +108,8 @@ class ProgramUtamaController extends Controller
      */
     public function destroy(Request $request)
     {   
-        $program = DB::table('dirprogutama')->where('id_dirprogutama',$request->prog_id);
-        $program->delete();
-        return redirect()->route('programutama.index')->with("success","Data Deleted Successfully!");
+        $kelompok = DB::table('kelompok')->where('id_kelompok',$request->kelompok_id);
+        $kelompok->delete();
+        return redirect()->route('kelompok-akun.index')->with("success","Data Deleted Successfully!");
     }
 }

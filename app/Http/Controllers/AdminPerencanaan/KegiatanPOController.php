@@ -58,7 +58,7 @@ class KegiatanPOController extends Controller
         $this->validate($request, [
             'nama_kegiatan' => 'required',
             'id_jurbagnitpus' => 'required',
-            'pimpinan' => 'required',
+            // 'pimpinan' => 'required',
         ]);
 
         $kegiatanpo = new KegiatanPO();
@@ -84,13 +84,6 @@ class KegiatanPOController extends Controller
         $kodeunit = Kodeunit::all();
         $pegawai = Pegawai::all();
         return view('adm-perencanaan.kegiatanpo.lihat', compact('kegiatanpo','kodeunit','pegawai'));
-        // $kegiatanpo = DB::table('kegiatanpo')
-        //             ->join('jurbagnitpus', 'jurbagnitpus.id_jurbagnitpus', '=', 'kegiatanpo.id_jurbagnitpus')
-        //             ->join('pegawai', 'pegawai.nip', '=', 'kegiatanpo.nip_pic')
-        //             ->select('kegiatanpo.*', 'jurbagnitpus.id_jurbagnitpus as idj','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nip','pegawai.nama')
-        //             ->where('kegiatanpo.id', '=', $id)
-        //             ->first();
-		// return response()->json($kegiatanpo);
     }
 
     /**

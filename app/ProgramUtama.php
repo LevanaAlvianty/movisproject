@@ -10,7 +10,7 @@ class ProgramUtama extends Model
     protected $primary = 'id_dirprogutama';
     public $timestamps = false;
     protected $fillable = [
-        'id_dirprogutama','dirprogutama', 'id_renstra'
+        'id_dirprogutama','dirprogutama', 'id_renstra','tahun_penetapan','status'
     ];
     public function renstra() {
         return $this->belongsTo('App\Renstra','id_renstra');
