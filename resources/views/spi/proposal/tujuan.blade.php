@@ -3,7 +3,9 @@
     <div class="col-sm-12 mb-4">
         <p style="text-align:justify">Uraikan tujuan secara <b><i>spesifik</i></b>, <b><i>terukur</i></b>, dan 
         <b><i>reliable</i></b>, atas apa yang ingin dicapai dengan usulan kegiatan.</p>
-        <textarea class="form-control mx-auto mb-2 tujuanprop" id="tujuanprop" rows="3" placeholder=""></textarea>
+        <textarea class="form-control mx-auto mb-2 tujuanprop" id="tujuanprop" name="tujuan_prop" rows="3" placeholder="">
+            {{ $proposal->tujuan_prop }}
+        </textarea>
         <div class="row justify-content-end">
             <label for="formGroupExampleInput" class="col-sm-3"></label>
         </div>

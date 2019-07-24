@@ -67,11 +67,11 @@
      /*progressbar connectors*/
      #progressbar li:after {
         content: '';
-        width: 50%;
+        width: 60%;
         height: 2px;
         background: lightgrey;
         position: absolute;
-        left: -25%;
+        left: -30%;
         top: 15px;
         z-index: 1; /*put it behind the numbers*/
     }
@@ -109,9 +109,11 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <!-- progressbar -->
-            <form id="msform">
+            <form id="msform" action="{{ route('proposal.insert',$kegiatan->id) }}" method="POST" enctype="multipart/form-data">
+            {{csrf_field()}}
+            {{method_field('PUT')}}
                 <!-- progressbar -->
                 <ul id="progressbar" style="padding-left:0px">
                     <li class="active">Sampul Depan</li>
@@ -125,6 +127,27 @@
                     <li>Anggaran</li>
                     <li>Penutup</li>
                 </ul>
+
+                @if(count($errors)>0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error )
+                                <li>{{ $error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                               
+                    @if(Session::has('success'))
+                        <div class="alert alert-success">
+                            {{Session::get('success')}}
+                        </div>
+                    @endif
+                    @if(Session::has('error'))
+                        <div class="alert alert-danger">
+                            {{Session::get('error')}}
+                        </div>
+                    @endif
                 
                 <!-- fieldsets -->
                 <fieldset>
@@ -184,8 +207,8 @@
                  <fieldset>
                     @include('spi.proposal.penutup')<br>
                     <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-success btn-sm submit" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
-                    <a href="" class="btn btn-danger btn-sm mr-2" style="float:right;"><i class="fa fa-floppy-o fa-lg"></i> Simpan</a>
+                    <button type="submit" id="submit" class="btn btn-success btn-sm submit" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
+                    <button class="btn btn-danger btn-sm mr-2" style="float:right;"><i class="fa fa-floppy-o fa-lg"></i> Simpan</button>
                 </fieldset>
             </form>
             <a href="{{route('kegiatan.index')}}" class="btn btn-danger btn-sm" style="float:right;"><i class=""></i> Kembali</a> 
@@ -279,9 +302,9 @@
       });
     });
       
-    $(".submit").click(function () {
-        return false;
-    });   
+    // $(".submit").click(function () {
+    //     return false;
+    // });   
     
     //scroll bar to top
     $('.next, .previous').click(function(){

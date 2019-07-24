@@ -6,27 +6,41 @@
                                 <thead class="thead-dark">
                                     <tr>
                                         <th width="30%" rowspan="2" class="text-center align-middle">Uraian</th>
-                                        <th width="30%" colspan="3" class="text-center">Volume</th>
-                                        <th width="15%" rowspan="2" class="text-center align-middle">Biaya Satuan</th>
-                                        <th width="15%" rowspan="2" class="text-center align-middle">Biaya</th>
+                                        <th width="15%" colspan="3" class="text-center">Volume</th>
+                                        <th width="20%" rowspan="2" class="text-center align-middle">Biaya Satuan</th>
+                                        <th width="25%" rowspan="2" class="text-center align-middle">Biaya</th>
                                         <th width="5%" rowspan="2" class="text-center align-middle">Option</th>
                                     </tr>
                                     <tr>
-                                        <th width="" class="text-center">Jumlah 1</th>
-                                        <th width="" class="text-center">Jumlah 2</th>
-                                        <th width="" class="text-center">Jumlah 3</th>
+                                        <th width="5%" class="text-center">Jumlah 1</th>
+                                        <th width="5%" class="text-center">Jumlah 2</th>
+                                        <th width="5%" class="text-center">Jumlah 3</th>
                                     </tr>
                                 </thead>
                                 <tbody class="anggaran">
-                                    <tr>
-                                        <td width="" ><input id="namabarang" name="namabarang[]" class="form-control form-control-sm namabarang" /></td>
-                                        <td width="" ><input name="jml1[]" class="form-control form-control-sm jml1" /></td>
-                                        <td width="" ><input name="jml2[]" class="form-control form-control-sm jml2" /></td>
-                                        <td width="" ><input name="jml3[]" class="form-control form-control-sm jml3" /></td>
-                                        <td width="" ><input id="hrg" name="hrg[]" class="form-control form-control-sm hrg" disable="true"/></td>
-                                        <td width="" ><input name="total[]" class="form-control form-control-sm total" /></td>
-                                        <td width="5%" class="text-center"><a href="#" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>
-                                    </tr>
+                                    
+                                    @foreach($anggaranpo as $angg)
+                                        @if($angg->id_proposal == $proposal->prop_id)
+                                        <tr id="row0">
+                                            <td width="30%" >
+                                            <select class="form-control barang" name="barang[]" id="barang" placeholder="Pilih Barang" style="width: 100%">
+                                                @foreach ($barang as $brg)
+                                                    <option value="{{ $brg->id_standartbiaya }}"
+                                                        @if($brg->id_standartbiaya == $angg->id_barang )
+                                                            selected
+                                                        @endif>  
+                                                    {{ $brg->namabarang }}</option>
+                                                @endforeach
+                                            </select>
+                                            <td width="" ><input name="jml1[]" class="form-control form-control-sm jml1" value="{{$angg->jml1}}"/></td>
+                                            <td width="" ><input name="jml2[]" class="form-control form-control-sm jml2" value="{{$angg->jml2}}"/></td>
+                                            <td width="" ><input name="jml3[]" class="form-control form-control-sm jml3" value="{{$angg->jml3}}"/></td>
+                                            <td width="" ><input id="hrg" name="hrg[]" class="form-control form-control-sm hrg" value="{{$angg->harga}}"/></td>
+                                            <td width="" ><input name="total[]" class="form-control form-control-sm total" value="{{$angg->total}}"/></td>
+                                            <td width="5%" class="text-center"><a href="#" id="0" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>
+                                        </tr>
+                                        @endif
+                                    @endforeach
                                 </tbody>
                                 <tfoot>
                                 <tr>
@@ -36,7 +50,7 @@
                                     <td></td> 
                                     <td><b>Total</b></td> 
                                     <td><b class="tot"></b></td> 
-                                    <td width="15%" class="text-center">
+                                    <td width="5%" class="text-center">
                                     <a href="#" id="add" class="btn btn-sm btn-success addRow"><i class="fa fa-lg fa-plus"></i></a>
                                     </td> 
                                 </tr>
@@ -48,12 +62,33 @@
 @push('js')
 <!-- </script> -->
 <script type="text/javascript">
-    $('.anggaran').delegate('.namabarang','change',function(){
+$(document).ready(function(){
+    $('.anggaran').delegate('.barang','change',function(){
         var tr = $(this).parent().parent();
         tr.find('.jml1').focus();
     });
 
-    // 
+     //change harga
+     $('.anggaran').delegate('.barang','change',function(){
+        var tr = $(this).parent().parent();
+        var brg_id = tr.find('.barang').val();
+        console.log(brg_id);
+        var op = ""; 
+             $.ajax({
+                type:'get',
+                url:'{!!URL::to('findBarang')!!}',
+                data:{'id_standartbiaya':brg_id},
+                dataType:'json',
+                success:function(data){
+                    console.log("hargasatuan");
+                    console.log(data.hargasatuan);
+
+                    tr.find('.hrg').val(data.hargasatuan);   
+              },
+              error:function(){
+            }
+        });
+    });
 
     $('.anggaran').delegate('.jml1, .jml2, .jml3, .hrg', 'keyup',function(){
         var tr = $(this).parent().parent();
@@ -93,8 +128,54 @@
         tot();
     });
 
+    //-----------------------------------call function number------------------------------------------
+    findRowNumOnly('.jml1');
+    findRowNumOnly('.jml2');
+    findRowNumOnly('.jml3');
+    findRowNum('.hrg');
     
+    //-----------------------------------add row------------------------------------------ 
+    var i = 0;  
+    $('#add').click(function(){ 
+        i++; 
+        var tr = '<tr id="row'+i+'" class="dynamic-added">'+
+                        '<td width="30%" >'+
+                        '<select class="form-control barang" name="barang[]" id="barang" placeholder="Pilih Barang" style="width: 100%">'+
+                                '@foreach ($barang as $brg)'+
+                                '<option value="{{ $brg->id_standartbiaya }}">{{ $brg->namabarang }}</option>'+
+                            '@endforeach'+
+                        '</select>'+
+                        '</td>'+
+                        
+                        '<td width="" ><input name="jml1[]" class="form-control form-control-sm jml1" /></td>'+
+                        '<td width="" ><input name="jml2[]" class="form-control form-control-sm jml2" /></td>'+
+                        '<td width="" ><input name="jml3[]" class="form-control form-control-sm jml3" /></td>'+
+                        '<td width="" ><input name="hrg[]" class="form-control form-control-sm hrg" /></td>'+
+                        '<td width="" ><input name="total[]" class="form-control form-control-sm total" /></td>'+
+                        '<td width="5%" class="text-center"><a href="#" name="remove" id="'+i+'" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>'+
+                    '</tr>';
+        $('.anggaran').append(tr);
 
+        // Inisialisasi Select2
+        $(".barang").select2({
+            width: 'resolve',
+            placeholder: 'Pilih Barang',
+            allowClear: true,
+            theme: "bootstrap",
+        });
+        $(window).resize(function() {
+            $('.barang').css('width', "100%");
+        });
+        // End Select2
+    });  
+
+    //------------------------------remove row-----------------------------------
+    $(document).on('click', '.remove', function(){  
+           var button_id = $(this).attr("id");   
+           $('#row'+button_id+'').remove();  
+    });
+
+    
     //--------------------------------create function by user------------------------------------
     function tot()
     {
@@ -120,45 +201,66 @@
         + (decPlaces ? decSeparator + Math.abs(n - i).toFixed(decPlaces).slice(2) : "");
 
     };
-    //------------------------------------------------------------------------------------------
 
-    $('#add').click(function(){  
-           i++; 
-        var tr = '<tr id="row'+i+'" class="dynamic-added">'+
-                        '<td width="" >'+
-                        '<input name="namabarang[]" id="namabarang" class="form-control form-control-sm namabarang" />'+
-                        '</td>'+
-                        
-                        '<td width="" ><input name="jml1[]" class="form-control form-control-sm jml1" /></td>'+
-                        '<td width="" ><input name="jml2[]" class="form-control form-control-sm jml2" /></td>'+
-                        '<td width="" ><input name="jml3[]" class="form-control form-control-sm jml3" /></td>'+
-                        '<td width="" ><input name="hrg[]" class="form-control form-control-sm hrg" /></td>'+
-                        '<td width="" ><input name="total[]" class="form-control form-control-sm total" /></td>'+
-                        '<td width="5%" class="text-center"><a href="#" name="remove" id="'+i+'" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>'+
-                    '</tr>';
-        $('.anggaran').append(tr);
-     
-    });  
+    //------------------------------find element by row------------------------------------------
+    function findRowNum(input){
+        $('.anggaran').delegate(input,'keydown',function(){
+            var tr = $(this).parent().parent();
+            number(tr.find(input));
+        });
+    }
+
+    function findRowNumOnly(input){
+        $('.anggaran').delegate(input,'keydown',function(){
+            var tr = $(this).parent().parent();
+            number(tr.find(input));
+        });
+    }
+
+    //------------------------------number and dot------------------------------------------
+    function number(input){
+        $(input).keypress (function (evt){
+            var theEvent = evt || window.event;
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode( key );
+            var regex = /[-\d\.]/;
+            var objRegex = /^-?\d*[\.]?\d*$/;
+            var val = $(evt.target).val();
+            if(!regex.test(key) || !objRegex.test(val+key) ||
+                !theEvent.keyCode == 46 || !theEvent.keyCode == 8){
+                    theEvent.returnValue = false;
+                if(theEvent.preventDefault) theEvent.preventDefault();
+            };
+        });
+    };
+
+    function numberOnly(input){
+        $(input).keypress (function (evt){
+            var e = event || evt;
+            var charCode = e.which || e.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+            return true;
+        });
+    };
     //------------------------------end create function by user-----------------------------------
+});
 
-    // $('.remove').live('click',function(){
-    //     var l= $('tbody tr').length;
-    //     if (l==1)
-    //     {
-    //         alert('You cannot remove last one');
-    //     } else{
-    //         $(this).parent().parent().remove();
-    //     } 
-    // });
-
-    $(document).on('click', '.remove', function(){  
-           var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
-      });
 </script>
 
 <script type="text/javascript">
-     
+$(document).ready(function(){
+    //Select2 NamaBarang
+    $(".barang").select2({
+        width: 'resolve',
+        placeholder: 'Pilih Barang',
+        allowClear: true,
+        theme: "bootstrap",
+    });
+    $(window).resize(function() {
+        $('.barang').css('width', "100%");
+    });
+});
 </script> 
 
 @endpush

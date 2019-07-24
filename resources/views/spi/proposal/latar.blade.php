@@ -5,14 +5,18 @@
         <p style="text-align:justify">Uraikan gejala atau praduga timbulnya masalah, dan rumusan masalah yang ingin diselesaikan dengan mengacu 
         kepada evaluasi diri (existing), perbandingan capaian output tahun sebelumnya, serta pengamatan, 
         analisis dari unit pelaksana kegiatan!</p>
-        <textarea class="form-control mx-auto mb-2 latarprop" id="latarprop1" rows="3" placeholder=""></textarea>
+        <textarea class="form-control mx-auto mb-2 latarprop" id="latarprop1" name="latarbelakang1" rows="3" placeholder="">
+            {{ $proposal->latarbelakang1 }}
+        </textarea>
         <div class="row justify-content-end">
             <label for="formGroupExampleInput" class="col-sm-3">Minimal 5 kalimat</label>
         </div>
     </div>
     <div class="col-sm-12 mb-4">
         <p style="text-align:justify">Uraikan penjelasan atau rasionalisasi yang menghubungkan antara permasalahan dengan tujuan!</p>
-        <textarea class="form-control mx-auto latarprop" id="latarprop2" rows="3" placeholder=""></textarea>
+        <textarea class="form-control mx-auto latarprop" id="latarprop2" rows="3"  name="latarbelakang2" placeholder="">
+            {{ $proposal->latarbelakang2 }}
+        </textarea>
         <div class="row justify-content-end">
             <label for="formGroupExampleInput" class="col-sm-3">Minimal 5 kalimat</label>
         </div>
@@ -20,7 +24,9 @@
     <div class="col-sm-12 mb-4">
         <p style="text-align:justify">Uraikan kegiatan sesuai dengan rencana pengembangan Polines yang tertuang dalam rencana strategis, 
         atau turunanya berupa rencana pengembangan jurusan atau pusat atau bagian atau unit pelaksana!</p>
-        <textarea class="form-control mx-auto latarprop" id="latarprop3" rows="3" placeholder=""></textarea>
+        <textarea class="form-control mx-auto latarprop" id="latarprop3" rows="3"  name="latarbelakang3" placeholder="">
+          {{ $proposal->latarbelakang3 }}
+        </textarea>
         <div class="row justify-content-end">
             <label for="formGroupExampleInput" class="col-sm-3">Minimal 5 kalimat</label>
         </div>

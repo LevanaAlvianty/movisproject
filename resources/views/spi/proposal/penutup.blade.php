@@ -2,7 +2,9 @@
 <div class="form-group">
     <div class="col-sm-12 mb-4">
         <p style="text-align:justify">Tuliskan penutup proposal secara singkat, padat, dan jelas.</p>
-        <textarea class="form-control mx-auto mb-2 penutup_prop" id="penutup_prop" rows="3" placeholder=""></textarea>
+        <textarea class="form-control mx-auto mb-2 penutup_prop" id="penutup_prop" name="penutup_prop" rows="3" placeholder="">
+            {{ $proposal->penutup_prop }}
+        </textarea>
         <div class="row justify-content-end">
             <label for="formGroupExampleInput" class="col-sm-3"></label>
         </div>

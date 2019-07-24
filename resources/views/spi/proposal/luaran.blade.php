@@ -3,7 +3,9 @@
     <div class="col-sm-12 mb-4">
         <p style="text-align:justify">Tuliskan luaran yang diharapkan dalam kegiatan sesuai dengan tujuan. Luaran yang dimaksud adalah <i><b>
         hasil kinerja langsung pelaksanaan kegiatan</b></i> yang bersifat terukur, spesifik, reliable.</p>
-        <textarea class="form-control mx-auto mb-2 luaranprop" id="luaranprop" rows="3" placeholder=""></textarea>
+        <textarea class="form-control mx-auto mb-2 luaranprop" id="luaranprop" name="luaran_prop" rows="3" placeholder="">
+            {{ $proposal->luaran_prop }}
+        </textarea>
         <div class="row justify-content-end">
             <label for="formGroupExampleInput" class="col-sm-3"></label>
         </div>
