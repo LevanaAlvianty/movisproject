@@ -54,8 +54,7 @@
                                             <tr>
                                                 <th class="text-center">No</th>
                                                 <th class="text-center">Renstra</th>
-                                                <th class="text-center">Program Utama</th>
-                                                <th class="text-center">Options</th>
+                                                <th class="text-center" width="120px">Options</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -66,14 +65,7 @@
                                             <tr>
                                                 <td>{{ ++$i }}</td>
                                                 <td>{{$r->renstra}}</td> 
-                                                     <td>   
-                                                        @foreach($program as $p)  
-                                                            @if($p->id_renstra == $r->id_renstra)  
-                                                                <label class="badge badge-success">{{ $p->dirprogutama }}</label> 
-                                                            @endif
-                                                        @endforeach
-                                                   </td>
-                                                <td>
+                                                <td >
                                                     <a href="{{ route('renstra.edit', $r->id_renstra) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i></a>
                                                     <a href="{{ route('renstra.show', $r->id_renstra) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i></a>
                                                     <button class="btn btn-sm btn-danger" data-renstraid="{{$r->id_renstra}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i></button>
@@ -87,7 +79,7 @@
                                 </div>
                                 <!-- /.tab-pane -->
                                 <div class="tab-pane" id="tab_2"><br>
-                                    <form class="form-horizontal" action="{{ route('programutama.store') }}" method="POST">
+                                    <form class="form-horizontal" action="{{ route('renstra.store') }}" method="POST">
                                         {{csrf_field()}}
                                         <div class="box-body">
                                             <div class="form-group row">
