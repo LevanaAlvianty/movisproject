@@ -108,4 +108,11 @@ class Pegawai extends Authenticatable
         }
         return false;
     }
+
+    public function isKabagKeuangan(){
+        if ($this->roles()->where('name', 'kepala_keuangan')->first()) {
+            return true;
+        }
+        return false;
+    }
 }
