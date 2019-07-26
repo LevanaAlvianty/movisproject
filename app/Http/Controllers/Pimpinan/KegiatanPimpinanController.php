@@ -19,20 +19,19 @@ class KegiatanPimpinanController extends Controller
      */
     public function index()
     {
-        $data= Auth::guard('pegawai')->user()->nip;
+        $pimpinan= Auth::guard('pegawai')->user()->jurusan;
         $data= DB::table('kegiatanpo')
-                    ->join('jurbagnitpus','jurbagnitpus.id_jurbagnitpus','=','kegiatanpo.id_jurbagnitpus')
-                    ->join('pegawai','pegawai.nip','=','kegiatanpo.pimpinan')
+                    ->join('jurbagnitpus','jurbagnitpus.kode','=','kegiatanpo.id_jurbagnitpus')
+                    ->join('pegawai','pegawai.jurusan','=','kegiatanpo.id_jurbagnitpus')
                     ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nip','pegawai.nama')
-                    ->where('kegiatanpo.pimpinan','=',$data)
+                    ->where('kegiatanpo.id_jurbagnitpus','=',$pimpinan)
                     ->get(); 
                     // dd($data);
-        $kegiatanpo = KegiatanPO::all();
         $pegawai = DB::table('pegawai')
                     ->select('pegawai.*')
                     ->where('pegawai.nama','!=','')
                     ->get();  
-        return view('pimpinan.kegiatanpo.index',compact('data','pegawai','kegiatanpo'));
+        return view('pimpinan.kegiatanpo.index',compact('data','pegawai'));
     }
 
     /**
@@ -64,10 +63,17 @@ class KegiatanPimpinanController extends Controller
      */
     public function show($id)
     {
-        $kegiatanpo= KegiatanPO::find($id);
-        $kodeunit = Kodeunit::all();
+        // $kegiatanpo= KegiatanPO::find($id);
+        $kegiatanpo= DB::table('kegiatanpo')
+                ->join('jurbagnitpus','jurbagnitpus.kode','=','kegiatanpo.id_jurbagnitpus')
+                ->join('pegawai','pegawai.jurusan','=','kegiatanpo.id_jurbagnitpus')
+                ->leftjoin('kelompokanggaran','kelompokanggaran.kelompokanggaran','=','kegiatanpo.sumber')
+                ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nip','pegawai.nama','kelompokanggaran.kelompokanggaran')
+                ->where('kegiatanpo.id','=',$id)
+                ->first(); 
+                // dd($kegiatanpo);
         $pegawai = Pegawai::all();
-        return view('pimpinan.kegiatanpo.lihat', compact('kegiatanpo','kodeunit','pegawai'));
+        return view('pimpinan.kegiatanpo.lihat', compact('kegiatanpo','pegawai'));
     }
 
     /**

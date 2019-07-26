@@ -30,27 +30,27 @@
                                 <td class="ikpo">{{$kegiatanpo->id}}</td>
                             </tr>
                             <tr>
-                                <th>Nama Kegiatan</th>
-                                <td class="namakeg">{{$kegiatanpo->nama_kegiatan}}</td>
+                                <th>Kode Akun</th>
+                                <td>{{$kegiatanpo->kode_akun}}</td>
+                            </tr>
+                            <tr>
+                                <th>Sumber</th>
+                                <td>{{ $kegiatanpo->kelompokanggaran }}</td>
                             </tr>
                             <tr>
                                 <th>Unit Pelaksana</th>
                                 <td class="unpel">
-                                    @foreach ($kodeunit as $kode)
-                                        @if($kode->id_jurbagnitpus == $kegiatanpo->id_jurbagnitpus)
-                                            {{ $kode->jurbagnitpus }} ({{ $kode->kode }})        
-                                        @endif
-                                    @endforeach
+                                    {{ $kegiatanpo->jurbagnitpus }} ({{ $kegiatanpo->kode }})
                                 </td>
+                            </tr>
+                            <tr>
+                                <th>Nama Kegiatan</th>
+                                <td class="namakeg">{{$kegiatanpo->nama_kegiatan}}</td>
                             </tr>
                             <tr>
                                 <th>Penanggungjawab</th>
                                 <td class="pimpinan">
-                                    @foreach ($pegawai as $p)
-                                        @if($p->nip == $kegiatanpo->pimpinan)
-                                            {{ $p->nama }}       
-                                        @endif
-                                    @endforeach
+                                    {{Auth::guard('pegawai')->user()->nama}}
                                 </td>
                             </tr>
                             <tr>
