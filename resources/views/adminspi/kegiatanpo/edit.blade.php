@@ -44,22 +44,6 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Reviewer Anggaran</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" name="reviewer_ang" id="reviewer_ang" placeholder="Pilih Reviewer Anggaran">
-                                    @foreach ($pegawai as $p)
-                                        <option 
-                                            value="{{ $p->nip }}"
-                                            @if($p->nip == $kegiatanpo->reviewer_ang)
-                                                selected
-                                            @endif
-                                            >{{ $p->nama }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">

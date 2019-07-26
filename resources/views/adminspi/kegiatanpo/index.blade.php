@@ -23,17 +23,19 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th class="text-center align-middle">No</th>
+                                <th class="text-center align-middle">Akun</th>
                                 <th class="text-center align-middle">Nama Kegiatan</th> 
                                 <th class="text-center align-middle">Unit Pelaksana</th>
-                                <th class="text-center align-middle">Reviewer SPI</th>
-                                <th class="text-center align-middle">Reviewer Anggaran</th>
+                                <th class="text-center align-middle">Reviewer SPI</th> 
                                 <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                        <?php $i = 0; ?>
                         @foreach ($kegiatanpo as $d )
                             <tr>
-                                <td>{{$d->id}}</td>
+                                <td>{{++$i}}</td>
+                                <td>{{$d->kode_akun}}</td> 
                                 <td>{{$d->nama_kegiatan}}</td>  
                                 <td>{{$d->kode}}</td>
                                 <td> @foreach ($pegawai as $p)
@@ -42,11 +44,6 @@
                                         @endif
                                     @endforeach
                                 </td>
-                                <td> @foreach ($pegawai as $p)
-                                        @if($p->nip == $d->reviewer_ang)
-                                            {{ $p->nama }}       
-                                        @endif
-                                    @endforeach
                                 <td>
                                     <a href="{{ route('kegiatanadminspi.edit', $d->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Assign</a>
                                     <a href="{{ route('kegiatanadminspi.show', $d->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>

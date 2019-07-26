@@ -19,8 +19,8 @@ class KegiatanAdminSpiController extends Controller
     public function index()
     {
         $kegiatanpo= DB::table('kegiatanpo')
-                    ->join('jurbagnitpus','jurbagnitpus.id_jurbagnitpus','=','kegiatanpo.id_jurbagnitpus')
-                    ->join('pegawai','pegawai.nip','=','kegiatanpo.pimpinan')
+                    ->join('jurbagnitpus','jurbagnitpus.kode','=','kegiatanpo.id_jurbagnitpus')
+                    ->join('pegawai','pegawai.jurusan','=','kegiatanpo.id_jurbagnitpus')
                     ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nama')
                     ->orderBy('kegiatanpo.id','desc')
                     ->get(); 
@@ -60,10 +60,15 @@ class KegiatanAdminSpiController extends Controller
      */
     public function show($id)
     {
-        $kegiatanpo= KegiatanPO::find($id);
-        $kodeunit = Kodeunit::all();
+        $kegiatanpo= DB::table('kegiatanpo')
+                    ->join('jurbagnitpus','jurbagnitpus.kode','=','kegiatanpo.id_jurbagnitpus')
+                    ->join('pegawai','pegawai.jurusan','=','kegiatanpo.id_jurbagnitpus')
+                    ->leftjoin('kelompokanggaran','kelompokanggaran.kelompokanggaran','=','kegiatanpo.sumber')
+                    ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nama','kelompokanggaran.kelompokanggaran')
+                    ->where('kegiatanpo.id',$id)
+                    ->first(); 
         $pegawai = Pegawai::all();
-        return view('adminspi.kegiatanpo.lihat', compact('kegiatanpo','kodeunit','pegawai'));
+        return view('adminspi.kegiatanpo.lihat', compact('kegiatanpo','pegawai'));
     }
 
     /**
