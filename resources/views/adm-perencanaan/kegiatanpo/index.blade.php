@@ -42,7 +42,12 @@
                                         {{ csrf_field() }}
                                         <label>Pilih file excel</label>
                                         <div class="form-group">
-                                            <input type="file" name="file" required="required">
+                                            <input type="file" name="file"  class="form-control" required="required">
+                                        </div>
+                                        
+                                        <label>Tahun</label>
+                                        <div class="form-group">
+                                            <input type="text" name="tahun"  class="form-control" placeholder="Masukkan Tahun Anggaran Kegiatan" >
                                         </div>
                                     </div>
 
@@ -60,19 +65,20 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th class="text-center align-middle">No</th>
+                                <th class="text-center align-middle">Akun</th>
                                 <th class="text-center align-middle">Nama Kegiatan</th> 
                                 <th class="text-center align-middle">Unit Pelaksana</th>
-                                <th class="text-center align-middle">Penanggungjawab</th>
                                 <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                        <?php $i = 0; ?>
                         @foreach ($kegiatanpo as $kpo )
                             <tr>
-                                <td>{{$kpo->id}}</td>
+                                <td>{{++$i}}</td>
+                                <td>{{$kpo->kode_akun}}</td> 
                                 <td>{{$kpo->nama_kegiatan}}</td> 
-                                <td>{{$kpo->kode}}</td>
-                                <td>{{$kpo->nama}}</td>
+                                <td>{{$kpo->id_jurbagnitpus}}</td>
                                 <td>
                                     <a href="{{ route('kegiatanpo.edit', $kpo->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i></a>
                                     <a href="{{ route('kegiatanpo.show', $kpo->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i></a>
@@ -125,8 +131,8 @@
         $('#tabelkegiatan').DataTable({
             "paging"    : true,
             "ordering"  : true,
-            "info"      : false,
-            "searching" : false,
+            "info"      : true,
+            "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
             "responsive":true

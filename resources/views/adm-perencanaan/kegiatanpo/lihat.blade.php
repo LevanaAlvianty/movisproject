@@ -30,59 +30,79 @@
                                 <td class="ikpo">{{$kegiatanpo->id}}</td>
                             </tr>
                             <tr>
-                                <th>Nama Kegiatan</th>
-                                <td class="namakeg">{{$kegiatanpo->nama_kegiatan}}</td>
+                                <th>Kode Akun</th>
+                                <td>{{$kegiatanpo->kode_akun}}</td>
+                            </tr>
+                            <tr>
+                                <th>Sumber</th>
+                                <td>{{ $kegiatanpo->kelompokanggaran }}</td>
                             </tr>
                             <tr>
                                 <th>Unit Pelaksana</th>
                                 <td class="unpel">
-                                    @foreach ($kodeunit as $kode)
-                                        @if($kode->id_jurbagnitpus == $kegiatanpo->id_jurbagnitpus)
-                                            {{ $kode->jurbagnitpus }} ({{ $kode->kode }})        
-                                        @endif
-                                    @endforeach
+                                    {{ $kegiatanpo->jurbagnitpus }} ({{ $kegiatanpo->kode }})
                                 </td>
                             </tr>
                             <tr>
-                                <th>Penanggungjawab</th>
-                                <td class="pimpinan">
-                                    @foreach ($pegawai as $p)
-                                        @if($p->nip == $kegiatanpo->pimpinan)
-                                            {{ $p->nama }}       
-                                        @endif
-                                    @endforeach
-                                </td>
+                                <th>Nama Kegiatan</th>
+                                <td class="namakeg">{{$kegiatanpo->nama_kegiatan}}</td>
                             </tr>
                             <tr>
-                                <th>PIC</th>
-                                <td class="pic">
-                                    @foreach ($pegawai as $p)
-                                        @if($p->nip == $kegiatanpo->nip_pic)
-                                            {{ $p->nama }}       
-                                        @endif
-                                    @endforeach
-                                </td>
+                                <th>Tahun Anggaran</th>
+                                <td>{{$kegiatanpo->tahun}}</td>
                             </tr>
                             <tr>
-                                <th>Reviewer SPI</th>
-                                <td class="spi">
-                                    @foreach ($pegawai as $p)
-                                        @if($p->nip == $kegiatanpo->reviewer_spi)
-                                            {{ $p->nama }}       
-                                        @endif
-                                    @endforeach
-                                </td>
+                                <th>521114</th>
+                                <td >{{ $kegiatanpo->mak_521114 }}</td>
                             </tr>
                             <tr>
-                                <th>Reviewer Anggaran</th>
-                                <td class="anggaran">
-                                    @foreach ($pegawai as $p)
-                                        @if($p->nip == $kegiatanpo->reviewer_ang)
-                                            {{ $p->nama }}       
-                                        @endif
-                                    @endforeach
-                                </td>
+                                <th>521211</th>
+                                <td>{{ $kegiatanpo->mak_521211 }}</td>
+                            </tr> 
+                            <tr>
+                                <th>521213</th>
+                                <td>{{ $kegiatanpo->mak_521213 }}</td>
                             </tr>
+                            <tr>
+                                <th>521219</th>
+                                <td>{{ $kegiatanpo->mak_521219 }}</td>
+                            </tr> 
+                            <tr>
+                                <th>521811</th>
+                                <td>{{ $kegiatanpo->mak_521811 }}</td>
+                            </tr>
+                            <tr>
+                                <th>522114</th>
+                                <td>{{ $kegiatanpo->mak_522114 }}</td>
+                            </tr> 
+                            <tr>
+                                <th>522141</th>
+                                <td>{{ $kegiatanpo->mak_522141 }}</td>
+                            </tr>
+                            <tr>
+                                <th>522151</th>
+                                <td>{{ $kegiatanpo->mak_522151 }}</td>
+                            </tr> 
+                            <tr>
+                                <th>524114</th>
+                                <td>{{ $kegiatanpo->mak_524114 }}</td>
+                            </tr>
+                            <tr>
+                                <th>524119</th>
+                                <td>{{ $kegiatanpo->mak_524119 }}</td>
+                            </tr> 
+                            <tr>
+                                <th>532111</th>
+                                <td>{{ $kegiatanpo->mak_532111 }}</td>
+                            </tr>
+                            <tr>
+                                <th>536111</th>
+                                <td>{{ $kegiatanpo->mak_536111 }}</td>
+                            </tr> 
+                            <tr>
+                                <th>Total</th>
+                                <td></td>
+                            </tr> 
                         </table>
                     </div>
                     <!-- /.box-body -->

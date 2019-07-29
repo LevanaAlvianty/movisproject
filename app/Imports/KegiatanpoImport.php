@@ -19,31 +19,27 @@ class KegiatanpoImport implements ToModel, WithHeadingRow
    
     public function model(array $row)
     {
+        // dd($row);
         return new KegiatanPO([
-            'nama_kegiatan' => $row['nama_kegiatan'],
-            'id_jurbagnitpus' => $row['pelaksana'],
-            'pimpinan' => $row['pimpinan'],
-            'nip_pic' => $row['pic'],
-            'reviewer_spi' => $row['reviewer_spi'],
-            'reviewer_ang' => $row['reviewer_anggaran'],
-            'kode' => $row['kode'],
-            'volume' => $row['volume'],
-            'satuan' => $row['satuan'],
-            '521114' => $row['521114'],
-            '521211' => $row['521211'],
-            '521811' => $row['521811'],
-            '521213' => $row['521213'],
-            '521219' => $row['521219'],
-            '522141' => $row['522141'],
-            '522151' => $row['522151'],
-            '524114' => $row['524114'],
-            '524119' => $row['524119'],
-            '532111' => $row['532111'],
-            '536111' => $row['536111'],
-            'total' => $row['total']
+            'kode_akun' => $row['akun'],
+            'sumber' => $row['sumber'],
+            'id_jurbagnitpus' => $row['jub'],
+            'nama_kegiatan' => $row['uraian'],
+            'mak_521114' => $row['521114'],
+            'mak_521211' => $row['521211'],
+            'mak_521811' => $row['521811'],
+            'mak_521213' => $row['521213'],
+            'mak_521219' => $row['521219'],
+            'mak_522114' => $row['522114'],
+            'mak_522141' => $row['522141'],
+            'mak_522151' => $row['522151'],
+            'mak_524114' => $row['524114'],
+            'mak_524119' => $row['524119'],
+            'mak_532111' => $row['532111'],
+            'mak_536111' => $row['536111'],
         ]);
-    }
 
+    }
 
     //LIMIT CHUNKSIZE
     // public function chunkSize(): int

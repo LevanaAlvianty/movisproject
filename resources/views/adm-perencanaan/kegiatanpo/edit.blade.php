@@ -34,11 +34,42 @@
                             {{Session::get('success')}}
                         </div>
                     @endif
+                    @if(Session::has('error'))
+                        <div class="alert alert-danger">
+                            {{Session::get('error')}}
+                        </div>
+                    @endif
 
                     <form action="{{ route('kegiatanpo.update', $kegiatanpo->id) }}" class="form-horizontal" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
                     <div class="box-body">
+                        <!-- <input type="hidden" class="form-control" name="id_kegiatan" placeholder="Kode Akun" value="{{ $kegiatanpo->id}}"> -->
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Tahun Anggaran</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="tahun" placeholder="Tahun Anggaran" value="{{ $kegiatanpo->tahun}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Kode Akun</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="kode_akun" placeholder="Kode Akun" value="{{ $kegiatanpo->kode_akun}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Sumber</label>
+                            <div class="col-sm-10">
+                                <select class="custom-select" id="kelanggaran" name="kelang" placeholder="Pilih Sumber"> 
+                                    <option class="active">Pilih Sumber...</option>
+                                    @foreach($kelang as $kel)
+                                        <option value="{{ $kel->kelompokanggaran}}" 
+                                            {{ ($kel->kelompokanggaran == $kegiatanpo->sumber) ? 'selected' : ''}}>{{ $kel->kelompokanggaran }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Nama Kegiatan</label>
                             <div class="col-sm-10">
@@ -51,76 +82,83 @@
                                 <select class="form-control" name="id_jurbagnitpus" id="jurbagnitpus" placeholder="Pilih Unit Pelaksana">
                                     @foreach ($kodeunit as $kode)
                                     <option 
-                                        value="{{ $kode->id_jurbagnitpus }}"
-                                        @if($kode->id_jurbagnitpus == $kegiatanpo->id_jurbagnitpus)
-                                            selected
-                                        @endif
-                                        >{{ $kode->jurbagnitpus }} ({{ $kode->kode }})
+                                        value="{{ $kode->kode }}" 
+                                        {{ ($kode->kode == $kegiatanpo->id_jurbagnitpus) ? 'selected' : ''}}>{{ $kode->jurbagnitpus }} ({{ $kode->kode }})
                                     </option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Penanggungjawab</label>
+                            <label for="input" class="col-sm-2 col-form-label">521114</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="pimpinan" id="pimpinan" placeholder="Pilih Penanggungjawab">
-                                    @foreach ($pegawai as $p)
-                                    <option 
-                                        value="{{ $p->nip }}"
-                                        @if($p->nip == $kegiatanpo->pimpinan)
-                                            selected
-                                        @endif
-                                        >{{ $p->nama }}
-                                    </option>
-                                    @endforeach
-                                </select>
+                                <input type="number" class="form-control" name="mak_521114" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_521114 }}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">PIC</label>
+                            <label for="input" class="col-sm-2 col-form-label">521211</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="nip_pic" id="pic" placeholder="Pilih PIC">
-                                    @foreach ($pegawai as $p)
-                                    <option 
-                                        value="{{ $p->nip }}"
-                                        @if($p->nip == $kegiatanpo->nip_pic)
-                                            selected
-                                        @else
-                                            {{$kegiatanpo->nip_pic == ''}}
-                                        @endif
-                                        >{{ $p->nama }}
-                                    </option>
-                                    @endforeach
-                                </select>
+                                <input type="number" class="form-control" name="mak_521211" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_521211 }}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Reviewer SPI</label>
+                            <label for="input" class="col-sm-2 col-form-label">521213</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="reviewer_spi" id="reviewer_spi" placeholder="Pilih Reviewer SPI">
-                                    @foreach ($pegawai as $peg)
-                                    <option 
-                                        value="{{ $peg->nip }}"
-                                        @if($peg->nip == $kegiatanpo->reviewer_spi)
-                                            selected
-                                        @endif
-                                        >{{ $peg->nama }}
-                                    </option>
-                                    @endforeach
-                                </select>
+                                <input type="number" class="form-control" name="mak_521213" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_521213 }}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Reviewer Anggaran</label>
+                            <label for="input" class="col-sm-2 col-form-label">521219</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="reviewer_anggaran" id="reviewer_anggaran" placeholder="Pilih Reviewer Anggaran">
-                                        @foreach ($pegawai as $p)
-                                        <option value="{{ $p->nip }} {{ ( $p->nip == $kegiatanpo->reviewer_ang ) ? 'selected' : '' }}" >
-                                            {{ $p->nama }}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                <input type="number" class="form-control" name="mak_521219" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_521219 }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">521811</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_521811" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_521811 }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">522114</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_522114" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_522114 }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">522141</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_522141" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_522141 }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">522151</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_522151" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_522151 }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">524114</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_524114" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_524114 }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">524119</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_524119" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_524119 }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">532111</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_532111" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_532111 }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">536111</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_536111" placeholder="Isi Jumlah Pagu" value="{{ $kegiatanpo->mak_536111 }}">
                             </div>
                         </div>
                     </div>

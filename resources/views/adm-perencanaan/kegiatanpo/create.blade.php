@@ -37,67 +37,122 @@
                             {{Session::get('success')}}
                         </div>
                     @endif
+                    @if(Session::has('error'))
+                        <div class="alert alert-danger">
+                            {{Session::get('error')}}
+                        </div>
+                    @endif
                     <div class="box-body">
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Tahun Anggaran</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="tahun" placeholder="Tahun Anggaran" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Kode Akun</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="kode_akun" placeholder="Kode Akun" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Sumber</label>
+                            <div class="col-sm-10">
+                                <select class="custom-select" id="kelanggaran" name="kelang" placeholder="Pilih Sumber"> 
+                                    <option class="active">Pilih Sumber...</option>
+                                    @foreach($kelang as $kel)
+                                        <option value="{{ $kel->kelompokanggaran}}">{{ $kel->kelompokanggaran }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Nama Kegiatan</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="nama_kegiatan" placeholder="Nama Kegiatan" value="" required>
+                                <input type="text" class="form-control" name="nama_kegiatan" placeholder="Nama Kegiatan" value="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Unit Pelaksana</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="id_jurbagnitpus" id="unitpelaksana" placeholder="Kode Unit" required> 
+                                <select class="form-control" name="id_jurbagnitpus" id="unitpelaksana" placeholder="Kode Unit"> 
                                     <option class="active">Pilih Unit Pelaksana</option>
                                         @foreach ($kodeunit as $k)
-                                            <option value="{{ $k->id_jurbagnitpus }}">{{ $k->jurbagnitpus }} ({{ $k->kode }})</option>
+                                            <option value="{{ $k->kode }}">{{ $k->jurbagnitpus }} ({{ $k->kode }})</option>
                                         @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Penanggungjawab</label>
+                            <label for="input" class="col-sm-2 col-form-label">521114</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="pimpinan" id="pimpinan"placeholder="Penanggungjawab">
-                                    <option class="active">Pilih Penanggungjawab</option>
-                                        @foreach ($pegawai as $p)
-                                            <option value="{{ $p->nip }}"> {{ $p->nama }}</option>
-                                        @endforeach
-                                </select>
+                                <input type="number" class="form-control" name="mak_521114" placeholder="Isi Jumlah Pagu" value="">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">PIC</label>
+                            <label for="input" class="col-sm-2 col-form-label">521211</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="nip_pic" id="nip_pic"placeholder="PIC">
-                                    <option class="active">Pilih PIC</option>
-                                        @foreach ($pegawai as $p)
-                                            <option value="{{ $p->nip }}"> {{ $p->nama }}</option>
-                                        @endforeach
-                                </select>
+                                <input type="number" class="form-control" name="mak_521211" placeholder="Isi Jumlah Pagu" value="">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Reviewer SPI</label>
+                            <label for="input" class="col-sm-2 col-form-label">521213</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="reviewer_spi" id="rev_spi" placeholder="Reviewer SPI">
-                                    <option class="active">Pilih Reviewer SPI</option>
-                                        @foreach ($pegawai as $p)
-                                            <option value="{{ $p->nip }}"> {{ $p->nama }}</option>
-                                        @endforeach
-                                </select>
+                                <input type="number" class="form-control" name="mak_521213" placeholder="Isi Jumlah Pagu" value="">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Reviewer Anggaran</label>
+                            <label for="input" class="col-sm-2 col-form-label">521219</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="reviewer_ang" id="rev_anggaran" placeholder="Reviewer Anggaran">
-                                    <option class="active">Pilih Reviewer Anggaran</option>
-                                        @foreach ($pegawai as $p)
-                                            <option value="{{ $p->nip }}"> {{ $p->nama }}</option>
-                                        @endforeach
-                                </select>
-                                <!-- <input type="text" class="form-control" name="reviewer_ang" placeholder="Reviewer Anggaran" value="" > -->
+                                <input type="number" class="form-control" name="mak_521219" placeholder="Isi Jumlah Pagu" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">521811</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_521811" placeholder="Isi Jumlah Pagu" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">522114</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_522114" placeholder="Isi Jumlah Pagu" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">522141</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_522141" placeholder="Isi Jumlah Pagu" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">522151</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_522151" placeholder="Isi Jumlah Pagu" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">524114</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_524114" placeholder="Isi Jumlah Pagu" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">524119</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_524119" placeholder="Isi Jumlah Pagu" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">532111</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_532111" placeholder="Isi Jumlah Pagu" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">536111</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="mak_536111" placeholder="Isi Jumlah Pagu" value="">
                             </div>
                         </div>
                     </div>
