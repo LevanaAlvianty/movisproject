@@ -23,7 +23,8 @@ class KegiatanKabagKeuanganController extends Controller
                     ->join('jurbagnitpus','jurbagnitpus.kode','=','kegiatanpo.id_jurbagnitpus')
                     ->join('pegawai','pegawai.jurusan','=','kegiatanpo.id_jurbagnitpus')
                     ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nama')
-                    ->orderBy('kegiatanpo.id','desc')
+                    ->orderBy('kegiatanpo.tahun','desc')
+                    ->orderBy('kegiatanpo.id','asc')
                     ->get(); 
         $pegawai = DB::table('pegawai')
                     ->select('pegawai.*')

@@ -66,6 +66,7 @@
                             <tr>
                                 <th class="text-center align-middle">No</th>
                                 <th class="text-center align-middle">Akun</th>
+                                <th class="text-center align-middle">Tahun</th> 
                                 <th class="text-center align-middle">Nama Kegiatan</th> 
                                 <th class="text-center align-middle">Unit Pelaksana</th>
                                 <th class="text-center align-middle">Aksi</th>
@@ -77,6 +78,7 @@
                             <tr>
                                 <td>{{++$i}}</td>
                                 <td>{{$kpo->kode_akun}}</td> 
+                                <td>{{$kpo->tahun}}</td> 
                                 <td>{{$kpo->nama_kegiatan}}</td> 
                                 <td>{{$kpo->id_jurbagnitpus}}</td>
                                 <td>

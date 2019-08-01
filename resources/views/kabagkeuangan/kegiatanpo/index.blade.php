@@ -30,18 +30,19 @@
                                 <th class="text-center align-middle">No</th>
                                 <th class="text-center align-middle">Akun</th> 
                                 <th class="text-center align-middle">Nama Kegiatan</th> 
+                                <th class="text-center align-middle">Tahun</th> 
                                 <th class="text-center align-middle">Unit Pelaksana</th>
                                 <th class="text-center align-middle">Reviewer Anggaran</th>
                                 <th class="text-center align-middle">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php $i = 0; ?>
                         @foreach ($kegiatanpo as $d )
                             <tr>
-                                <td>{{++$i}}</td>
+                                <td>{{$loop->iteration}}</td>
                                 <td>{{$d->kode_akun}}</td>  
                                 <td>{{$d->nama_kegiatan}}</td>  
+                                <td>{{$d->tahun}}</td>
                                 <td>{{$d->kode}}</td>
                                 <td> @foreach ($pegawai as $p)
                                         @if($p->nip == $d->reviewer_ang)
@@ -49,7 +50,7 @@
                                         @endif
                                     @endforeach
                                 <td>
-                                    <a href="{{ route('kegiatankabagkeuangan.edit', $d->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Assign</a>
+                                    <a href="{{ route('kegiatankabagkeuangan.edit', $d->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Pilih Reviewer</a>
                                     <a href="{{ route('kegiatankabagkeuangan.show', $d->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
                                 </td>
                             </tr>
@@ -70,8 +71,8 @@
         $('#tabelkegiatanspi').DataTable({
             "paging"    : true,
             "ordering"  : true,
-            "info"      : false,
-            "searching" : false,
+            "info"      : true,
+            "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
             "responsive":true

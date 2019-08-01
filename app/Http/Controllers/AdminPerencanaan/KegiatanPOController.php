@@ -25,7 +25,8 @@ class KegiatanPOController extends Controller
         $kegiatanpo= DB::table('kegiatanpo')
                     ->leftJoin('jurbagnitpus','jurbagnitpus.kode','=','kegiatanpo.id_jurbagnitpus')
                     ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode')
-                    ->orderBy('kegiatanpo.id','desc')
+                    ->orderBy('kegiatanpo.tahun','desc')
+                    ->orderBy('kegiatanpo.id','asc')
                     ->get(); 
         return view('adm-perencanaan.kegiatanpo.index',compact('kegiatanpo'));
     }

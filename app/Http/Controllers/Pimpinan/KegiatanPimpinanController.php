@@ -24,6 +24,8 @@ class KegiatanPimpinanController extends Controller
                     ->join('jurbagnitpus','jurbagnitpus.kode','=','kegiatanpo.id_jurbagnitpus')
                     ->join('pegawai','pegawai.jurusan','=','kegiatanpo.id_jurbagnitpus')
                     ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nip','pegawai.nama')
+                    ->orderBy('kegiatanpo.tahun','desc')
+                    ->orderBy('kegiatanpo.id','asc')
                     ->where('kegiatanpo.id_jurbagnitpus','=',$pimpinan)
                     ->get(); 
                     // dd($data);
