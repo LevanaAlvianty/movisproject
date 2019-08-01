@@ -32,7 +32,9 @@ Route::get('/spi/dashboard','Spi\DashboardController@index')->name('spi.dashboar
 //Proposal
 Route::resource('/spi/proposal','Spi\ProposalController');
 Route::get('/spi/proposal/{proposal}','Spi\ProposalController@buka')->name('proposal.pertama');
-Route::put('/spi/proposal/{proposal}','Spi\ProposalController@insert')->name('proposal.insert');
+Route::post('/spi/proposal/{proposal}','Spi\ProposalController@insert')->name('proposal.insert');
+Route::get('/spi/proposal/{proposal}/edit','Spi\ProposalController@edit')->name('proposal.edit');
+Route::put('/spi/proposal/{proposal}', 'Spi\ProposalController@update')->name('proposal.update');
 Route::get('/spi/daftarproposal','Spi\ProposalController@daftar')->name('proposal.daftar');
 Route::get('/spi/penilaianproposal','Spi\ProposalController@penilaian')->name('proposal.penilaian');
 Route::get('/spi/editproposal','Spi\ProposalController@editproposal')->name('proposal.editproposal');
@@ -44,6 +46,12 @@ Route::get('/findBarang','Spi\ProposalController@findBarang');
 Route::get('/findPanitiaDalam','Spi\ProposalController@findPanitiaDalam');
 Route::get('/findPeserta','Spi\ProposalController@findPeserta');
 Route::get('/viewpdf/{proposal}','Spi\ProposalController@ViewPDF')->name('proposal.viewpdf');
+Route::get('/viewpdf2/{idKegiatan}','Spi\ProposalController@viewPdf2')->name('proposal.viewpdf2');
+
+//Laporan
+Route::resource('/spi/laporan','Spi\LaporanController');
+Route::get('/spi/laporan/{laporan}','Spi\LaporanController@buatLaporan')->name('laporan.buatlaporan');
+Route::get('/viewlaporanpdf/{idKegiatan}','Spi\LaporanController@viewLaporanPdf')->name('proposal.viewlaporanpdf');
 
 //Kegiatan
 Route::resource('/spi/kegiatan','Spi\KegiatanController');

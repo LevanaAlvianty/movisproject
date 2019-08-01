@@ -111,9 +111,16 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <!-- progressbar -->
-            <form id="msform" action="{{ route('proposal.insert',$kegiatan->id) }}" method="POST" enctype="multipart/form-data">
-            {{csrf_field()}}
-            {{method_field('PUT')}}
+            @if ($proposal)
+                <form id="msform" action="{{ route('proposal.update', $proposal->id) }}" method="POST" enctype="multipart/form-data">
+                    {{csrf_field()}}
+                    {{method_field('PUT')}}
+            @else
+                <form id="msform" action="{{ route('proposal.insert',$kegiatan->id) }}" method="POST" enctype="multipart/form-data">
+                    {{csrf_field()}}
+                    {{method_field('POST')}}    
+            @endif
+
                 <!-- progressbar -->
                 <ul id="progressbar" style="padding-left:0px">
                     <li class="active">Sampul Depan</li>
@@ -153,7 +160,6 @@
                 <fieldset>
                     @include('spi.proposal.sampul')
                     <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                    <a href="" class="btn btn-primary btn-sm mr-2" style="float:right;"><i class="fa fa-plus fa-lg"></i> Data SERENA</a>
                 </fieldset>
                 
                 <fieldset>

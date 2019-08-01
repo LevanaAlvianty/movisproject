@@ -11,25 +11,25 @@
                 </tr>
             </thead>
             <tbody id="panitia-dalam" class="panitia-dalam">
-                @foreach($panitiadalampo as $panitiadalam)
-                    @if($panitiadalam->id_proposal == $proposal->prop_id)
-                    <tr id="row0">
-                        <td width="35%">
-                            <select class="form-control nama_panitiadlm"  name="nama_panitiadlm[]" id="nama_panitiadlm" placeholder="Pilih Panitia" style="width: 100%">
-                                @foreach ($pegawai as $pgw)
-                                    <option value="{{ $pgw->id_pegawai }}"
-                                        @if($pgw->id_pegawai == $panitiadalam->id_panitiadalam)
-                                            selected
-                                        @endif> 
-                                    {{ $pgw->nama }}</option>
-                                @endforeach
-                            </select>
-                        <td width="35%"><input name="nip_panitiadlm[]" class="form-control nip_panitiadlm"  value="{{$panitiadalam->nip}}"/></td>
-                        <td width="25%"><input name="peran_panitiadlm[]" class="form-control"  value="{{$panitiadalam->peran}}"/></td>
-                        <td width="5%" class="text-center"><a href="#" id="0" class="btn btn-danger btn-sm removePanitiadlm"><i class="fa fa-lg fa-times"></i></a></td>
-                    </tr>
-                    @endif
-                @endforeach
+                @if ($proposal->panitiadalampos)
+                    @foreach ($proposal->panitiadalampos as $panitiadalam)
+                        <tr id="row_panitiadalam_{{ $panitiadalam->id }}">
+                            <td width="35%">
+                                <select class="form-control nama_panitiadlm"  name="nama_panitiadlm[]" id="nama_panitiadlm" placeholder="Pilih Panitia" style="width: 100%">
+                                    @foreach ($pegawai as $pgw)
+                                        <option value="{{ $pgw->id_pegawai }}"
+                                            @if($pgw->id_pegawai == $panitiadalam->id_panitiadalam)
+                                                selected
+                                            @endif> 
+                                        {{ $pgw->nama }}</option>
+                                    @endforeach
+                                </select>
+                            <td width="35%"><input name="nip_panitiadlm[]" class="form-control nip_panitiadlm"  value="{{$panitiadalam->nip}}"/></td>
+                            <td width="25%"><input name="peran_panitiadlm[]" class="form-control"  value="{{$panitiadalam->peran}}"/></td>
+                            <td width="5%" class="text-center"><a href="#" id="{{ $panitiadalam->id }}" class="btn btn-danger btn-sm removePanitiadlm"><i class="fa fa-lg fa-times"></i></a></td>
+                        </tr>
+                    @endforeach
+                @endif
             </tbody>
             <tfoot>
                 <tr>
@@ -54,17 +54,17 @@
                 </tr>
             </thead>
             <tbody id="panitia-luar" class="panitia-luar">
-                @foreach($panitialuarpo as $panitialuar)
-                    @if($panitialuar->id_proposal == $proposal->prop_id)
-                    <tr id="row0">
-                        <td width="30%"><input name="nama_panitialuar[]" class="form-control form-control-sm" value="{{$panitialuar->nama}}"/></td>
-                        <td width="25%"><input name="nip_panitialuar[]" class="form-control form-control-sm" value="{{$panitialuar->nip}}"/></td>
-                        <td width="15%"><input name="npwp_panitialuar[]" class="form-control form-control-sm" value="{{$panitialuar->npwp}}"/></td>
-                        <td width="10%"><input type="file" name="cv_panitialuar[]"  class="btn btn-small btn-default"  value="{{$panitialuar->cv}}"></td>
-                        <td width="5%" class="text-center"><a href="#" id="0" class="btn btn-danger btn-sm removePanitialuar"><i class="fa fa-lg fa-times"></i></a></td>
-                    </tr>
-                    @endif
-                @endforeach
+                @if($proposal->panitialuarpos)
+                    @foreach($proposal->panitialuarpos as $panitialuar)
+                        <tr id="row_panitialuar_{{ $panitialuar->id }}">
+                            <td width="30%"><input name="nama_panitialuar[]" class="form-control form-control-sm" value="{{$panitialuar->nama}}"/></td>
+                            <td width="25%"><input name="nip_panitialuar[]" class="form-control form-control-sm" value="{{$panitialuar->nip}}"/></td>
+                            <td width="15%"><input name="npwp_panitialuar[]" class="form-control form-control-sm" value="{{$panitialuar->npwp}}"/></td>
+                            <td width="10%"><input type="file" name="cv_panitialuar[]"  class="btn btn-small btn-default"  value="{{$panitialuar->cv}}"></td>
+                            <td width="5%" class="text-center"><a href="#" id="{{ $panitialuar->id }}" class="btn btn-danger btn-sm removePanitialuar"><i class="fa fa-lg fa-times"></i></a></td>
+                        </tr>
+                    @endforeach
+                @endif
             </tbody>
             <tfoot>
                 <tr>
@@ -90,28 +90,28 @@
                 </tr>
             </thead>
             <tbody id="peserta" class="peserta">
-                @foreach($pesertapo as $peserta)
-                    @if($peserta->id_proposal == $proposal->prop_id)
-                    <tr id="row0">
-                        <td width="30%">
-                            <select class="form-control nama_peserta"  name="nama_peserta[]" id="nama_peserta" placeholder="Pilih Panitia" style="width: 100%">
-                                @foreach ($pegawai as $karyawan)
-                                    <option value="{{ $karyawan->id_pegawai }}"
-                                        @if($karyawan->id_pegawai == $peserta->id_peserta)
-                                            selected
-                                        @endif> 
-                                        {{ $karyawan->nama }}</option>
-                                @endforeach
-                            </select>
-                        </td>
-                        <td width="25%"><input name="nip_peserta[]" class="form-control nip_peserta" value="{{$peserta->nip}}"/></td>
-                        <td width="15%"><input name="peran_peserta[]" class="form-control" value="{{$peserta->peran}}"/></td>
-                        <td width="10%"><input name="gol_peserta[]" class="form-control gol_peserta" value="{{$peserta->golongan}}"/></td>
-                        <td width="15%"><input name="jab_peserta[]" class="form-control jab_peserta" value="{{$peserta->jabatan}}"/></td>
-                        <td width="5%" class="text-center"><a href="#" id="0" class="btn btn-danger btn-sm removePeserta"><i class="fa fa-lg fa-times"></i></a></td>
-                    @endif
-                @endforeach
-                </tr>
+                @if($proposal->pesertaPos)
+                    @foreach($proposal->pesertaPos as $peserta)
+                        <tr id="row_peserta_{{ $peserta->id }}">
+                            <td width="30%">
+                                <select class="form-control nama_peserta"  name="nama_peserta[]" id="nama_peserta" placeholder="Pilih Panitia" style="width: 100%">
+                                    @foreach ($pegawai as $karyawan)
+                                        <option value="{{ $karyawan->id_pegawai }}"
+                                            @if($karyawan->id_pegawai == $peserta->id_peserta)
+                                                selected
+                                            @endif> 
+                                            {{ $karyawan->nama }}</option>
+                                    @endforeach
+                                </select>
+                            </td>
+                            <td width="25%"><input name="nip_peserta[]" class="form-control nip_peserta" value="{{$peserta->nip}}"/></td>
+                            <td width="15%"><input name="peran_peserta[]" class="form-control" value="{{$peserta->peran}}"/></td>
+                            <td width="10%"><input name="gol_peserta[]" class="form-control gol_peserta" value="{{$peserta->golongan}}"/></td>
+                            <td width="15%"><input name="jab_peserta[]" class="form-control jab_peserta" value="{{$peserta->jabatan}}"/></td>
+                            <td width="5%" class="text-center"><a href="#" id="{{ $peserta->id }}" class="btn btn-danger btn-sm removePeserta"><i class="fa fa-lg fa-times"></i></a></td>
+                        </tr>a
+                    @endforeach
+                @endif
             </tbody>
             <tfoot>
                 <tr>
@@ -129,7 +129,7 @@
     var i = 0; 
     $('#addPanitiadlm').click(function(){ 
         i++; 
-        var tr ='<tr id="row'+i+'" class="dynamic-added">'+
+        var tr ='<tr id="row_panitiadalam_'+i+'" class="dynamic-added">'+
                 '<td width="35%">'+
                     '<select class="form-control nama_panitiadlm"  name="nama_panitiadlm[]" id="nama_panitiadlm" placeholder="Pilih Panitia" style="width: 100%">'+
                         '@foreach ($pegawai as $pgw)'+
@@ -159,7 +159,7 @@
     //remove row
     $(document).on('click', '.removePanitiadlm', function(){  
            var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
+           $('#row_panitiadalam_'+button_id+'').remove();  
     });
      //end remove row 
 
@@ -203,7 +203,7 @@
     var i = 0;
     $('#addPeserta').click(function(){ 
         i++; 
-        var tr ='<tr id="row'+i+'" class="dynamic-added">'+
+        var tr ='<tr id="row_peserta_'+i+'" class="dynamic-added">'+
                 '<td width="30%">'+
                     '<select class="form-control nama_peserta"  name="nama_peserta[]" id="nama_peserta" placeholder="Pilih Panitia" style="width: 100%">'+
                         '@foreach ($pegawai as $karyawan)'+
@@ -236,14 +236,14 @@
     //remove row
     $(document).on('click', '.removePeserta', function(){  
            var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
+           $('#row_peserta_'+button_id+'').remove();  
     });
      //end remove row 
 
     //select2 panitia-dalam
     $(".nama_peserta").select2({
         width: 'resolve',
-        placeholder: 'Pilih Panitia',
+        placeholder: 'Pilih Peserta',
         allowClear: true,
         theme: "bootstrap",
     });
@@ -282,7 +282,7 @@
     var i = 0; 
     $('#addPanitialuar').click(function(){  
         i++; 
-        var tr ='<tr id="row'+i+'" class="dynamic-added">'+
+        var tr ='<tr id="row_panitialuar_'+i+'" class="dynamic-added">'+
                 '<td width="30%"><input name="nama_panitialuar[]" class="form-control form-control-sm" /></td>'+
                 '<td width="25%"><input name="nip_panitialuar[]" class="form-control form-control-sm" /></td>'+
                 '<td width="15%"><input name="npwp_panitialuar[]" class="form-control form-control-sm" /></td>'+
@@ -296,7 +296,7 @@
     //remove row
     $(document).on('click', '.removePanitialuar', function(){  
            var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
+           $('#row_panitialuar_'+button_id+'').remove();  
     });
      //End remove row 
     // End Panitialuar

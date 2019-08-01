@@ -9,4 +9,9 @@ class AnggaranPO extends Model
     protected $table = 'anggaranpo';
     protected $primary = 'id';
     public $timestamps = false;
+
+    public function standartbiaya()
+    {
+        return $this->belongsTo(\App\StandartBiaya::class, 'id_barang', 'id_standartbiaya');
+    }
 }

@@ -24,22 +24,26 @@
             </tr>
         </thead>
         <tbody id="jadwalpo" class="jadwalpo">
-            <tr id="row0" class="dynamic-added">
-                <td width="59%"><input name="nama_kegiatan[0]" class="form-control form-control-sm" /></td>
-                <td width="3%"><input type="checkbox" name="januari[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="februari[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="maret[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="april[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="mei[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="juni[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="juli[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="agustus[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="september[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="oktober[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="november[0]" class="" /></td>
-                <td width="3%"><input type="checkbox" name="desember[0]" class="" /></td>
-                <td width="5%" class="text-center"><a href="#" id="0" class="btn btn-danger btn-sm removeJadwal"><i class="fa fa-lg fa-times"></i></a></td>
-            </tr>
+            @if($proposal->jadwalpos)
+                @foreach($proposal->jadwalpos as $jadwal)
+                        <tr id="row_jadwal_{{ $jadwal->id }}" class="dynamic-added">
+                            <td width="59%"><input name="nama_kegiatan[]" class="form-control form-control-sm" value="{{$jadwal->kegiatan}}"/></td>
+                            <td width="3%"><input type="checkbox" name="januari[]" class="" value="{{$jadwal->stat_jan}}" {{($jadwal->stat_jan == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="februari[]" class="" value="{{$jadwal->stat_feb}}" {{($jadwal->stat_feb == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="maret[]" class="" value="{{$jadwal->stat_mar}}" {{($jadwal->stat_mar == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="april[]" class="" value="{{$jadwal->stat_april}}" {{($jadwal->stat_april == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="mei[]" class="" value="{{$jadwal->stat_mei}}" {{($jadwal->stat_mei == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="juni[]" class="" value="{{$jadwal->stat_jun}}" {{($jadwal->stat_jun == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="juli[]" class="" value="{{$jadwal->stat_jul}}" {{($jadwal->stat_jul == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="agustus[]" class="" value="{{$jadwal->stat_agust}}" {{($jadwal->stat_agust == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="september[]" class="" value="{{$jadwal->stat_sept}}" {{($jadwal->stat_sept == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="oktober[]" class="" value="{{$jadwal->stat_okt}}" {{($jadwal->stat_okt == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="november[]" class="" value="{{$jadwal->stat_nov}}" {{($jadwal->stat_nov == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="desember[]" class="" value="{{$jadwal->stat_des}}" {{($jadwal->stat_des == '1') ? 'checked' : ''}} /></td>
+                            <td width="5%" class="text-center"><a href="#" id="" class="btn btn-danger btn-sm removeJadwal"><i class="fa fa-lg fa-times"></i></a></td>
+                        </tr>
+                @endforeach
+            @endif
         </tbody>
         <tfoot>
             <tr>
@@ -56,12 +60,7 @@
     var i = 0; 
     $('#addJadwal').click(function(){ 
         i++; 
-        // disii aku nulis arraynya manual
-        // kalo tadi semisal kegiatan1 januari kosong trus ada kegiatan 2 januari diisi
-        // arraynya bakal  baca ke array[0]
-        // nah disini array aku masukin secara manual.
-        // yang inya itu
-        var tr = '<tr id="row'+i+'" class="dynamic-added">'+
+        var tr = '<tr id="row_jadwal_'+i+'" class="dynamic-added">'+
                     '<td width="59%"><input name="nama_kegiatan['+i+']" class="form-control form-control-sm" /></td>'+
                     '<td width="3%"><input type="checkbox" name="januari['+i+']" class="" /></td>'+
                     '<td width="3%"><input type="checkbox" name="februari['+i+']" class="" /></td>'+
@@ -82,7 +81,7 @@
 
       $(document).on('click', '.removeJadwal', function(){  
            var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
+           $('#row_jadwal_'+button_id+'').remove();  
     });
 </script>
 @endpush

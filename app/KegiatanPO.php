@@ -21,4 +21,8 @@ class KegiatanPO extends Model
         return $this->belongsto('App\Pegawai','id_pegawai');
     }
 
+    public function proposal()
+    {
+        return $this->hasOne(\App\Proposal::class, 'id_kegiatan', 'id');
+    }
 }

@@ -15,6 +15,7 @@
 <script>
     tinymce.init({
         selector: '#penutup_prop',
+        // forced_root_block : "",
         toolbar: 'undo redo | fontselect | fontsizeselect | bold italic underline forecolor backcolor| alignleft aligncenter alignright alignjustify | formatselect | bullist numlist outdent indent',
         menubar : false,
         plugins: [

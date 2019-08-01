@@ -19,16 +19,24 @@ class KegiatanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $kegiatan= Auth::guard('pegawai')->user()->nip;
-        $kegiatan= DB::table('kegiatanpo')
-                    ->join('jurbagnitpus','jurbagnitpus.id_jurbagnitpus','=','kegiatanpo.id_jurbagnitpus')
-                    ->join('pegawai','pegawai.nip','=','kegiatanpo.nip_pic')
-                    ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nip','pegawai.nama')
-                    ->where('kegiatanpo.nip_pic','=',$kegiatan)
-                    ->get(); 
-        return view('spi.kegiatan.index',compact('kegiatan'));
+        $pic = Auth::guard('pegawai')->user()->nip;
+        // $kegiatan= DB::table('kegiatanpo')
+        //             ->leftJoin('jurbagnitpus','jurbagnitpus.kode','=','kegiatanpo.id_jurbagnitpus')
+        //             ->leftJoin('pegawai','pegawai.nip','=','kegiatanpo.nip_pic')
+        //             ->leftjoin('kelompokanggaran','kelompokanggaran.kelompokanggaran','=','kegiatanpo.sumber')
+        //             ->select('kegiatanpo.*','kegiatanpo.id as id_kegiatan','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nip','pegawai.nama','kelompokanggaran.kelompokanggaran')
+        //             ->where('kegiatanpo.nip_pic','=',$pic)
+        //             ->get(); 
+        // $proposal=DB::table('proposal')
+        //             ->select('proposal.*')
+        //             ->get(); 
+        
+        $data['kegiatanpos'] = KegiatanPO::with('proposal')->where('nip_pic', $pic)->get();
+        dump($data);
+
+        return view('spi.kegiatan.index', $data);
     }
 
     /**

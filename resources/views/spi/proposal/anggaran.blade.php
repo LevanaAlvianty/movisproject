@@ -18,29 +18,28 @@
                                     </tr>
                                 </thead>
                                 <tbody class="anggaran">
-                                    
-                                    @foreach($anggaranpo as $angg)
-                                        @if($angg->id_proposal == $proposal->prop_id)
-                                        <tr id="row0">
-                                            <td width="30%" >
-                                            <select class="form-control barang" name="barang[]" id="barang" placeholder="Pilih Barang" style="width: 100%">
-                                                @foreach ($barang as $brg)
-                                                    <option value="{{ $brg->id_standartbiaya }}"
-                                                        @if($brg->id_standartbiaya == $angg->id_barang )
-                                                            selected
-                                                        @endif>  
-                                                    {{ $brg->namabarang }}</option>
-                                                @endforeach
-                                            </select>
-                                            <td width="" ><input name="jml1[]" class="form-control form-control-sm jml1" value="{{$angg->jml1}}"/></td>
-                                            <td width="" ><input name="jml2[]" class="form-control form-control-sm jml2" value="{{$angg->jml2}}"/></td>
-                                            <td width="" ><input name="jml3[]" class="form-control form-control-sm jml3" value="{{$angg->jml3}}"/></td>
-                                            <td width="" ><input id="hrg" name="hrg[]" class="form-control form-control-sm hrg" value="{{$angg->harga}}"/></td>
-                                            <td width="" ><input name="total[]" class="form-control form-control-sm total" value="{{$angg->total}}"/></td>
-                                            <td width="5%" class="text-center"><a href="#" id="0" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>
-                                        </tr>
-                                        @endif
-                                    @endforeach
+                                    @if($proposal->anggaranpos)
+                                        @foreach($proposal->anggaranpos as $angg)
+                                            <tr id="row_anggaran_{{ $angg->id }}">
+                                                <td width="30%" >
+                                                <select class="form-control barang" name="barang[]" id="barang" placeholder="Pilih Barang" style="width: 100%">
+                                                    @foreach ($barang as $brg)
+                                                        <option value="{{ $brg->id_standartbiaya }}"
+                                                            @if($brg->id_standartbiaya == $angg->id_barang )
+                                                                selected
+                                                            @endif>  
+                                                        {{ $brg->namabarang }}</option>
+                                                    @endforeach
+                                                </select>
+                                                <td width="" ><input type="number" name="jml1[]" class="form-control form-control-sm jml1" value="{{$angg->jml1}}"/></td>
+                                                <td width="" ><input type="number" name="jml2[]" class="form-control form-control-sm jml2" value="{{$angg->jml2}}"/></td>
+                                                <td width="" ><input type="number" name="jml3[]" class="form-control form-control-sm jml3" value="{{$angg->jml3}}"/></td>
+                                                <td width="" ><input type="number" id="hrg" name="hrg[]" class="form-control form-control-sm hrg" value="{{$angg->harga}}"/></td>
+                                                <td width="" ><input type="number" name="total[]" class="form-control form-control-sm total" value="{{$angg->total}}"/></td>
+                                                <td width="5%" class="text-center"><a href="#" id="{{ $angg->id }}" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>
+                                            </tr>  
+                                        @endforeach
+                                    @endif
                                 </tbody>
                                 <tfoot>
                                 <tr>
@@ -138,7 +137,7 @@ $(document).ready(function(){
     var i = 0;  
     $('#add').click(function(){ 
         i++; 
-        var tr = '<tr id="row'+i+'" class="dynamic-added">'+
+        var tr = '<tr id="row_anggaran_'+i+'" class="dynamic-added">'+
                         '<td width="30%" >'+
                         '<select class="form-control barang" name="barang[]" id="barang" placeholder="Pilih Barang" style="width: 100%">'+
                                 '@foreach ($barang as $brg)'+
@@ -147,11 +146,11 @@ $(document).ready(function(){
                         '</select>'+
                         '</td>'+
                         
-                        '<td width="" ><input name="jml1[]" class="form-control form-control-sm jml1" /></td>'+
-                        '<td width="" ><input name="jml2[]" class="form-control form-control-sm jml2" /></td>'+
-                        '<td width="" ><input name="jml3[]" class="form-control form-control-sm jml3" /></td>'+
-                        '<td width="" ><input name="hrg[]" class="form-control form-control-sm hrg" /></td>'+
-                        '<td width="" ><input name="total[]" class="form-control form-control-sm total" /></td>'+
+                        '<td width="" ><input type="number" name="jml1[]" class="form-control form-control-sm jml1" /></td>'+
+                        '<td width="" ><input type="number" name="jml2[]" class="form-control form-control-sm jml2" /></td>'+
+                        '<td width="" ><input type="number" name="jml3[]" class="form-control form-control-sm jml3" /></td>'+
+                        '<td width="" ><input type="number" name="hrg[]" class="form-control form-control-sm hrg" /></td>'+
+                        '<td width="" ><input type="number" name="total[]" class="form-control form-control-sm total" /></td>'+
                         '<td width="5%" class="text-center"><a href="#" name="remove" id="'+i+'" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>'+
                     '</tr>';
         $('.anggaran').append(tr);
@@ -172,7 +171,7 @@ $(document).ready(function(){
     //------------------------------remove row-----------------------------------
     $(document).on('click', '.remove', function(){  
            var button_id = $(this).attr("id");   
-           $('#row'+button_id+'').remove();  
+           $('#row_anggaran_'+button_id+'').remove();  
     });
 
     

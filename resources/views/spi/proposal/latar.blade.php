@@ -38,6 +38,7 @@
 <script>
     tinymce.init({
         selector: '#latarprop1',
+        // forced_root_block : "",
         toolbar: 'undo redo | fontselect | fontsizeselect | bold italic underline forecolor backcolor| alignleft aligncenter alignright alignjustify | formatselect | bullist numlist outdent indent',
         menubar : false,
         plugins: [
@@ -54,6 +55,7 @@
 
     tinymce.init({
         selector: '#latarprop2',
+        // forced_root_block : "",
         toolbar: 'undo redo | fontselect | fontsizeselect | bold italic underline forecolor backcolor| alignleft aligncenter alignright alignjustify | formatselect | bullist numlist outdent indent',
         menubar : false,
         plugins: [
@@ -70,6 +72,7 @@
 
     tinymce.init({
         selector: '#latarprop3',
+        // forced_root_block : "",
         toolbar: 'undo redo | fontselect | fontsizeselect | bold italic underline forecolor backcolor| alignleft aligncenter alignright alignjustify | formatselect | bullist numlist outdent indent',
         menubar : false,
         plugins: [
