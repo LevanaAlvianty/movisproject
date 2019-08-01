@@ -18,7 +18,7 @@ class Pegawai extends Authenticatable
     protected $primaryKey = 'id_pegawai';
 
     protected $fillable = [
-        'id_pegawai','nip', 'nama', 'password','username','jabatan','golongan','photo','email','jk'
+        'id_pegawai','nip', 'nama', 'password','username','jabatan','jurusan','golongan','photo','email','jk'
     ];
 
     protected $hidden = [
@@ -33,6 +33,10 @@ class Pegawai extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function jurbagnitpus()
+    {
+        return $this->belongsTo(\App\Kodeunit::class, 'jurusan', 'kode');
+    }
 
     public function roles() {
         return $this->belongsToMany('App\Role','pegawai_role','pegawai_id','role_id');

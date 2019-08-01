@@ -55,6 +55,11 @@
                                         <td>{{$pegawai->jabatan}}</td>
                                     </tr>
                                     <tr>
+                                        <td width="150px">Jurusan / Bagian / Unit Pusat</td>
+                                        <td width="20px"> : </td>
+                                        <td>{{$pegawai->jurbagnitpus->jurbagnitpus}} ({{$pegawai->jurbagnitpus->kode}})</td>
+                                    </tr>
+                                    <tr>
                                         <td width="150px">Email</td>
                                         <td width="20px"> : </td>
                                         <td>{{$pegawai->email}}</td>

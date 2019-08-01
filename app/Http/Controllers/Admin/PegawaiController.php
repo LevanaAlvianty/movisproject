@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Pegawai;
+use App\Kodeunit;
 use App\Role;
 use DB;
 use Hash;
@@ -24,8 +25,9 @@ class PegawaiController extends Controller
      
     public function index(Request $request)
     {
-        $pegawai=Pegawai::all();         
-        return view('admin.user.index',compact('pegawai'));
+        $pegawai=Pegawai::all();
+        $kodeunit=Kodeunit::all();          
+        return view('admin.user.index',compact('pegawai','kodeunit'));
     }
 
     /**
@@ -51,6 +53,7 @@ class PegawaiController extends Controller
             'nip' => 'required',
             'golongan' => 'required',
             'jabatan' => 'required',
+            'jurusan' => 'required',
             'username' => 'required',
             'role' => 'required',
             'password' => 'required|min:8|same:password_confirmation',
@@ -63,6 +66,7 @@ class PegawaiController extends Controller
         $pegawai->username = $request->username;
         $pegawai->golongan = $request->golongan;
         $pegawai->jabatan = $request->jabatan;
+        $pegawai->jurusan = $request->jurusan;
         $pegawai->password = bcrypt($request->password);
         $pegawai->save();
         $pegawai->roles()->attach($role_pegawai);
@@ -93,7 +97,8 @@ class PegawaiController extends Controller
     {
         $pegawai = Pegawai::find($id);
         $peran = Role::all();
-        return view('admin.user.edit',compact('pegawai','peran'));
+        $kodeunit=Kodeunit::all(); 
+        return view('admin.user.edit',compact('pegawai','peran','kodeunit'));
     }
 
     /**
@@ -110,6 +115,7 @@ class PegawaiController extends Controller
             'nip' => 'required',
             'golongan' => 'required',
             'jabatan' => 'required',
+            'jurusan' => 'required',
             'username' => 'required',
             'role' => 'required',
             'password' => 'same:password_confirmation',

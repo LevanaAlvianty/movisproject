@@ -19,6 +19,7 @@
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
+               
                     <table class="table table-hover table-bordered dt-responsive" id="tabelpic">
                         <thead class="thead-dark">
                             <tr>
@@ -35,23 +36,51 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach ($kegiatan as $k )
+                        @foreach ($kegiatanpos as $k)
                             <tr>
                                 <td>{{$k->id}}</td>
                                 <td>{{$k->nama_kegiatan}}</td> 
                                 <!-- Proposal -->
                                 <td>
-                                    <a href="{{route('proposal.index')}}" class="btn btn-sm btn-success"><i class="icon fa fa-plus"></i> Buat</a>
-                                    <a href="{{route('proposal.editproposal')}}" class="btn btn-sm btn-warning"><i class="icon fa fa-exclamation"></i> Revisi</a>
-                                </td>
-                                <td>
-                                    <span class="badge badge-pill badge-success">Submit</span>
-                                </td>
+                                    @if (empty($k->proposal))
+                                        <a href="{{route('proposal.pertama',$k->id)}}" class="btn btn-sm btn-success">
+                                            <i class="icon fa fa-plus"></i> Buat
+                                        </a>
+                                    @endif
 
-                                <!-- Laporan -->
+                                    @if ($k->proposal)
+                                        @if ($k->proposal->status == '0')
+                                            <a href="{{ route('proposal.edit', $k->proposal->id) }}" class="btn btn-sm btn-success">
+                                                <i class="icon fa fa-plus"></i> Ubah
+                                            </a>
+                                        @endif
+
+                                        @if ($k->proposal->status == 2)
+                                            <a href="{{route('proposal.editproposal')}}" class="btn btn-sm btn-warning">
+                                                <i class="icon fa fa-exclamation"></i> Revisi
+                                            </a>
+                                        @endif
+                                    @endif
+
+                                    <a href="{{route('proposal.viewpdf',$k->id)}}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> PDF</a>
+                                </td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-success"><i class="icon fa fa-plus"></i> Buat</a>
+                                    @if (empty($k->proposal))
+                                        <span class="badge badge-pill badge-warning">Belum Dibuat</span>
+                                    @elseif($k->proposal->status == '0')
+                                        <span class="badge badge-pill badge-warning">Belum Submit</span>
+                                    @elseif($k->proposal->status == '1')
+                                        <span class="badge badge-pill badge-info">Submit</span>
+                                    @elseif($k->proposal->status == '2')
+                                        <span class="badge badge-pill badge-danger">Revisi</span>
+                                    @else
+                                        <span class="badge badge-pill badge-success">Disetujui</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="{{route('laporan.buatlaporan',$k->id)}}" class="btn btn-sm btn-success"><i class="icon fa fa-plus"></i> Buat</a>
                                     <a href="" class="btn btn-sm btn-warning"><i class="icon fa fa-exclamation"></i> Revisi</a>
+                                    <a href="{{route('proposal.viewlaporanpdf',$k->id)}}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> </a>
                                 </td>
                                 <td>
                                     <span class="badge badge-pill badge-danger">Revisi</span>

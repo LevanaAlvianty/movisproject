@@ -75,6 +75,19 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Jurusan / Bagian / Unit Pusat</label>
+                            <div class="col-sm-10">
+                                <select class="custom-select" id="jurusan" name="jurusan" placeholder="Jurusan/Bagian/Unit Pusat"> 
+                                    @foreach ($kodeunit as $jurusan)
+                                        <option 
+                                            value="{{ $jurusan->kode }}" 
+                                            {{ ($jurusan->kode == $pegawai->jurusan) ? 'selected' : ''}}>{{ $jurusan->jurbagnitpus }} ({{ $jurusan->kode }})
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label class="col-sm-2">Password</label>
                             <div class="col-sm-10">
                                 <input type="password" class="form-control" name="password">
@@ -121,6 +134,21 @@
 @push('js')
 <script>
 $('.alert').delay(3000).slideUp(300);
+
+$(document).ready(function() {
+    $("#jurusan").select2({
+        width: '100%',
+        placeholder: 'Pilih PIC',
+        allowClear: true,
+        minimumInputLength: 1,
+        selectOnClose: false,
+        theme: "bootstrap",
+    });
+    
+    $(window).resize(function() {
+        $('#jurusan').css('width', "100%");
+    });
+});
 </script>
 @endpush()
                 

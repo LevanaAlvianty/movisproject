@@ -52,6 +52,7 @@
                                     <table class="table table-bordered table-striped dt-responsive " id="tabeluser">
                                         <thead class="thead-dark">
                                             <tr>
+                                                <th class="text-center">No</th>
                                                 <th class="text-center">Nama</th>
                                                 <th class="text-center">NIP</th>
                                                 <th class="text-center">Role</th>
@@ -61,6 +62,7 @@
                                         <tbody>
                                             @foreach ($pegawai as $p )
                                             <tr>
+                                                <td>{{$loop->iteration}}</td>
                                                 <td>{{$p->nama}}</td>
                                                 <td class="text-center">{{$p->nip}}</td> 
                                                 <td>
@@ -115,6 +117,17 @@
                                                 <label class="col-sm-2">Jabatan</label>
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-control" name="jabatan" placeholder="Jabatan">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2">Jurusan/Bagian/Unit Pusat</label>
+                                                <div class="col-sm-6">
+                                                    <select class="custom-select" id="jurusan" name="jurusan" placeholder="Jurusan/Bagian/Unit Pusat"> 
+                                                        <option class="active">Pilih Salah Satu...</option>
+                                                            @foreach ($kodeunit as $k)
+                                                                <option value="{{ $k->kode }}">{{ $k->jurbagnitpus }} ({{ $k->kode }})</option>
+                                                            @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -196,6 +209,19 @@
 @endsection
 
 @push('js')
+<script>
+$(document).ready(function() {
+    $("#jurusan").select2({
+        width: '100%',
+        placeholder: 'Pilih Kode Unit Jurusan',
+        allowClear: true,
+        theme: "bootstrap",
+    });
+    $(window).resize(function() {
+        $('#jurusan').css('width', "100%");
+    });
+});
+</script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#tabeluser').DataTable({
