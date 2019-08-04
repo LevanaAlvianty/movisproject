@@ -71,7 +71,14 @@
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true
+            "responsive":true,
+            "language": {
+                "lengthMenu": "Menampilkan _MENU_ kegiatan",
+                "zeroRecords": "Tidak Ditemukan - maaf",
+                "info":"Menampilkan _START_ sampai _END_ dari _TOTAL_ kegiatan",
+                "infoEmpty":"Menampilkan 0 sampai 0 dari 0 kegiatan",
+                "search":"Cari :",
+            }
         });
     });
 </script>

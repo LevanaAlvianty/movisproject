@@ -217,7 +217,14 @@
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true
+            "responsive":true,
+            "language": {
+                "lengthMenu": "Menampilkan _MENU_ data",
+                "zeroRecords": "Tidak Ditemukan - maaf",
+                "info":"Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                "infoEmpty":"Menampilkan 0 sampai 0 dari 0 data",
+                "search":"Cari :",
+            }
         });
     });
 

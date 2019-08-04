@@ -19,7 +19,7 @@
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-               
+                
                     <table class="table table-hover table-bordered dt-responsive" id="tabelpic">
                         <thead class="thead-dark">
                             <tr>
@@ -38,44 +38,70 @@
                         <tbody>
                         @foreach ($kegiatanpos as $k)
                             <tr>
-                                <td>{{$k->id}}</td>
+                                <td class="text-center">{{$loop->iteration}}</td>
                                 <td>{{$k->nama_kegiatan}}</td> 
                                 <!-- Proposal -->
-                                <td>
+                                <td class="text-center">
                                     @if (empty($k->proposal))
                                         <a href="{{route('proposal.pertama',$k->id)}}" class="btn btn-sm btn-success">
                                             <i class="icon fa fa-plus"></i> Buat
                                         </a>
                                     @endif
 
-                                    @if ($k->proposal)
-                                        @if ($k->proposal->status == '0')
+                                    @if ($proposal = $k->proposal)
+                                        @if ($proposal->getStatusIsNotSubmitted())
                                             <a href="{{ route('proposal.edit', $k->proposal->id) }}" class="btn btn-sm btn-success">
                                                 <i class="icon fa fa-plus"></i> Ubah
                                             </a>
-                                        @endif
-
-                                        @if ($k->proposal->status == 2)
-                                            <a href="{{route('proposal.editproposal')}}" class="btn btn-sm btn-warning">
+                                          
+                                        @elseif ($proposal->getStatusRevisi())
+                                            <a href="{{ route('proposal.edit', $k->proposal->id) }}" class="btn btn-sm btn-warning">
                                                 <i class="icon fa fa-exclamation"></i> Revisi
+                                            </a>
+
+                                        @elseif($proposal->getStatusDisetujui())
+                                            <a href="{{route('proposal.viewpdf',$k->id)}}" class="btn btn-sm btn-warning">
+                                                <i class="icon fa fa-eye"></i> PDF
                                             </a>
                                         @endif
                                     @endif
-
-                                    <a href="{{route('proposal.viewpdf',$k->id)}}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> PDF</a>
                                 </td>
                                 <td>
                                     @if (empty($k->proposal))
                                         <span class="badge badge-pill badge-warning">Belum Dibuat</span>
-                                    @elseif($k->proposal->status == '0')
-                                        <span class="badge badge-pill badge-warning">Belum Submit</span>
-                                    @elseif($k->proposal->status == '1')
-                                        <span class="badge badge-pill badge-info">Submit</span>
-                                    @elseif($k->proposal->status == '2')
-                                        <span class="badge badge-pill badge-danger">Revisi</span>
-                                    @else
-                                        <span class="badge badge-pill badge-success">Disetujui</span>
+                                    @endif 
+                                    @if ($proposal = $k->proposal)
+                                        @if ($proposal->status == '0')
+                                            <span class="badge badge-pill badge-warning">Belum Submit</span>
+                                        @elseif ($proposal->getStatusIsSubmitted())
+                                            <span class="badge badge-pill badge-success">Sudah Disubmit</span>
+                                        @elseif ($proposal->getStatusRevisi())
+                                            <span class="badge badge-pill badge-danger">Revisi</span>
+                                        @endif
+
+                                        @if (empty($proposal->review))
+                                            <span class="badge badge-pill badge-info">Menunggu Review</span>
+                                        @elseif ($review = $proposal->review)
+                                            
+                                        @if ($review->status_proposal == '0')
+                                                <span class="badge badge-pill badge-info">Menunggu Proposal Review</span>   
+                                            @elseif ($review->status_proposal == '1')
+                                                <span class="badge badge-pill badge-success">Proposal Disetujui</span>
+                                            @elseif ($review->status_proposal == '2')
+                                                <span class="badge badge-pill badge-danger">Proposal tidak disetujui</span>
+                                            @endif
+
+                                            @if ($review->status_anggaran == '0')
+                                                <span class="badge badge-pill badge-info">Menunggu Anggaran Review</span>   
+                                            @elseif ($review->status_anggaran == '1')
+                                                <span class="badge badge-pill badge-success">Anggaran Disetujui</span>
+                                            @elseif ($review->status_anggaran == '2')
+                                                <span class="badge badge-pill badge-danger">Anggaran tidak disetujui</span>
+                                            @endif
+                                            
+                                        @endif 
                                     @endif
+                             
                                 </td>
                                 <td>
                                     <a href="{{route('laporan.buatlaporan',$k->id)}}" class="btn btn-sm btn-success"><i class="icon fa fa-plus"></i> Buat</a>
@@ -102,11 +128,18 @@
         $('#tabelpic').DataTable({
             "paging"    : true,
             "ordering"  : true,
-            "info"      : false,
-            "searching" : false,
+            "info"      : true,
+            "searching" : true,
             "autoWidth" : false,
             'LengthChange' : false,
-            "responsive": true
+            "responsive": true,
+            "language": {
+                "lengthMenu": "Menampilkan _MENU_ kegiatan",
+                "zeroRecords": "Tidak Ditemukan - maaf",
+                "info":"Menampilkan _START_ sampai _END_ dari _TOTAL_ kegiatan",
+                "infoEmpty":"Menampilkan 0 sampai 0 dari 0 kegiatan",
+                "search":"Cari :",
+            }
         });
     });
 </script>
