@@ -4,7 +4,7 @@
 <div class="form-group row">
     <div class="col-sm-12 mb-4">
         <p style="text-align:justify">Uraikan rangkuman pelaksanaan kegiatan, luaran, hasil, indikator kinerja, dan ... kegiatan.</p>
-            <textarea class="form-control mx-auto mb-2" id="kesimpulan" rows="3" placeholder="" value=""></textarea>  
+            <textarea class="form-control mx-auto mb-2" id="kesimpulan" name="kesimpulan" rows="3">{{$laporan->kesimpulan}}</textarea>  
     </div>
 </div>
 
@@ -12,7 +12,7 @@
 <div class="form-group row">
     <div class="col-sm-12 mb-4">
         <p style="text-align:justify">Uraikan rekomendasi dari kegiatan ini khususnya dalam hal keberlanjutan kegiatan.</p>
-            <textarea class="form-control mx-auto mb-2" id="rekomendasi" rows="3" placeholder="" value=""></textarea>  
+            <textarea class="form-control mx-auto mb-2" id="rekomendasi" name="rekomendasi" rows="3">{{$laporan->rekomendasi}}</textarea>  
     </div>
 </div>
                    

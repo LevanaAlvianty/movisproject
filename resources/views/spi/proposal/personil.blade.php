@@ -12,10 +12,10 @@
             </thead>
             <tbody id="panitia-dalam" class="panitia-dalam">
                 @if ($proposal->panitiadalampos)
-                    @foreach ($proposal->panitiadalampos as $panitiadalam)
-                        <tr id="row_panitiadalam_{{ $panitiadalam->id }}">
+                    @foreach ($proposal->panitiadalampos as $i => $panitiadalam)
+                        <tr id="row_panitiadalam_{{ $i }}" class="panitiadalam-tr">
                             <td width="35%">
-                                <select class="form-control nama_panitiadlm"  name="nama_panitiadlm[]" id="nama_panitiadlm" placeholder="Pilih Panitia" style="width: 100%">
+                                <select class="form-control nama_panitiadlm"  name="nama_panitiadlm[{{ $i }}]" id="nama_panitiadlm" placeholder="Pilih Panitia" style="width: 100%">
                                     @foreach ($pegawai as $pgw)
                                         <option value="{{ $pgw->id_pegawai }}"
                                             @if($pgw->id_pegawai == $panitiadalam->id_panitiadalam)
@@ -24,9 +24,9 @@
                                         {{ $pgw->nama }}</option>
                                     @endforeach
                                 </select>
-                            <td width="35%"><input name="nip_panitiadlm[]" class="form-control nip_panitiadlm"  value="{{$panitiadalam->nip}}"/></td>
-                            <td width="25%"><input name="peran_panitiadlm[]" class="form-control"  value="{{$panitiadalam->peran}}"/></td>
-                            <td width="5%" class="text-center"><a href="#" id="{{ $panitiadalam->id }}" class="btn btn-danger btn-sm removePanitiadlm"><i class="fa fa-lg fa-times"></i></a></td>
+                            <td width="35%"><input name="nip_panitiadlm[{{ $i }}]" class="form-control nip_panitiadlm"  value="{{$panitiadalam->nip}}"/></td>
+                            <td width="25%"><input name="peran_panitiadlm[{{ $i }}]" class="form-control"  value="{{$panitiadalam->peran}}"/></td>
+                            <td width="5%" class="text-center"><a href="#" id="{{ $i}}" class="btn btn-danger btn-sm removePanitiadlm"><i class="fa fa-lg fa-times"></i></a></td>
                         </tr>
                     @endforeach
                 @endif
@@ -41,7 +41,10 @@
     </div>
     <hr>
                         
-<br><p>Apabila ada pelibatan dengan personil dari luar Polines, maka <b>wajib</b> mencantumkan datanya pada tabel berikut :</p>
+<br><p style="font-weight:bold"> * Apabila ada pelibatan dengan personil dari luar Polines, maka <b>wajib</b> 
+        mencantumkan datanya pada tabel berikut : 
+        <br><span style="color:red">** Jika mencantumkan data personil dari luar Polines, wajib melampirkan CV</span>
+    </p>
     <div class="table-responsive">
         <table class="table table-striped table-hover">
             <thead class="thead-dark">
@@ -55,13 +58,17 @@
             </thead>
             <tbody id="panitia-luar" class="panitia-luar">
                 @if($proposal->panitialuarpos)
-                    @foreach($proposal->panitialuarpos as $panitialuar)
-                        <tr id="row_panitialuar_{{ $panitialuar->id }}">
-                            <td width="30%"><input name="nama_panitialuar[]" class="form-control form-control-sm" value="{{$panitialuar->nama}}"/></td>
-                            <td width="25%"><input name="nip_panitialuar[]" class="form-control form-control-sm" value="{{$panitialuar->nip}}"/></td>
-                            <td width="15%"><input name="npwp_panitialuar[]" class="form-control form-control-sm" value="{{$panitialuar->npwp}}"/></td>
-                            <td width="10%"><input type="file" name="cv_panitialuar[]"  class="btn btn-small btn-default"  value="{{$panitialuar->cv}}"></td>
-                            <td width="5%" class="text-center"><a href="#" id="{{ $panitialuar->id }}" class="btn btn-danger btn-sm removePanitialuar"><i class="fa fa-lg fa-times"></i></a></td>
+                    @foreach($proposal->panitialuarpos as $i => $panitialuar)
+                        <tr id="row_panitialuar_{{ $i }}" class="panitialuar-tr">
+                            <td width="30%"><input name="nama_panitialuar[{{ $i }}]" class="form-control form-control-sm" value="{{$panitialuar->nama}}"/></td>
+                            <td width="25%"><input name="nip_panitialuar[{{ $i }}]" class="form-control form-control-sm" value="{{$panitialuar->nip}}"/></td>
+                            <td width="15%"><input name="npwp_panitialuar[{{ $i }}]" class="form-control form-control-sm" value="{{$panitialuar->npwp}}"/></td>
+                            <td width="10%">
+                                <input name="cv_panitialuar_hidden[{{ $i }}]" type="hidden" value="{{ $panitialuar->cv }}" />
+                                <label>{{ $panitialuar->cv }}</label><br>
+                                <input class="btn btn-small btn-default" name="cv_panitialuar[{{ $i }}]" type="file" />
+                            </td>
+                            <td width="5%" class="text-center"><a href="#" id="{{ $i }}" class="btn btn-danger btn-sm removePanitialuar"><i class="fa fa-lg fa-times"></i></a></td>
                         </tr>
                     @endforeach
                 @endif
@@ -91,10 +98,10 @@
             </thead>
             <tbody id="peserta" class="peserta">
                 @if($proposal->pesertaPos)
-                    @foreach($proposal->pesertaPos as $peserta)
-                        <tr id="row_peserta_{{ $peserta->id }}">
+                    @foreach($proposal->pesertaPos as $i => $peserta)
+                        <tr id="row_peserta_{{ $i }}" class="peserta-tr">
                             <td width="30%">
-                                <select class="form-control nama_peserta"  name="nama_peserta[]" id="nama_peserta" placeholder="Pilih Panitia" style="width: 100%">
+                                <select class="form-control nama_peserta"  name="nama_peserta[{{ $i }}]" id="nama_peserta" placeholder="Pilih Panitia" style="width: 100%">
                                     @foreach ($pegawai as $karyawan)
                                         <option value="{{ $karyawan->id_pegawai }}"
                                             @if($karyawan->id_pegawai == $peserta->id_peserta)
@@ -104,12 +111,12 @@
                                     @endforeach
                                 </select>
                             </td>
-                            <td width="25%"><input name="nip_peserta[]" class="form-control nip_peserta" value="{{$peserta->nip}}"/></td>
-                            <td width="15%"><input name="peran_peserta[]" class="form-control" value="{{$peserta->peran}}"/></td>
-                            <td width="10%"><input name="gol_peserta[]" class="form-control gol_peserta" value="{{$peserta->golongan}}"/></td>
-                            <td width="15%"><input name="jab_peserta[]" class="form-control jab_peserta" value="{{$peserta->jabatan}}"/></td>
-                            <td width="5%" class="text-center"><a href="#" id="{{ $peserta->id }}" class="btn btn-danger btn-sm removePeserta"><i class="fa fa-lg fa-times"></i></a></td>
-                        </tr>a
+                            <td width="25%"><input name="nip_peserta[{{ $i }}]" class="form-control nip_peserta" value="{{$peserta->nip}}"/></td>
+                            <td width="15%"><input name="peran_peserta[{{ $i }}]" class="form-control" value="{{$peserta->peran}}"/></td>
+                            <td width="10%"><input name="gol_peserta[{{ $i }}]" class="form-control gol_peserta" value="{{$peserta->golongan}}"/></td>
+                            <td width="15%"><input name="jab_peserta[{{ $i }}]" class="form-control jab_peserta" value="{{$peserta->jabatan}}"/></td>
+                            <td width="5%" class="text-center"><a href="#" id="{{ $i }}" class="btn btn-danger btn-sm removePeserta"><i class="fa fa-lg fa-times"></i></a></td>
+                        </tr>
                     @endforeach
                 @endif
             </tbody>
@@ -126,19 +133,18 @@
 <script> 
 //Panitia Dalam
     //add row
-    var i = 0; 
-    $('#addPanitiadlm').click(function(){ 
-        i++; 
-        var tr ='<tr id="row_panitiadalam_'+i+'" class="dynamic-added">'+
+    var panitiadalam_i = $('tr.panitiadalam-tr').length; 
+    $('#addPanitiadlm').click(function(){
+        var tr ='<tr id="row_panitiadalam_'+panitiadalam_i+'" class="dynamic-added panitiadalam-tr">'+
                 '<td width="35%">'+
-                    '<select class="form-control nama_panitiadlm"  name="nama_panitiadlm[]" id="nama_panitiadlm" placeholder="Pilih Panitia" style="width: 100%">'+
+                    '<select class="form-control nama_panitiadlm"  name="nama_panitiadlm['+panitiadalam_i+']" id="nama_panitiadlm" placeholder="Pilih Panitia" style="width: 100%">'+
                         '@foreach ($pegawai as $pgw)'+
                             '<option value="{{ $pgw->id_pegawai }}">{{ $pgw->nama }}</option>'+
                         '@endforeach'+
                     '</select>'+
-                '<td width="35%"><input name="nip_panitiadlm[]" class="form-control nip_panitiadlm" /></td>'+
-                '<td width="25%"><input name="peran_panitiadlm[]" class="form-control" /></td>'+
-                '<td width="5%" class="text-center"><a href="#" name="removePanitiadlm" id="'+i+'" class="btn btn-danger btn-sm removePanitiadlm"><i class="fa fa-lg fa-times"></i></a></td>'+
+                '<td width="35%"><input name="nip_panitiadlm['+panitiadalam_i+']" class="form-control nip_panitiadlm" /></td>'+
+                '<td width="25%"><input name="peran_panitiadlm['+panitiadalam_i+']" class="form-control" /></td>'+
+                '<td width="5%" class="text-center"><a href="#" name="removePanitiadlm" id="'+panitiadalam_i+'" class="btn btn-danger btn-sm removePanitiadlm"><i class="fa fa-lg fa-times"></i></a></td>'+
                 '</tr>'
         $('.panitia-dalam').append(tr);
 
@@ -153,6 +159,7 @@
             $('.nama_panitiadlm').css('width', "100%");
         });
         // End Select2
+        panitiadalam_i++; 
     }); 
     //end add row 
 
@@ -200,25 +207,24 @@
 <script> 
 //Peserta
     //add row
-    var i = 0;
+    var peserta_i = $('tr.peserta-tr').length; 
     $('#addPeserta').click(function(){ 
-        i++; 
-        var tr ='<tr id="row_peserta_'+i+'" class="dynamic-added">'+
+        var tr ='<tr id="row_peserta_'+peserta_i+'" class="dynamic-added peserta-tr">'+
                 '<td width="30%">'+
-                    '<select class="form-control nama_peserta"  name="nama_peserta[]" id="nama_peserta" placeholder="Pilih Panitia" style="width: 100%">'+
+                    '<select class="form-control nama_peserta"  name="nama_peserta['+peserta_i+']" id="nama_peserta" placeholder="Pilih Panitia" style="width: 100%">'+
                         '@foreach ($pegawai as $karyawan)'+
                             '<option value="{{ $karyawan->id_pegawai }}">{{ $karyawan->nama }}</option>'+
                         '@endforeach'+
                     '</select>'+
                 '</td>'+
-                '<td width="25%"><input name="nip_peserta[]" class="form-control nip_peserta" /></td>'+
-                '<td width="15%"><input name="peran_peserta[]" class="form-control" /></td>'+
-                '<td width="10%"><input name="gol_peserta[]" class="form-control gol_peserta" /></td>'+
-                '<td width="15%"><input name="jab_peserta[]" class="form-control jab_peserta" /></td>'+
-                '<td width="5%" class="text-center"><a href="#" name="removePeserta" id="'+i+'" class="btn btn-danger btn-sm removePeserta"><i class="fa fa-lg fa-times"></i></a></td>'+
+                '<td width="25%"><input name="nip_peserta['+peserta_i+']" class="form-control nip_peserta" /></td>'+
+                '<td width="15%"><input name="peran_peserta['+peserta_i+']" class="form-control" /></td>'+
+                '<td width="10%"><input name="gol_peserta['+peserta_i+']" class="form-control gol_peserta" /></td>'+
+                '<td width="15%"><input name="jab_peserta['+peserta_i+']" class="form-control jab_peserta" /></td>'+
+                '<td width="5%" class="text-center"><a href="#" name="removePeserta" id="'+peserta_i+'" class="btn btn-danger btn-sm removePeserta"><i class="fa fa-lg fa-times"></i></a></td>'+
                 '</tr>'
         $('.peserta').append(tr);
-
+         
         // Inisialisasi Select2
         $(".nama_peserta").select2({
             width: 'resolve',
@@ -230,6 +236,7 @@
             $('.nama_peserta').css('width', "100%");
         });
         // End Select2
+        peserta_i++;
     }); 
     //end add row 
 
@@ -279,17 +286,20 @@
 <script> 
 //Panitia-Luar
     //add row
-    var i = 0; 
+    var panitialuar_i = $('tr.panitialuar-tr').length; 
     $('#addPanitialuar').click(function(){  
-        i++; 
-        var tr ='<tr id="row_panitialuar_'+i+'" class="dynamic-added">'+
-                '<td width="30%"><input name="nama_panitialuar[]" class="form-control form-control-sm" /></td>'+
-                '<td width="25%"><input name="nip_panitialuar[]" class="form-control form-control-sm" /></td>'+
-                '<td width="15%"><input name="npwp_panitialuar[]" class="form-control form-control-sm" /></td>'+
-                '<td width="10%"><input type="file" name="cv_panitialuar[]"  class="btn btn-small btn-default" ></td>'+
-                '<td width="5%" class="text-center"><a href="#" name="removePanitialuar" id="'+i+'" class="btn btn-danger btn-sm removePanitialuar"><i class="fa fa-lg fa-times"></i></a></td>'+
+        var tr ='<tr id="row_panitialuar_'+panitialuar_i+'" class="dynamic-added panitialuar-tr">'+
+                '<td width="30%"><input name="nama_panitialuar['+panitialuar_i+']" class="form-control form-control-sm" /></td>'+
+                '<td width="25%"><input name="nip_panitialuar['+panitialuar_i+']" class="form-control form-control-sm" /></td>'+
+                '<td width="15%"><input name="npwp_panitialuar['+panitialuar_i+']" class="form-control form-control-sm" /></td>'+
+                '<td width="10%">'+
+                    '<input name="cv_panitialuar_hidden[' + panitialuar_i + ']" type="hidden" value="" />'+
+                    '<input type="file" name="cv_panitialuar['+panitialuar_i+']"  class="btn btn-small btn-default" >'+
+                '</td>'+
+                '<td width="5%" class="text-center"><a href="#" name="removePanitialuar" id="'+panitialuar_i+'" class="btn btn-danger btn-sm removePanitialuar"><i class="fa fa-lg fa-times"></i></a></td>'+
                 '</tr>'
         $('.panitia-luar').append(tr);
+        panitialuar_i++;
     }); 
     //End add row 
 

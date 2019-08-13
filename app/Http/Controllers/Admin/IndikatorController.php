@@ -51,10 +51,11 @@ class IndikatorController extends Controller
         $indikator->id_dirprogutama = $request->id_dirprogutama;
         $indikator->tahun_penetapan = $request->tahun_penetapan;
         $indikator->status = $request->status;
+        $indikator->keterangan = $request->keterangan;
         $indikator->save();
 
         return redirect()->route('indikator.index')
-                    ->with('success','Data created successfully');
+                    ->with('success','Data Berhasil Dibuat!');
     }
 
     /**
@@ -99,7 +100,7 @@ class IndikatorController extends Controller
 
         $input = request()->except(['_token','_method']);
         $indikator = Indikator::where('id_dirkegiatan',$id)->update($input);
-        return redirect()->route('indikator.index')->with("success","Data Updated Successfully!");
+        return redirect()->route('indikator.index')->with("success","Data Berhasil Diperbarui!");
     }
 
     /**
@@ -112,6 +113,6 @@ class IndikatorController extends Controller
     {
         $indikator = DB::table('dirkegiatan')->where('id_dirkegiatan',$request->kegiatan_id);
         $indikator->delete();
-        return redirect()->route('indikator.index')->with("success","Data Deleted Successfully!");
+        return redirect()->route('indikator.index')->with("success","Data Berhasil Dihapus!");
     }
 }

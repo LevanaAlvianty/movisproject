@@ -240,7 +240,7 @@
                     <td width="3%"></td>
                     <td width="30%">b. Dampak yang timbul</td>
                     <td width="1%"> : </td>
-                    <td width="66%"><textarea>{{$laporan->proposal->dampak}}</textarea></td>
+                    <td width="66%" style="text-align:justify;">{{$laporan->proposal->dampak}}</td>
                 </tr>
         </table>
         <table>
@@ -329,6 +329,7 @@
     <!-- Kata Pengantar -->
     <div class="page-break">
         <p style="font-weight:bold;text-align:center">KATA PENGANTAR</p>
+        <p>{!! $laporan->katapengantar !!}</p>
         <table>
             <tr>
                 <td width="33,3%"></td>
@@ -396,11 +397,31 @@
     <!-- Daftar Lampiran -->
     <div class="page-break">
         <p style="font-weight:bold;text-align:center">DAFTAR LAMPIRAN</p>
-        <ull>
-            <li>Lampiran 1 : ..................</li>
-            <li>Lampiran 2 : ..................</li>
-            <li>Lampiran 3 : ..................</li>
-            <!-- foreach nama lampiran -->
+        <ul>
+            <!-- Lampiran 1 -->
+            @if($laporan->foto_laporan)
+                <li class="text-center">Lampiran 1 : Foto-foto Pelaksanaan Kegiatan</li>
+            @endif
+
+            <!-- Lampiran 2 -->
+            @if($laporan->surat_laporan)
+                <li class="text-center">Lamliiran 2 : Surat Kegiatan</li>
+            @endif
+
+            <!-- Lampiran 3 -->
+            @if($laporan->materi_laporan)
+                <li class="text-center">Lampiran 3 : Materi Kegiatan</li>
+            @endif
+
+            <!-- Lampiran 4 -->
+            @if($laporan->luaran_laporan)
+                <li class="text-center">Lampiran 4 : Luaran Kegiatan</li>
+            @endif
+
+            <!-- Lampiran 5 -->
+            @if($laporan->berita_laporan)
+                <li class="text-center">Lampiran 5 : Berita Acara<li>
+            @endif
         </ul>
     </div>
     <!-- End Daftar Lampiran -->
@@ -410,13 +431,13 @@
         <div class="page-break">
             <p style="font-weight:bold;text-align:center">BAB 1. PENDAHULUAN</p>
                 <p style="font-weight:bold;">1.1 Latar Belakang</p>
-                    <p>{{ strip_tags($laporan->proposal->latarbelakang1) }}</p>
-                    <p>{{ strip_tags($laporan->proposal->latarbelakang2) }}</p>
-                    <p>{{ strip_tags($laporan->proposal->latarbelakang3) }}</p>
+                    <p>{!! ($laporan->proposal->latarbelakang1) !!}</p>
+                    <p>{!! ($laporan->proposal->latarbelakang2) !!}</p>
+                    <p>{!! ($laporan->proposal->latarbelakang3) !!}</p>
 
                 <p style="font-weight:bold;">1.2 Maksud dan Tujuan</p>
-                    Tujuan kegiatan {{$laporan->proposal->judul}} adalah :
-                    <textarea style="text-align:justify;line-height:1.5em;">{{ strip_tags($laporan->proposal->tujuan_prop) }}</textarea>
+                    <label>Tujuan kegiatan {{$laporan->proposal->judul}} adalah :</label>
+                    <p>{!! ($laporan->proposal->tujuan_prop) !!}</p>
         </div>
         <!-- End Pendahuluan -->
 
@@ -424,12 +445,14 @@
          <div class="page-break">
             <p style="font-weight:bold;text-align:center">BAB 2. PELAKSANAAN KEGIATAN</p>
                 <p style="font-weight:bold;">2.1 Mekanisme Pelaksanaan Kegiatan</p>
-                    <textarea style="text-align:justify;line-height:1.5em;">{{ strip_tags($laporan->proposal->mekanisme_prop) }}</textarea>
+                    <p>{!! $laporan->mekanisme_laporan !!}</p>
                 
                 <p style="font-weight:bold;">2.2 Pelaksanaan Kegiatan</p>
+                    <p>{!! $laporan->pelaksanaan !!}</p>
+
                 <p style="font-weight:bold;">2.3 Pemanfaatan Sumber Daya</p>
-                    <p>Overview</p>
-                    <p>Pembagian peran SDM dalam kegiatan ini diatur pada Tabel 1:</p>
+                    <p>{!! $laporan->overview_sumberdaya !!}</p>
+
                     <p style="text-align:center;">Tabel 1. Susunan Panitia</p>
                     <table class="tabelview">
                         <thead>
@@ -490,10 +513,10 @@
                         <tbody>
                     </table>
                     @endif
-
-                    penjelasan tugas dan peran
-
-                    overview tabel peserta
+                    
+                    <p>{!! $laporan->peran_panitia !!}</p>
+                
+                    <p>{!! $laporan->overview_peserta !!}</p>
 
                     <p style="text-align:center;">Tabel 2. Daftar Peserta</p>
                         <table class="tabelview">
@@ -511,7 +534,9 @@
                             <tbody>
                         </table>
 
-                    overview tabel anggaraan
+                    @if($laporan->alasan_peserta)
+                    <p>{{$laporan->alasan_peserta}}</p>
+                    @endif
 
                     <p style="text-align:center;">Tabel 3. Biaya yang Digunakan</p>
                         <table class="tabelview">
@@ -541,6 +566,11 @@
                                     <td class="tabelview" width="12%" style="text-align:right;padding:3px;">{{$anggaran->total}}</td>   
                                 </tr>
                             @endforeach
+                                <tr>
+                                    <td colspan="5"></td>
+                                    <td style="text-align:center;border-left:1px solid black;">Rp</td>
+                                    <td style="text-align:right;padding:3px;">{{ $laporan->proposal->getAnggaranTotal() }}</td>
+                                </tr>
                             <tbody>
                         </table>
 
@@ -551,7 +581,35 @@
         <div class="page-break">
             <p style="font-weight:bold;text-align:center">BAB 3. LUARAN YANG DICAPAI</p>
                 <p style="font-weight:bold;">3.1 Luaran Kegiatan (Output)</p>
+                    <p>{!! $laporan->luaran_kegiatan !!}</p>
                 <p style="font-weight:bold;">3.2 Indikator Kinerja</p>
+                    <p>{!! $laporan->overview_indikator !!}</p>
+                    
+                    <table class="tabelview">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="tabelview" style="text-align:center">No</th>
+                                <th class="tabelview" style="text-align:center">Indikator</th>
+                                <th class="tabelview" style="text-align:center">Base Line</th>
+                                <th class="tabelview" style="text-align:center">Target</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody id="indikator" class="indikator">
+                        @if($laporan->indikatorpos)
+                            @foreach($laporan->indikatorpos as $indikator)
+                                <tr>
+                                    <td class="tabelview" style="text-align:center">{{$loop->iteration}}</td>
+                                    <td class="tabelview" style="padding:3px">{{$indikator->indikator}}</td>
+                                    <td class="tabelview" style="padding:3px">{{$indikator->baseline}}</td>
+                                    <td class="tabelview" style="padding:3px">{{$indikator->target}}</td>
+                                </tr>
+                            @endforeach
+                        @endif
+                        </tbody>
+                    </table>
+                    
+                <p>{!!$laporan->rincian_indikator1!!}</p>
         </div>
         <!-- End Luaran yang Dicapai -->
 
@@ -559,7 +617,9 @@
         <div class="page-break">
             <p style="font-weight:bold;text-align:center">BAB 4. PERMASALAHAN YANG DIHADAPI DAN PEMECAHANNYA</p>
                 <p style="font-weight:bold;">4.1 Permasalahan yang Dihadapi</p>
+                    <p>{!! $laporan->permasalahan !!}</p>
                 <p style="font-weight:bold;">4.2 Pemecahan yang Dilakukan</p>
+                    <p>{!! $laporan->pemecahan!!}</p>
         </div>
         <!-- End Permasalahan -->
 
@@ -567,15 +627,17 @@
         <div class="page-break">
             <p style="font-weight:bold;text-align:center">BAB 5. PENUTUP</p>
                 <p style="font-weight:bold;">5.1 Kesimpulan</p>
+                    <p>{!! $laporan->kesimpulan !!}</p>
                 <p style="font-weight:bold;">5.2 Rekomendasi</p>
+                    <p>{!! $laporan->rekomendasi !!}</p>
             
             <div>
                 <table>
                     <tr>
                         <td width="33,3%"></td>
                         <td width="33,3%"></td>
-                        <td width="33,3%">Semarang, {{ Carbon\Carbon::parse($laporan->proposal->tgltulis)->formatLocalized('%d %B %Y')}}</td>
-                    </tr>ganti tanggal penulisan laporan
+                        <td width="33,3%">Semarang, {{ Carbon\Carbon::parse($laporan->tgltulis)->formatLocalized('%d %B %Y')}}</td>
+                    </tr>
                     <tr>
                         <td width="33,3%"></td>
                         <td width="33,3%"></td>
@@ -604,6 +666,31 @@
         <!-- Lampiran -->
         <div>
             <p style="font-weight:bold;text-align:center">LAMPIRAN</p>
+            
+             <!-- Lampiran 1 -->
+            @if($laporan->foto_laporan)
+                <p class="text-center">Lampiran 1 : Foto-foto Pelaksanaan Kegiatan</p>
+            @endif
+
+            <!-- Lampiran 2 -->
+            @if($laporan->surat_laporan)
+                <p class="text-center">Lampiran 2 : Surat Kegiatan</p>
+            @endif
+
+            <!-- Lampiran 3 -->
+            @if($laporan->materi_laporan)
+                <p class="text-center">Lampiran 3 : Materi Kegiatan</p>
+            @endif
+
+            <!-- Lampiran 4 -->
+            @if($laporan->luaran_laporan)
+                <p class="text-center">Lampiran 4 : Luaran Kegiatan</p>
+            @endif
+
+            <!-- Lampiran 5 -->
+            @if($laporan->berita_laporan)
+                <p class="text-center">Lampiran 5 : Berita Acara<p>
+            @endif
         </div>
         <!-- End Lampiran -->
     <!-- End Isi Laporan -->

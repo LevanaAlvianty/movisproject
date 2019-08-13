@@ -99,10 +99,10 @@
                                 <th>536111</th>
                                 <td>{{ $kegiatanpo->mak_536111 }}</td>
                             </tr> 
-                            <tr>
+                            <!-- <tr>
                                 <th>Total</th>
                                 <td></td>
-                            </tr> 
+                            </tr>  -->
                         </table>
                     </div>
                     <!-- /.box-body -->

@@ -62,7 +62,7 @@ class BarangController extends Controller
         $barang->save();
 
         return redirect()->route('barang.index')
-                    ->with('success','Data created successfully');
+                    ->with('success','Data Berhasil Dibuat!');
     }
 
     /**
@@ -114,7 +114,7 @@ class BarangController extends Controller
 
         $input = request()->except(['_token','_method']);
         $barang = Barang::where('id_standartbiaya',$id)->update($input);
-        return redirect()->route('barang.index')->with("success","Data Updated Successfully!");
+        return redirect()->route('barang.index')->with("success","Data Berhasil Diperbarui!");
     }
 
     /**
@@ -127,6 +127,6 @@ class BarangController extends Controller
     {
         $indikator = DB::table('standartbiaya')->where('id_standartbiaya',$request->barang_id);
         $indikator->delete();
-        return redirect()->route('barang.index')->with("success","Data Deleted Successfully!");
+        return redirect()->route('barang.index')->with("success","Data Berhasil Dihapus!");
     }
 }

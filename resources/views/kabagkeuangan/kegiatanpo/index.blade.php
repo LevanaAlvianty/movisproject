@@ -24,39 +24,41 @@
                             {{Session::get('success')}}
                         </div>
                     @endif
-                    <table class="table table-hover table-bordered dt-responsive" id="tabelkegiatanspi">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th class="text-center align-middle">No</th>
-                                <th class="text-center align-middle">Akun</th> 
-                                <th class="text-center align-middle">Nama Kegiatan</th> 
-                                <th class="text-center align-middle">Tahun</th> 
-                                <th class="text-center align-middle">Unit Pelaksana</th>
-                                <th class="text-center align-middle">Reviewer Anggaran</th>
-                                <th class="text-center align-middle">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach ($kegiatanpo as $d )
-                            <tr>
-                                <td>{{$loop->iteration}}</td>
-                                <td>{{$d->kode_akun}}</td>  
-                                <td>{{$d->nama_kegiatan}}</td>  
-                                <td>{{$d->tahun}}</td>
-                                <td>{{$d->kode}}</td>
-                                <td> @foreach ($pegawai as $p)
-                                        @if($p->nip == $d->reviewer_ang)
-                                            {{ $p->nama }}       
-                                        @endif
-                                    @endforeach
-                                <td>
-                                    <a href="{{ route('kegiatankabagkeuangan.edit', $d->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Pilih Reviewer</a>
-                                    <a href="{{ route('kegiatankabagkeuangan.show', $d->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered dt-responsive" id="tabelkegiatanspi">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="text-center align-middle">No</th>
+                                    <th class="text-center align-middle">Akun</th> 
+                                    <th class="text-center align-middle">Nama Kegiatan</th> 
+                                    <th class="text-center align-middle">Tahun</th> 
+                                    <th class="text-center align-middle">Unit Pelaksana</th>
+                                    <th class="text-center align-middle">Reviewer Anggaran</th>
+                                    <th class="text-center align-middle">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($kegiatanpo as $d )
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$d->kode_akun}}</td>  
+                                    <td>{{$d->nama_kegiatan}}</td>  
+                                    <td>{{$d->tahun}}</td>
+                                    <td>{{$d->kode}}</td>
+                                    <td> @foreach ($pegawai as $p)
+                                            @if($p->nip == $d->reviewer_ang)
+                                                {{ $p->nama }}       
+                                            @endif
+                                        @endforeach
+                                    <td>
+                                        <a href="{{ route('kegiatankabagkeuangan.edit', $d->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Pilih Reviewer</a>
+                                        <a href="{{ route('kegiatankabagkeuangan.show', $d->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,7 +77,7 @@
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true,
+            "responsive":false,
             "language": {
                 "lengthMenu": "Menampilkan _MENU_ kegiatan",
                 "zeroRecords": "Tidak Ditemukan - maaf",

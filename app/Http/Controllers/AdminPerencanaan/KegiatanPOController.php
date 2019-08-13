@@ -201,7 +201,7 @@ class KegiatanPOController extends Controller
             //GET FILE
             $file = $request->file('file');
             
-            $filename = rand().'_'.$file->getClientOriginalName();
+            $filename = date('YmdHis',time()).'_'.$file->getClientOriginalName();
  
             // upload ke folder file_siswa di dalam folder public
             $file->move('file_kegiatanpo',$filename);

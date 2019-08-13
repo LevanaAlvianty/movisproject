@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,18 +12,18 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Pegawai extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
     
     protected $table ='pegawai';
 
     protected $primaryKey = 'id_pegawai';
 
     protected $fillable = [
-        'id_pegawai','nip', 'nama', 'password','username','jabatan','jurusan','golongan','photo','email','jk'
+        'id_pegawai','nip', 'nama', 'password','username','jabatan','jurusan','golongan','photo','email','jk','api_token'
     ];
 
     protected $hidden = [
-        'password','remember_token'
+        'password','remember_token','api_token'
     ];
     public $timestamps = false;
      /**
@@ -93,7 +94,7 @@ class Pegawai extends Authenticatable
     }
 
     public function isReviewerang(){
-        if ($this->roles()->where('name', 'reviewer_ang')->first()) {
+        if ($this->roles()->where('name', 'reviewer_anggaran')->first()) {
             return true;
         }
         return false;

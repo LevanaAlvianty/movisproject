@@ -25,6 +25,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin123'),
+                'api_token'=> str_random(60),
             ),
             1 => 
             array (
@@ -34,6 +35,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             2 => 
             array (
@@ -43,6 +45,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             3 => 
             array (
@@ -52,6 +55,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             4 => 
             array (
@@ -61,6 +65,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN MUDA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             5 => 
             array (
@@ -70,6 +75,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PENYELIA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             6 => 
             array (
@@ -79,6 +85,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             7 => 
             array (
@@ -88,6 +95,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             8 => 
             array (
@@ -97,6 +105,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'TEKNISI SARANA DAN PRASARANA PENDIDIKAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             9 => 
             array (
@@ -106,6 +115,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             10 => 
             array (
@@ -115,6 +125,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PETUGAS TEKNOLOGI INFORMASI KOMPUTER',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             11 => 
             array (
@@ -124,6 +135,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             12 => 
             array (
@@ -133,6 +145,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PENGELOLA KEMAHASISWAAN/ ALUMNI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             13 => 
             array (
@@ -142,6 +155,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'BENDAHARA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             14 => 
             array (
@@ -151,6 +165,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PUSTAKAWAN PELAKSANA LANJUTAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             15 => 
             array (
@@ -160,6 +175,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PETUGAS TEKNOLOGI INFORMASI KOMPUTER',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             16 => 
             array (
@@ -169,6 +185,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN MUDA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             17 => 
             array (
@@ -178,6 +195,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             18 => 
             array (
@@ -187,6 +205,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             19 => 
             array (
@@ -196,6 +215,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/b',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             20 => 
             array (
@@ -205,6 +225,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'Kepala Subbagian Kerja Sama',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             21 => 
             array (
@@ -214,6 +235,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             22 => 
             array (
@@ -223,6 +245,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'I/c',
                 'jabatan' => 'PENGEMUDI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             23 => 
             array (
@@ -232,6 +255,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PETUGAS KEAMANAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             24 => 
             array (
@@ -241,6 +265,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/b',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             25 => 
             array (
@@ -250,6 +275,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             26 => 
             array (
@@ -259,6 +285,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             27 => 
             array (
@@ -268,6 +295,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PUSTAKAWAN MUDA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             28 => 
             array (
@@ -277,6 +305,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             29 => 
             array (
@@ -286,6 +315,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI KEPEGAWAIAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             30 => 
             array (
@@ -295,6 +325,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PENGEMUDI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             31 => 
             array (
@@ -304,6 +335,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGELOLA DATA PELAKSANAAN PROGRAM DAN ANGGARAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             32 => 
             array (
@@ -313,6 +345,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             33 => 
             array (
@@ -322,6 +355,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             34 => 
             array (
@@ -331,6 +365,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'KEPALA SUBBAGIAN TATA USAHA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             35 => 
             array (
@@ -340,6 +375,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/b',
                 'jabatan' => 'TEKNISI SARANA DAN PRASARANA PENDIDIKAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             36 => 
             array (
@@ -349,6 +385,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             37 => 
             array (
@@ -358,6 +395,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI KEUANGAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             38 => 
             array (
@@ -367,6 +405,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PENGELOLA INFORMASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             39 => 
             array (
@@ -376,6 +415,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'PENGELOLA DATABASE SURAT PERINTAH MEMBAYAR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             40 => 
             array (
@@ -385,6 +425,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PUSTAKAWAN MUDA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             41 => 
             array (
@@ -394,6 +435,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGELOLA INFORMASI KERJASAMA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             42 => 
             array (
@@ -403,6 +445,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PENYELIA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             43 => 
             array (
@@ -412,6 +455,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'TEKNISI SARANA DAN PRASARANA PENDIDIKAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             44 => 
             array (
@@ -421,6 +465,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'TEKNISI SARANA DAN PRASARANA PENDIDIKAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             45 => 
             array (
@@ -430,6 +475,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PETUGAS KEAMANAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             46 => 
             array (
@@ -439,6 +485,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             47 => 
             array (
@@ -448,6 +495,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PUSTAKAWAN MUDA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             48 => 
             array (
@@ -457,6 +505,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'Pengelola Pengadaan Barang dan Jasa  Muda',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             49 => 
             array (
@@ -466,6 +515,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             50 => 
             array (
@@ -475,6 +525,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             51 => 
             array (
@@ -484,6 +535,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI KEUANGAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             52 => 
             array (
@@ -493,6 +545,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN AHLI PERTAMA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             53 => 
             array (
@@ -502,6 +555,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PUSTAKAWAN MUDA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             54 => 
             array (
@@ -511,6 +565,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             55 => 
             array (
@@ -520,6 +575,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA HUMAS PENYELIA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             56 => 
             array (
@@ -529,6 +585,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             57 => 
             array (
@@ -538,6 +595,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI PERSURATAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             58 => 
             array (
@@ -547,6 +605,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             59 => 
             array (
@@ -556,6 +615,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             60 => 
             array (
@@ -565,6 +625,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'Pengelola Pengadaan Barang dan Jasa  Muda',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             61 => 
             array (
@@ -574,6 +635,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             62 => 
             array (
@@ -583,6 +645,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'I/c',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             63 => 
             array (
@@ -592,6 +655,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             64 => 
             array (
@@ -601,6 +665,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             65 => 
             array (
@@ -610,6 +675,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PENGELOLA INFORMASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             66 => 
             array (
@@ -619,6 +685,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PENYELIA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             67 => 
             array (
@@ -628,6 +695,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'ARSIPARIS MUDA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             68 => 
             array (
@@ -637,6 +705,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             69 => 
             array (
@@ -646,6 +715,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'I/c',
                 'jabatan' => 'PENGEMUDI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             70 => 
             array (
@@ -655,6 +725,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PUSTAKAWAN MUDA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             71 => 
             array (
@@ -664,6 +735,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGELOLA KEUANGAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             72 => 
             array (
@@ -673,6 +745,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             73 => 
             array (
@@ -682,6 +755,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             74 => 
             array (
@@ -691,6 +765,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             75 => 
             array (
@@ -700,6 +775,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             76 => 
             array (
@@ -709,6 +785,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             77 => 
             array (
@@ -718,6 +795,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PELAKSANA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             78 => 
             array (
@@ -727,6 +805,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'ARSIPARIS MUDA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             79 => 
             array (
@@ -736,6 +815,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PETUGAS KEAMANAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             80 => 
             array (
@@ -745,6 +825,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             81 => 
             array (
@@ -754,6 +835,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PETUGAS TEKNOLOGI INFORMASI KOMPUTER',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             82 => 
             array (
@@ -763,6 +845,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'KEPALA SUBBAGIAN KEPEGAWAIAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             83 => 
             array (
@@ -772,6 +855,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGELOLA SISTEM DAN JARINGAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             84 => 
             array (
@@ -781,6 +865,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PUSTAKAWAN MUDA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             85 => 
             array (
@@ -790,6 +875,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             86 => 
             array (
@@ -799,6 +885,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             87 => 
             array (
@@ -808,6 +895,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'TEKNISI PERALATAN KANTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             88 => 
             array (
@@ -817,6 +905,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             89 => 
             array (
@@ -826,6 +915,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'KEPALA BAGIAN UMUM DAN KEUANGAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             90 => 
             array (
@@ -835,6 +925,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             91 => 
             array (
@@ -844,6 +935,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'ANALIS SUMBER DAYA MANUSIA APARATUR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             92 => 
             array (
@@ -853,6 +945,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             93 => 
             array (
@@ -862,6 +955,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PENGADMINISTRASI PERSURATAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             94 => 
             array (
@@ -871,6 +965,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             95 => 
             array (
@@ -880,6 +975,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             96 => 
             array (
@@ -889,6 +985,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PUSTAKAWAN PENYELIA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             97 => 
             array (
@@ -898,6 +995,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'TEKNISI SARANA DAN PRASARANA PENDIDIKAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             98 => 
             array (
@@ -907,6 +1005,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             99 => 
             array (
@@ -916,6 +1015,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             100 => 
             array (
@@ -925,6 +1025,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             101 => 
             array (
@@ -934,6 +1035,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'ANALIS KEPEGAWAIAN PELAKSANA LANJUTAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             102 => 
             array (
@@ -943,6 +1045,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             103 => 
             array (
@@ -952,6 +1055,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI KEPEGAWAIAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             104 => 
             array (
@@ -961,6 +1065,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PENGELOLA KEUANGAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             105 => 
             array (
@@ -970,6 +1075,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'ARSIPARIS PERTAMA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             106 => 
             array (
@@ -979,6 +1085,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PELAKSANA LANJUTAN ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             107 => 
             array (
@@ -988,6 +1095,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             108 => 
             array (
@@ -997,6 +1105,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             109 => 
             array (
@@ -1006,6 +1115,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PETUGAS PENGGANDAAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             110 => 
             array (
@@ -1015,6 +1125,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'TEKNISI SARANA DAN PRASARANA PENDIDIKAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             111 => 
             array (
@@ -1024,6 +1135,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PENYELIA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             112 => 
             array (
@@ -1033,6 +1145,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             113 => 
             array (
@@ -1042,6 +1155,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             114 => 
             array (
@@ -1051,6 +1165,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PENYELIA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             115 => 
             array (
@@ -1060,6 +1175,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PENGADMINISTRASI KEUANGAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             116 => 
             array (
@@ -1069,6 +1185,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             117 => 
             array (
@@ -1078,6 +1195,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             118 => 
             array (
@@ -1087,6 +1205,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             119 => 
             array (
@@ -1096,6 +1215,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             120 => 
             array (
@@ -1105,6 +1225,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'I/c',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             121 => 
             array (
@@ -1114,6 +1235,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             122 => 
             array (
@@ -1123,6 +1245,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             123 => 
             array (
@@ -1132,6 +1255,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             124 => 
             array (
@@ -1141,6 +1265,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             125 => 
             array (
@@ -1150,6 +1275,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PENGELOLA SISTEM INFORMASI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             126 => 
             array (
@@ -1159,6 +1285,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI PERSURATAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             127 => 
             array (
@@ -1168,6 +1295,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             128 => 
             array (
@@ -1177,6 +1305,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'PUSTAKAWAN MADYA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             129 => 
             array (
@@ -1186,6 +1315,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             130 => 
             array (
@@ -1195,6 +1325,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             131 => 
             array (
@@ -1204,6 +1335,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             132 => 
             array (
@@ -1213,6 +1345,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'Kepala Subbagian Perencanaan',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             133 => 
             array (
@@ -1222,6 +1355,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             134 => 
             array (
@@ -1231,6 +1365,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PENGADMINISTRASI KEMAHASISWAAN DAN ALUMNI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             135 => 
             array (
@@ -1240,6 +1375,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PENYELIA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             136 => 
             array (
@@ -1249,6 +1385,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             137 => 
             array (
@@ -1258,6 +1395,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'TEKNISI SARANA DAN PRASARANA PENDIDIKAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             138 => 
             array (
@@ -1267,6 +1405,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PENGELOLA KEUANGAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             139 => 
             array (
@@ -1276,6 +1415,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'TEKNISI PERALATAN KANTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             140 => 
             array (
@@ -1285,6 +1425,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             141 => 
             array (
@@ -1294,6 +1435,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PENYELIA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             142 => 
             array (
@@ -1303,6 +1445,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             143 => 
             array (
@@ -1312,6 +1455,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'KEPALA SUBBAGIAN AKADEMIK DAN KEMAHASISWAAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             144 => 
             array (
@@ -1321,6 +1465,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PENYUSUN PROGRAM ANGGARAN DAN PELAPORAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             145 => 
             array (
@@ -1330,6 +1475,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             146 => 
             array (
@@ -1339,6 +1485,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             147 => 
             array (
@@ -1348,6 +1495,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             148 => 
             array (
@@ -1357,6 +1505,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             149 => 
             array (
@@ -1366,6 +1515,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'TEKNISI SARANA DAN PRASARANA PENDIDIKAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             150 => 
             array (
@@ -1375,6 +1525,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/D',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN MUDA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             151 => 
             array (
@@ -1384,6 +1535,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PETUGAS KEAMANAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             152 => 
             array (
@@ -1393,6 +1545,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI KEUANGAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             153 => 
             array (
@@ -1402,6 +1555,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PETUGAS PENGGANDAAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             154 => 
             array (
@@ -1411,6 +1565,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN MUDA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             155 => 
             array (
@@ -1420,6 +1575,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'KEPALA SUBBAGIAN KEUANGAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             156 => 
             array (
@@ -1429,6 +1585,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PETUGAS KEAMANAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             157 => 
             array (
@@ -1438,6 +1595,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PENYELIA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             158 => 
             array (
@@ -1447,6 +1605,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             159 => 
             array (
@@ -1456,6 +1615,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             160 => 
             array (
@@ -1465,6 +1625,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             161 => 
             array (
@@ -1474,6 +1635,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             162 => 
             array (
@@ -1483,6 +1645,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGEMUDI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             163 => 
             array (
@@ -1492,6 +1655,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             164 => 
             array (
@@ -1501,6 +1665,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PENYELIA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             165 => 
             array (
@@ -1510,6 +1675,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             166 => 
             array (
@@ -1519,6 +1685,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PETUGAS KEAMANAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             167 => 
             array (
@@ -1528,6 +1695,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             168 => 
             array (
@@ -1537,6 +1705,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PUSTAKAWAN MUDA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             169 => 
             array (
@@ -1546,6 +1715,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
             'jabatan' => 'PENGELOLA GAJI (PENDIDIKAN D III)',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             170 => 
             array (
@@ -1555,6 +1725,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             171 => 
             array (
@@ -1564,6 +1735,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PETUGAS KEAMANAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             172 => 
             array (
@@ -1573,6 +1745,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'PUSTAKAWAN MUDA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             173 => 
             array (
@@ -1582,6 +1755,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'TEKNISI SARANA DAN PRASARANA PENDIDIKAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             174 => 
             array (
@@ -1591,6 +1765,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'BENDAHARA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             175 => 
             array (
@@ -1600,6 +1775,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/b',
                 'jabatan' => 'TEKNISI SARANA DAN PRASARANA PENDIDIKAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             176 => 
             array (
@@ -1609,6 +1785,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             177 => 
             array (
@@ -1618,6 +1795,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'KEPALA BAGIAN AKADEMIK, KEMAHASISWAAN, PERENCANAAN, DAN KERJA SAMA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             178 => 
             array (
@@ -1627,6 +1805,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             179 => 
             array (
@@ -1636,6 +1815,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             180 => 
             array (
@@ -1645,6 +1825,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             181 => 
             array (
@@ -1654,6 +1835,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PELAKSANA LANJUTAN ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             182 => 
             array (
@@ -1663,6 +1845,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             183 => 
             array (
@@ -1672,6 +1855,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI PROGRAM DAN KERJASAMA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             184 => 
             array (
@@ -1681,6 +1865,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGELOLA KEUANGAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             185 => 
             array (
@@ -1690,6 +1875,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PELAKSANA LANJUTAN ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             186 => 
             array (
@@ -1699,6 +1885,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'TEKNISI LABORATORIUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             187 => 
             array (
@@ -1708,6 +1895,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/a',
                 'jabatan' => 'PRAMU BAKTI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             188 => 
             array (
@@ -1717,6 +1905,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'PRANATA LABORATORIUM PENDIDIKAN PENYELIA ',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             189 => 
             array (
@@ -1726,6 +1915,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PENGADMINISTRASI PERSURATAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             190 => 
             array (
@@ -1735,6 +1925,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'PENGADMINISTRASI KEPEGAWAIAN',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             191 => 
             array (
@@ -1744,6 +1935,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/c',
                 'jabatan' => 'PENGADMINISTRASI UMUM',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             192 => 
             array (
@@ -1753,6 +1945,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'II/d',
                 'jabatan' => 'PENGADMINISTRASI AKADEMIK',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             193 => 
             array (
@@ -1762,6 +1955,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             194 => 
             array (
@@ -1771,6 +1965,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             195 => 
             array (
@@ -1780,6 +1975,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             196 => 
             array (
@@ -1789,6 +1985,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             197 => 
             array (
@@ -1798,6 +1995,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             198 => 
             array (
@@ -1807,6 +2005,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             199 => 
             array (
@@ -1816,6 +2015,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             200 => 
             array (
@@ -1825,6 +2025,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             201 => 
             array (
@@ -1834,6 +2035,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             202 => 
             array (
@@ -1843,6 +2045,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             203 => 
             array (
@@ -1852,6 +2055,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             204 => 
             array (
@@ -1861,6 +2065,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             205 => 
             array (
@@ -1870,6 +2075,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             206 => 
             array (
@@ -1879,6 +2085,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             207 => 
             array (
@@ -1888,6 +2095,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             208 => 
             array (
@@ -1897,6 +2105,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             209 => 
             array (
@@ -1906,6 +2115,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             210 => 
             array (
@@ -1915,6 +2125,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             211 => 
             array (
@@ -1924,6 +2135,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             212 => 
             array (
@@ -1933,6 +2145,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             213 => 
             array (
@@ -1942,6 +2155,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             214 => 
             array (
@@ -1951,6 +2165,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             215 => 
             array (
@@ -1960,6 +2175,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             216 => 
             array (
@@ -1969,6 +2185,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             217 => 
             array (
@@ -1978,6 +2195,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             218 => 
             array (
@@ -1987,6 +2205,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             219 => 
             array (
@@ -1996,6 +2215,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             220 => 
             array (
@@ -2005,6 +2225,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             221 => 
             array (
@@ -2014,6 +2235,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             222 => 
             array (
@@ -2023,6 +2245,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             223 => 
             array (
@@ -2032,6 +2255,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             224 => 
             array (
@@ -2041,6 +2265,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             225 => 
             array (
@@ -2050,6 +2275,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             226 => 
             array (
@@ -2059,6 +2285,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             227 => 
             array (
@@ -2068,6 +2295,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             228 => 
             array (
@@ -2077,6 +2305,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             229 => 
             array (
@@ -2086,6 +2315,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             230 => 
             array (
@@ -2095,6 +2325,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             231 => 
             array (
@@ -2104,6 +2335,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             232 => 
             array (
@@ -2113,6 +2345,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             233 => 
             array (
@@ -2122,6 +2355,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             234 => 
             array (
@@ -2131,6 +2365,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             235 => 
             array (
@@ -2140,6 +2375,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             236 => 
             array (
@@ -2149,6 +2385,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             237 => 
             array (
@@ -2158,6 +2395,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             238 => 
             array (
@@ -2167,6 +2405,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             239 => 
             array (
@@ -2176,6 +2415,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             240 => 
             array (
@@ -2185,6 +2425,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             241 => 
             array (
@@ -2194,6 +2435,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             242 => 
             array (
@@ -2203,6 +2445,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             243 => 
             array (
@@ -2212,6 +2455,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             244 => 
             array (
@@ -2221,6 +2465,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             245 => 
             array (
@@ -2230,6 +2475,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             246 => 
             array (
@@ -2239,6 +2485,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             247 => 
             array (
@@ -2248,6 +2495,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             248 => 
             array (
@@ -2257,6 +2505,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             249 => 
             array (
@@ -2266,6 +2515,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             250 => 
             array (
@@ -2275,6 +2525,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             251 => 
             array (
@@ -2284,6 +2535,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             252 => 
             array (
@@ -2293,6 +2545,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             253 => 
             array (
@@ -2302,6 +2555,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             254 => 
             array (
@@ -2311,6 +2565,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             255 => 
             array (
@@ -2320,6 +2575,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             256 => 
             array (
@@ -2329,6 +2585,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             257 => 
             array (
@@ -2338,6 +2595,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             258 => 
             array (
@@ -2347,6 +2605,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             259 => 
             array (
@@ -2356,6 +2615,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             260 => 
             array (
@@ -2365,6 +2625,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             261 => 
             array (
@@ -2374,6 +2635,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             262 => 
             array (
@@ -2383,6 +2645,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             263 => 
             array (
@@ -2392,6 +2655,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             264 => 
             array (
@@ -2401,6 +2665,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             265 => 
             array (
@@ -2410,6 +2675,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             266 => 
             array (
@@ -2419,6 +2685,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             267 => 
             array (
@@ -2428,6 +2695,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             268 => 
             array (
@@ -2437,6 +2705,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             269 => 
             array (
@@ -2446,6 +2715,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             270 => 
             array (
@@ -2455,6 +2725,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             271 => 
             array (
@@ -2464,6 +2735,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             272 => 
             array (
@@ -2473,6 +2745,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             273 => 
             array (
@@ -2482,6 +2755,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             274 => 
             array (
@@ -2491,6 +2765,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             275 => 
             array (
@@ -2500,6 +2775,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             276 => 
             array (
@@ -2509,6 +2785,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             277 => 
             array (
@@ -2518,6 +2795,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             278 => 
             array (
@@ -2527,6 +2805,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             279 => 
             array (
@@ -2536,6 +2815,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             280 => 
             array (
@@ -2545,6 +2825,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             281 => 
             array (
@@ -2554,6 +2835,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             282 => 
             array (
@@ -2563,6 +2845,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             283 => 
             array (
@@ -2572,6 +2855,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             284 => 
             array (
@@ -2581,6 +2865,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             285 => 
             array (
@@ -2590,6 +2875,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             286 => 
             array (
@@ -2599,6 +2885,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             287 => 
             array (
@@ -2608,6 +2895,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             288 => 
             array (
@@ -2617,6 +2905,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             289 => 
             array (
@@ -2626,6 +2915,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             290 => 
             array (
@@ -2635,6 +2925,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             291 => 
             array (
@@ -2644,6 +2935,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             292 => 
             array (
@@ -2653,6 +2945,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             293 => 
             array (
@@ -2662,6 +2955,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             294 => 
             array (
@@ -2671,6 +2965,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             295 => 
             array (
@@ -2680,6 +2975,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             296 => 
             array (
@@ -2689,6 +2985,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             297 => 
             array (
@@ -2698,6 +2995,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             298 => 
             array (
@@ -2707,6 +3005,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             299 => 
             array (
@@ -2716,6 +3015,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             300 => 
             array (
@@ -2725,6 +3025,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             301 => 
             array (
@@ -2734,6 +3035,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             302 => 
             array (
@@ -2743,6 +3045,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             303 => 
             array (
@@ -2752,6 +3055,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             304 => 
             array (
@@ -2761,6 +3065,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             305 => 
             array (
@@ -2770,6 +3075,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             306 => 
             array (
@@ -2779,6 +3085,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             307 => 
             array (
@@ -2788,6 +3095,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             308 => 
             array (
@@ -2797,6 +3105,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             309 => 
             array (
@@ -2806,6 +3115,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             310 => 
             array (
@@ -2815,6 +3125,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             311 => 
             array (
@@ -2824,6 +3135,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             312 => 
             array (
@@ -2833,6 +3145,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             313 => 
             array (
@@ -2842,6 +3155,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             314 => 
             array (
@@ -2851,6 +3165,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             315 => 
             array (
@@ -2860,6 +3175,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             316 => 
             array (
@@ -2869,6 +3185,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             317 => 
             array (
@@ -2878,6 +3195,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             318 => 
             array (
@@ -2887,6 +3205,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             319 => 
             array (
@@ -2896,6 +3215,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             320 => 
             array (
@@ -2905,6 +3225,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             321 => 
             array (
@@ -2914,6 +3235,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             322 => 
             array (
@@ -2923,6 +3245,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             323 => 
             array (
@@ -2932,6 +3255,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             324 => 
             array (
@@ -2941,6 +3265,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             325 => 
             array (
@@ -2950,6 +3275,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             326 => 
             array (
@@ -2959,6 +3285,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             327 => 
             array (
@@ -2968,6 +3295,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             328 => 
             array (
@@ -2977,6 +3305,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             329 => 
             array (
@@ -2986,6 +3315,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             330 => 
             array (
@@ -2995,6 +3325,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             331 => 
             array (
@@ -3004,6 +3335,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             332 => 
             array (
@@ -3013,6 +3345,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             333 => 
             array (
@@ -3022,6 +3355,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             334 => 
             array (
@@ -3031,6 +3365,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             335 => 
             array (
@@ -3040,6 +3375,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             336 => 
             array (
@@ -3049,6 +3385,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             337 => 
             array (
@@ -3058,6 +3395,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             338 => 
             array (
@@ -3067,6 +3405,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             339 => 
             array (
@@ -3076,6 +3415,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             340 => 
             array (
@@ -3085,6 +3425,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             341 => 
             array (
@@ -3094,6 +3435,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             342 => 
             array (
@@ -3103,6 +3445,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             343 => 
             array (
@@ -3112,6 +3455,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             344 => 
             array (
@@ -3121,6 +3465,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             345 => 
             array (
@@ -3130,6 +3475,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             346 => 
             array (
@@ -3139,6 +3485,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             347 => 
             array (
@@ -3148,6 +3495,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             348 => 
             array (
@@ -3157,6 +3505,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             349 => 
             array (
@@ -3166,6 +3515,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             350 => 
             array (
@@ -3175,6 +3525,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             351 => 
             array (
@@ -3184,6 +3535,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             352 => 
             array (
@@ -3193,6 +3545,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             353 => 
             array (
@@ -3202,6 +3555,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             354 => 
             array (
@@ -3211,6 +3565,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             355 => 
             array (
@@ -3220,6 +3575,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             356 => 
             array (
@@ -3229,6 +3585,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             357 => 
             array (
@@ -3238,6 +3595,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             358 => 
             array (
@@ -3247,6 +3605,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             359 => 
             array (
@@ -3256,6 +3615,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             360 => 
             array (
@@ -3265,6 +3625,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             361 => 
             array (
@@ -3274,6 +3635,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             362 => 
             array (
@@ -3283,6 +3645,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             363 => 
             array (
@@ -3292,6 +3655,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             364 => 
             array (
@@ -3301,6 +3665,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             365 => 
             array (
@@ -3310,6 +3675,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             366 => 
             array (
@@ -3319,6 +3685,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             367 => 
             array (
@@ -3328,6 +3695,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             368 => 
             array (
@@ -3337,6 +3705,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             369 => 
             array (
@@ -3346,6 +3715,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             370 => 
             array (
@@ -3355,6 +3725,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             371 => 
             array (
@@ -3364,6 +3735,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             372 => 
             array (
@@ -3373,6 +3745,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             373 => 
             array (
@@ -3382,6 +3755,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             374 => 
             array (
@@ -3391,6 +3765,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             375 => 
             array (
@@ -3400,6 +3775,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             376 => 
             array (
@@ -3409,6 +3785,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             377 => 
             array (
@@ -3418,6 +3795,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             378 => 
             array (
@@ -3427,6 +3805,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             379 => 
             array (
@@ -3436,6 +3815,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             380 => 
             array (
@@ -3445,6 +3825,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             381 => 
             array (
@@ -3454,6 +3835,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             382 => 
             array (
@@ -3463,6 +3845,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             383 => 
             array (
@@ -3472,6 +3855,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             384 => 
             array (
@@ -3481,6 +3865,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             385 => 
             array (
@@ -3490,6 +3875,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             386 => 
             array (
@@ -3499,6 +3885,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             387 => 
             array (
@@ -3508,6 +3895,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             388 => 
             array (
@@ -3517,6 +3905,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             389 => 
             array (
@@ -3526,6 +3915,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             390 => 
             array (
@@ -3535,6 +3925,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             391 => 
             array (
@@ -3544,6 +3935,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             392 => 
             array (
@@ -3553,6 +3945,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             393 => 
             array (
@@ -3562,6 +3955,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             394 => 
             array (
@@ -3571,6 +3965,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             395 => 
             array (
@@ -3580,6 +3975,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             396 => 
             array (
@@ -3589,6 +3985,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             397 => 
             array (
@@ -3598,6 +3995,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             398 => 
             array (
@@ -3607,6 +4005,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             399 => 
             array (
@@ -3616,6 +4015,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             400 => 
             array (
@@ -3625,6 +4025,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             401 => 
             array (
@@ -3634,6 +4035,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             402 => 
             array (
@@ -3643,6 +4045,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             403 => 
             array (
@@ -3652,6 +4055,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             404 => 
             array (
@@ -3661,6 +4065,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             405 => 
             array (
@@ -3670,6 +4075,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             406 => 
             array (
@@ -3679,6 +4085,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             407 => 
             array (
@@ -3688,6 +4095,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             408 => 
             array (
@@ -3697,6 +4105,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             409 => 
             array (
@@ -3706,6 +4115,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             410 => 
             array (
@@ -3715,6 +4125,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('pic123'),
+                'api_token'=> str_random(60),
             ),
             411 => 
             array (
@@ -3724,6 +4135,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             412 => 
             array (
@@ -3733,6 +4145,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             413 => 
             array (
@@ -3742,6 +4155,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             414 => 
             array (
@@ -3751,6 +4165,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             415 => 
             array (
@@ -3760,6 +4175,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             416 => 
             array (
@@ -3769,6 +4185,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             417 => 
             array (
@@ -3778,6 +4195,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             418 => 
             array (
@@ -3787,6 +4205,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             419 => 
             array (
@@ -3796,6 +4215,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             420 => 
             array (
@@ -3805,6 +4225,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             421 => 
             array (
@@ -3814,6 +4235,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             422 => 
             array (
@@ -3823,6 +4245,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             423 => 
             array (
@@ -3832,6 +4255,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             424 => 
             array (
@@ -3841,6 +4265,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             425 => 
             array (
@@ -3850,6 +4275,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             426 => 
             array (
@@ -3859,6 +4285,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             427 => 
             array (
@@ -3868,6 +4295,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             428 => 
             array (
@@ -3877,6 +4305,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             429 => 
             array (
@@ -3886,6 +4315,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             430 => 
             array (
@@ -3895,6 +4325,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             431 => 
             array (
@@ -3904,6 +4335,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             432 => 
             array (
@@ -3913,6 +4345,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             433 => 
             array (
@@ -3922,6 +4355,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             434 => 
             array (
@@ -3931,6 +4365,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             435 => 
             array (
@@ -3940,6 +4375,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             436 => 
             array (
@@ -3949,6 +4385,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             437 => 
             array (
@@ -3958,6 +4395,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/a',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             438 => 
             array (
@@ -3967,6 +4405,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             439 => 
             array (
@@ -3976,6 +4415,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             440 => 
             array (
@@ -3985,6 +4425,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             441 => 
             array (
@@ -3994,6 +4435,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             442 => 
             array (
@@ -4003,6 +4445,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             443 => 
             array (
@@ -4012,6 +4455,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             444 => 
             array (
@@ -4021,6 +4465,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             445 => 
             array (
@@ -4030,6 +4475,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             446 => 
             array (
@@ -4039,6 +4485,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             447 => 
             array (
@@ -4048,6 +4495,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             448 => 
             array (
@@ -4057,6 +4505,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             449 => 
             array (
@@ -4066,6 +4515,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             450 => 
             array (
@@ -4075,6 +4525,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/b',
                 'jabatan' => 'ASISTEN AHLI',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             451 => 
             array (
@@ -4084,6 +4535,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             452 => 
             array (
@@ -4093,6 +4545,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             453 => 
             array (
@@ -4102,6 +4555,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             454 => 
             array (
@@ -4111,6 +4565,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             455 => 
             array (
@@ -4120,6 +4575,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             456 => 
             array (
@@ -4129,6 +4585,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             457 => 
             array (
@@ -4138,6 +4595,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             458 => 
             array (
@@ -4147,6 +4605,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             459 => 
             array (
@@ -4156,6 +4615,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             460 => 
             array (
@@ -4165,6 +4625,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             461 => 
             array (
@@ -4174,6 +4635,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             462 => 
             array (
@@ -4183,6 +4645,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             463 => 
             array (
@@ -4192,6 +4655,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             464 => 
             array (
@@ -4201,6 +4665,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             465 => 
             array (
@@ -4210,6 +4675,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             466 => 
             array (
@@ -4219,6 +4685,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             467 => 
             array (
@@ -4228,6 +4695,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             468 => 
             array (
@@ -4237,6 +4705,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             469 => 
             array (
@@ -4246,6 +4715,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             470 => 
             array (
@@ -4255,6 +4725,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             471 => 
             array (
@@ -4264,6 +4735,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             472 => 
             array (
@@ -4273,6 +4745,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             473 => 
             array (
@@ -4282,6 +4755,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             474 => 
             array (
@@ -4291,6 +4765,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             475 => 
             array (
@@ -4300,6 +4775,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             476 => 
             array (
@@ -4309,6 +4785,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             477 => 
             array (
@@ -4318,6 +4795,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             478 => 
             array (
@@ -4327,6 +4805,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             479 => 
             array (
@@ -4336,6 +4815,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             480 => 
             array (
@@ -4345,6 +4825,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             481 => 
             array (
@@ -4354,6 +4835,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             482 => 
             array (
@@ -4363,6 +4845,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             483 => 
             array (
@@ -4372,6 +4855,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             484 => 
             array (
@@ -4381,6 +4865,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             485 => 
             array (
@@ -4390,6 +4875,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             486 => 
             array (
@@ -4399,6 +4885,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             487 => 
             array (
@@ -4408,6 +4895,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             488 => 
             array (
@@ -4417,6 +4905,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             489 => 
             array (
@@ -4426,6 +4915,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             490 => 
             array (
@@ -4435,6 +4925,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             491 => 
             array (
@@ -4444,6 +4935,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             492 => 
             array (
@@ -4453,6 +4945,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             493 => 
             array (
@@ -4462,6 +4955,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             494 => 
             array (
@@ -4471,6 +4965,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             495 => 
             array (
@@ -4480,6 +4975,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             496 => 
             array (
@@ -4489,6 +4985,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             497 => 
             array (
@@ -4498,6 +4995,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             498 => 
             array (
@@ -4507,6 +5005,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             499 => 
             array (
@@ -4516,6 +5015,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
         ));
         \DB::table('pegawai')->insert(array (
@@ -4527,6 +5027,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             1 => 
             array (
@@ -4536,6 +5037,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             2 => 
             array (
@@ -4545,6 +5047,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             3 => 
             array (
@@ -4554,6 +5057,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             4 => 
             array (
@@ -4563,6 +5067,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/c',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             5 => 
             array (
@@ -4572,6 +5077,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             6 => 
             array (
@@ -4581,6 +5087,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             7 => 
             array (
@@ -4590,6 +5097,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/b',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             8 => 
             array (
@@ -4599,6 +5107,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'IV/a',
                 'jabatan' => 'LEKTOR KEPALA',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             9 => 
             array (
@@ -4608,6 +5117,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => 'III/d',
                 'jabatan' => 'LEKTOR',
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
             10 => 
             array (
@@ -4617,6 +5127,7 @@ class PegawaiTableSeeder extends Seeder
                 'golongan' => NULL,
                 'jabatan' => NULL,
                 'password' => bcrypt('admin23'),
+                'api_token'=> str_random(60),
             ),
         ));
         

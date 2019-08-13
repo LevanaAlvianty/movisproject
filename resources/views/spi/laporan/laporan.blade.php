@@ -1,4 +1,4 @@
-@extends('layouts.spi.master')
+@extends('layouts.spi.master');
 @section('title', 'Laporan')
 @push('css')
 <style>
@@ -66,11 +66,11 @@
      /*progressbar connectors*/
      #progressbar li:after {
         content: '';
-        width: 58%;
+        width: 68%;
         height: 2px;
         background: lightgrey;
         position: absolute;
-        left: -29%;
+        left: -34%;
         top: 15px;
         z-index: 1; /*put it behind the numbers*/
     }
@@ -87,7 +87,7 @@
 
     .textarea-none-resize{
         width: 100px;
-        height: 50px;
+        height: 210px;
         resize: none;
     }
 </style>
@@ -108,88 +108,690 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
-            <!-- progressbar -->
-            <form id="msform" action="" method="post" enctype="multipart/form-data">
-                {{csrf_field()}}
-                <!-- progressbar -->
-                <ul id="progressbar">
-                    <li class="active">Sampul Depan</li>
-                    <li>Halaman Pengesahan</li>
-                    <li>Kata Pengantar</li>
-                    <li>Daftar isi</li>
-                    <li>Daftar Lampiran</li>                   
-                    <li>BAB I</li>
-                    <li>BAB II</li>
-                    <li>BAB III</li>
-                    <li>BAB IV</li>
-                    <li>BAB V</li>
-                    <li>Lampiran</li>
+        <div class="col-md-12">
+            @if(count($errors)>0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error )
+                        <li>{{ $error}}</li>
+                    @endforeach
                 </ul>
+            </div>
+            @endif
+                    
+            @if(Session::has('success'))
+                <div class="alert alert-success">
+                    {{Session::get('success')}}
+                </div>
+            @endif
+            
+            @if(Session::has('error'))
+                <div class="alert alert-danger">
+                    {{Session::get('error')}}
+                </div>
+            @endif
 
-                <fieldset>
-                    @include('spi.laporan.sampul')<br>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-                <fieldset>
-                    @include('spi.laporan.pengesahan')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+            @if($laporan->id)
+                @if($laporan->getStatusIsNotSubmitted())
+                    <form id="msform" action="{{ route('laporan.updateLaporan', $laporan->id) }}" method="POST" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        {{method_field('PUT')}}
+
+                        <!-- progressbar -->
+                        <ul id="progressbar">
+                            <li class="active">Sampul Depan</li>
+                            <li>Halaman Pengesahan</li>
+                            <li>Kata Pengantar</li>
+                            <li>Daftar isi</li>
+                            <li>Daftar Lampiran</li>                   
+                            <li>BAB I</li>
+                            <li>BAB II</li>
+                            <li>BAB III</li>
+                            <li>BAB IV</li>
+                            <li>BAB V</li>
+                            <li>Lampiran</li>
+                        </ul>
+
+                        <fieldset>
+                            @include('spi.laporan.sampul')<br>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+                        <fieldset>
+                            @include('spi.laporan.pengesahan')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+                        
+                        <fieldset>
+                            @include('spi.laporan.katapengantar')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.laporan.daftarisi')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.laporan.daftarlampiran')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.laporan.bab1')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.laporan.bab2')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.laporan.bab3')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.laporan.bab4')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.laporan.bab5')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+                        <fieldset>
+                            @include('spi.laporan.lampiran')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        </fieldset><br>
+
+                        <a href="{{route('kegiatan.index')}}" class="btn btn-danger btn-sm" style="float:right;"><i class="fa fa-home fa-lg"></i> Kembali ke Halaman Index</a> 
+                        <button type="submit" id="submit" class="btn btn-success btn-sm submit mr-2" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
+                    </form> 
                 
-                <fieldset>
-                    @include('spi.laporan.katapengantar')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                @elseif($laporan->getStatusRevisi())
+                    <form id="msform" action="{{ route('laporan.updateLaporan', $laporan->id) }}" method="POST" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        {{method_field('PUT')}}
 
-                <fieldset>
-                    @include('spi.laporan.daftarisi')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                        <!-- progressbar -->
+                        <ul id="progressbar">
+                            <li class="active">Sampul Depan</li>
+                            <li>Halaman Pengesahan</li>
+                            <li>Kata Pengantar</li>
+                            <li>Daftar isi</li>
+                            <li>Daftar Lampiran</li>                   
+                            <li>BAB I</li>
+                            <li>BAB II</li>
+                            <li>BAB III</li>
+                            <li>BAB IV</li>
+                            <li>BAB V</li>
+                            <li>Lampiran</li>
+                        </ul>
 
-                <fieldset>
-                    @include('spi.laporan.daftarlampiran')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.laporan.sampul')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Sampul</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_sampul" id="r_sampul" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_sampul}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
 
-                <fieldset>
-                    @include('spi.laporan.bab1')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.laporan.pengesahan')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Pengesahan</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_pengesahan" id="r_pengesahan" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_pengesahan}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.laporan.katapengantar')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Kata Pengantar</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_katapengantar" id="r_katapengantar" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_katapengantar}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
 
-                 <fieldset>
-                    @include('spi.laporan.bab2')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.laporan.daftarisi')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Daftar Isi</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_daftarisi" id="r_daftarisi" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_daftarisi}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
 
-                <fieldset>
-                    @include('spi.laporan.bab3')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.laporan.daftarlampiran')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Daftar Lampiran</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_daftarlampiran" id="r_daftarlampiran" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_daftarlampiran}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
 
-                <fieldset>
-                    @include('spi.laporan.bab4')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.laporan.bab1')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:130px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Latar Belakang Paragraf 1</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_latar1" id="r_latar1" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_latar1}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br style = "line-height:325px;">
 
-                 <fieldset>
-                    @include('spi.laporan.bab5')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-                <fieldset>
-                    @include('spi.laporan.lampiran')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="submit" class="btn btn-info btn-sm next" style="float:right;" type="button">Submit<i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-            </form> 
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Latar Belakang Paragraf 2</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_latar2" id="r_latar2" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_latar2}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br style = "line-height:295px;">
+
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Latar Belakang Paragraf 3</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_latar3" id="r_latar3" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_latar3}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br style = "line-height:390px;">
+                                        
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Maksud dan Tujuan</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_maksudtujuan" id="r_maksudtujuan" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_maksudtujuan}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.laporan.bab2')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:130px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Mekanisme Pelaksanaan Kegiatan</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_mekanisme" id="r_mekanisme" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_mekanisme}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br style = "line-height:350px;">
+
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Pelaksanaan Kegiatan</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_pelaksanaan" id="r_pelaksanaan" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_pelaksanaan}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br style = "line-height:720px;">
+
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Pemanfaatan Sumber Daya</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_sumberdaya" id="r_sumberdaya" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_sumberdaya}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.laporan.bab3')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:130px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Luaran Kegiatan</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_luaran" id="r_luaran" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_luaran}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br style = "line-height:260px;">
+
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Indikator Kegiatan</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_indikator" id="r_indikator" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_indikator}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.laporan.bab4')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:130px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Permasalahan</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_permasalahan" id="r_permasalahan" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_permasalahan}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br style = "line-height:360px;">
+
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Pemecahan</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_pemecahan" id="r_pemecahan" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_pemecahan}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.laporan.bab5')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:130px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Kesimpulan</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_kesimpulan" id="r_kesimpulan" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_kesimpulan}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br style = "line-height:330px;">
+
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th class="text-center">Komentar Rekomendasi</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_rekomendasi" id="r_rekomendasi" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_rekomendasi}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.laporan.lampiran')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <br style = "line-height:160px;">
+                                    <table class="responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Lampiran</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_lampiran" id="r_lampiran" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" disabled>{{$laporan->review->r_lampiran}}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        </fieldset><br>
+
+                        <a href="{{route('kegiatan.index')}}" class="btn btn-danger btn-sm" style="float:right;"><i class="fa fa-home fa-lg"></i> Kembali ke Halaman Index</a> 
+                        <button type="submit" id="submit" class="btn btn-success btn-sm submit mr-2" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
+                    </form> 
+                @endif
+            
+            @else
+                <form id="msform" action="{{ route('laporan.simpanlaporan',$kegiatanpo->id )}}" method="POST" enctype="multipart/form-data">
+                    {{csrf_field()}}
+                    {{method_field('POST')}}
+
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li class="active">Sampul Depan</li>
+                        <li>Halaman Pengesahan</li>
+                        <li>Kata Pengantar</li>
+                        <li>Daftar isi</li>
+                        <li>Daftar Lampiran</li>                   
+                        <li>BAB I</li>
+                        <li>BAB II</li>
+                        <li>BAB III</li>
+                        <li>BAB IV</li>
+                        <li>BAB V</li>
+                        <li>Lampiran</li>
+                    </ul>
+
+                    <fieldset>
+                        @include('spi.laporan.sampul')<br>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+                    <fieldset>
+                        @include('spi.laporan.pengesahan')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+                    
+                    <fieldset>
+                        @include('spi.laporan.katapengantar')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+
+                    <fieldset>
+                        @include('spi.laporan.daftarisi')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+
+                    <fieldset>
+                        @include('spi.laporan.daftarlampiran')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+
+                    <fieldset>
+                        @include('spi.laporan.bab1')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+
+                    <fieldset>
+                        @include('spi.laporan.bab2')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+
+                    <fieldset>
+                        @include('spi.laporan.bab3')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+
+                    <fieldset>
+                        @include('spi.laporan.bab4')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+
+                    <fieldset>
+                        @include('spi.laporan.bab5')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+                    <fieldset>
+                        @include('spi.laporan.lampiran')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                    </fieldset><br>
+
+                    <a href="{{route('kegiatan.index')}}" class="btn btn-danger btn-sm" style="float:right;"><i class="fa fa-home fa-lg"></i> Kembali ke Halaman Index</a> 
+                        <button type="submit" id="submit" class="btn btn-success btn-sm submit mr-2" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
+                </form> 
+            @endif
+             
         </div>
     </div>
 </div>
@@ -280,10 +882,6 @@
       });
     });
       
-    // $(".submit").click(function () {
-    //     return false;
-    // });   
-    
     //scroll bar to top
     $('.next, .previous').click(function(){
         $("html, body").animate({ scrollTop: 0 }, 1200);
@@ -291,5 +889,6 @@
     });
  
 </script>
+
 @endpush()
 

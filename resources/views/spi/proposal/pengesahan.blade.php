@@ -57,7 +57,7 @@
                                         <option class="active">RM/BOPTN/PNBP</option>
                                         @foreach($kelang as $kel)
                                             <option value="{{ $kel->id_kelang}}"
-                                                @if($kel->id_kelang == $proposal->id_kelang )
+                                                @if($kel->kelompokanggaran == $kegiatan->sumber)
                                                     selected
                                                 @endif>               
                                                     {{ $kel->kelompokanggaran }}
@@ -135,7 +135,7 @@
                                     <label for="" class="ml-sm-3">d. Jabatan Struktural</label>
                                 </div>
                                 <div class="col-sm-8 ">
-                                    <input type="text" class="form-control form-control-sm" id="jabstruk" name="jabstruk" placeholder="Jabatan Struktural">
+                                    <input type="text" class="form-control form-control-sm" id="jabstruk" name="jabstruk" placeholder="Jabatan Struktural" value="{{$proposal->jab_struktural}}">
                                 </div>
                             </div>
                             
@@ -239,7 +239,7 @@
                                 
                                 <div class="form-inline">
                                     <label for="formGroupExampleInput" class="mr-sm-3">NIP</label>
-                                    <input type="text" class="form-control form-control-sm" id="nip_up" name="nip_up" placeholder="NIP" value="{{$proposal->nama_unitpelaksana}}">
+                                    <input type="text" class="form-control form-control-sm" id="nip_up" name="nip_up" placeholder="NIP" value="{{$proposal->nip_unitpelaksana}}">
                                 </div>
                             </div>
                             <div class="col-sm-5">

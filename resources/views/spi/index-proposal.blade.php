@@ -19,50 +19,54 @@
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    <table class="table table-hover table-bordered dt-responsive" id="tabelproposal">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th class="text-center align-middle">No</th>
-                                <th class="text-center align-middle">Judul</th>
-                                <th class="text-center align-middle">Unit Pelaksana</th> 
-                                <th class="text-center align-middle">Tahun</th> 
-                                <th class="text-center align-middle">PIC</th>
-                                <th class="text-center align-middle">Status Proposal</th> 
-                                <th class="text-center align-middle">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @if($proposals)
-                            @foreach ($proposals as $proposal )
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered dt-responsive" id="tabelproposal">
+                            <thead class="thead-dark">
                                 <tr>
-                                    <td class="text-center align-middle">{{$loop->iteration}}</td>
-                                    <td>{{$proposal->judul}}</td>
-                                    <td class="text-center align-middle">{{$proposal->kodeunit}}</td>  
-                                    <td class="text-center align-middle">{{$proposal->thn_anggaran}}</td>
-                                    <td>{{$proposal->namapelaksana}}</td>
-                                    <td class="text-center align-middle">
-                                        @if($proposal->status == '1')
-                                            <span class="badge badge-pill badge-success">Submit</span>
-                                        @elseif($proposal->status == '2')
-                                            <span class="badge badge-pill badge-danger">Revisi</span>
-                                        @else
-                                            <span class="badge badge-pill badge-success">Disetujui</span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if($proposal->status == '3')
-                                            <a href="{{ route('proposal.viewpdf', $proposal->kegiatanpo->id) }}" class="btn btn-sm btn-warning">
-                                                <i class="icon fa fa-eye"></i> Proposal PDF
-                                            </a>
-                                        @else
-                                            <button class="btn btn-sm btn-warning" disabled><i class="icon fa fa-eye"></i> Proposal PDF</button>
-                                        @endif
-                                    </td>
+                                    <th class="text-center align-middle">No</th>
+                                    <th class="text-center align-middle">Judul</th>
+                                    <th class="text-center align-middle">Unit Pelaksana</th> 
+                                    <th class="text-center align-middle">Tahun</th> 
+                                    <th class="text-center align-middle">PIC</th>
+                                    <th class="text-center align-middle">Status Proposal</th> 
+                                    <th class="text-center align-middle">Aksi</th>
                                 </tr>
-                            @endforeach
-                        @endif
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            @if($proposals)
+                                @foreach ($proposals as $proposal )
+                                    <tr>
+                                        <td class="text-center align-middle">{{$loop->iteration}}</td>
+                                        <td>{{$proposal->judul}}</td>
+                                        <td class="text-center align-middle">{{$proposal->kodeunit}}</td>  
+                                        <td class="text-center align-middle">{{$proposal->thn_anggaran}}</td>
+                                        <td>{{$proposal->namapelaksana}}</td>
+                                        <td class="text-center align-middle">
+                                            @if ($proposal->status == '0')
+                                                <span class="badge badge-pill badge-warning">Belum Submit</span>
+                                            @elseif ($proposal->getStatusIsSubmitted())
+                                                <span class="badge badge-pill badge-info">Menunggu Review</span>
+                                            @elseif ($proposal->getStatusRevisi())
+                                                <span class="badge badge-pill badge-danger">Revisi</span>
+                                            @elseif($proposal->getStatusDisetujui())
+                                                <span class="badge badge-pill badge-success">Disetujui</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($proposal->status == '3')
+                                                <a href="{{ route('proposal.viewpdf', $proposal->kegiatanpo->id) }}" class="btn btn-sm btn-warning">
+                                                    <i class="icon fa fa-eye"></i> Proposal PDF
+                                                </a>
+                                            @else
+                                                <button class="btn btn-sm btn-warning" disabled><i class="icon fa fa-eye"></i> Proposal PDF</button>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -81,7 +85,7 @@
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true,
+            "responsive":false,
             "language": {
                 "lengthMenu": "Menampilkan _MENU_ proposal",
                 "zeroRecords": "Tidak Ditemukan - maaf",

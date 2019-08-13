@@ -48,7 +48,7 @@
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <a href="{{ route('kegiatankabagkeuangan.index')}}" class="btn btn-sm btn-danger">Batal</a>
-                        <button type="submit" class="btn btn-sm btn-info">Assign Reviewer</button>
+                        <button type="submit" class="btn btn-sm btn-info">Set Reviewer</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>

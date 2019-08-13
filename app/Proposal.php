@@ -54,7 +54,7 @@ class Proposal extends Model
 
     protected $table = 'proposal';
     protected $primary = 'id';
-    public $timestamps = false;
+    // public $timestamps = false;
 
     public function anggaranpos()
     {
@@ -64,6 +64,58 @@ class Proposal extends Model
     public function dirprogutama()
     {
         return $this->belongsTo(\App\ProgramUtama::class, 'id_dirprogram', 'id_dirprogutama');
+    }
+
+    /**
+     * @return float $anggaranTotal
+     */
+    public function getAnggaranTotal()
+    {
+        $anggaranTotal = 0;
+
+        if ($anggaranpos = $this->anggaranpos) {
+            foreach ($anggaranpos as $anggaran) {
+                $anggaranTotal += $anggaran->total;
+            }
+        }
+
+        return $anggaranTotal;
+    }
+
+    public function getStatusDisetujui()
+    {
+        if($this->status == '3')
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function getStatusIsNotSubmitted()
+    {
+        if ($this->status == '0') {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function getStatusIsSubmitted()
+    {
+        if ($this->status == '1') {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function getStatusRevisi()
+    {
+        if ($this->status == '2') {
+            return true;
+        }
+
+        return false;
     }
 
     public function jadwalpos()
@@ -79,6 +131,11 @@ class Proposal extends Model
     public function kegiatanpo()
     {
         return $this->belongsTo(\App\KegiatanPO::class, 'id_kegiatan', 'id');
+    }
+
+    public function laporan()
+    {
+        return $this->hasOne(\App\Laporan::class, 'id_proposal', 'id');
     }
 
     public function panitiadalampos()
@@ -108,5 +165,10 @@ class Proposal extends Model
     public function pesertaPos()
     {
         return $this->hasMany(\App\PesertaPo::class, 'id_proposal', 'id');
+    }
+
+    public function review()
+    {
+        return $this->hasOne(\App\ReviewProposalpo::class, 'id_proposal', 'id');
     }
 }

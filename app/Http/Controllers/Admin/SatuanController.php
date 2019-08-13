@@ -42,7 +42,7 @@ class SatuanController extends Controller
         $satuan->satuan = $request->satuan;
         $satuan->save();
         return redirect()->route('satuan.index')
-                    ->with('success','Satuan created successfully');
+                    ->with('success','Satuan Berhasil Dibuat!');
     }
 
     /**
@@ -81,7 +81,7 @@ class SatuanController extends Controller
         $input = request()->except(['_token','_method']);
         $satuans = Satuan::where('id_satuan',$id)->update($input);
         return redirect()->route('satuan.index')
-                    ->with('success','Satuan updated successfully');
+                    ->with('success','Satuan Berhasil Diperbarui!');
     }
 
     /**
@@ -93,6 +93,6 @@ class SatuanController extends Controller
     public function destroy(Request $request)
     {
         $satuan = Satuan::where('id_satuan',$request->satuan_id)->delete();
-        return redirect()->route('satuan.index')->with('success','Satuan deleted successfully');
+        return redirect()->route('satuan.index')->with('success','Satuan Berhasil Dihapus!');
     }
 }

@@ -44,4 +44,5 @@ class PegawaiLoginController extends Controller
     {
         return view('auth.pegawai-login');
     }
+
 }

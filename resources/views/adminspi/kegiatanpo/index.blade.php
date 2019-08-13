@@ -19,40 +19,63 @@
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    <table class="table table-hover table-bordered dt-responsive" id="tabelkegiatanspi">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th class="text-center align-middle">No</th>
-                                <th class="text-center align-middle">Akun</th>
-                                <th class="text-center align-middle">Nama Kegiatan</th> 
-                                <th class="text-center align-middle">Tahun</th> 
-                                <th class="text-center align-middle">Unit Pelaksana</th>
-                                <th class="text-center align-middle">Reviewer SPI</th> 
-                                <th class="text-center align-middle">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach ($kegiatanpo as $d )
-                            <tr>
-                                <td>{{$loop->iteration}}</td>
-                                <td>{{$d->kode_akun}}</td> 
-                                <td>{{$d->nama_kegiatan}}</td>  
-                                <td>{{$d->tahun}}</td>  
-                                <td>{{$d->kode}}</td>
-                                <td> @foreach ($pegawai as $p)
-                                        @if($p->nip == $d->reviewer_spi)
-                                            {{ $p->nama }}       
-                                        @endif
-                                    @endforeach
-                                </td>
-                                <td>
-                                    <a href="{{ route('kegiatanadminspi.edit', $d->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Pilih Reviewer</a>
-                                    <a href="{{ route('kegiatanadminspi.show', $d->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                     @if(count($errors)>0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error )
+                                    <li>{{ $error}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                               
+                    @if(Session::has('success'))
+                        <div class="alert alert-success">
+                            {{Session::get('success')}}
+                        </div>
+                    @endif
+                    @if(Session::has('error'))
+                        <div class="alert alert-danger">
+                            {{Session::get('error')}}
+                        </div>
+                    @endif
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered dt-responsive" id="tabelkegiatanspi">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="text-center align-middle">No</th>
+                                    <th class="text-center align-middle">Akun</th>
+                                    <th class="text-center align-middle">Nama Kegiatan</th> 
+                                    <th class="text-center align-middle">Tahun</th> 
+                                    <th class="text-center align-middle">Unit Pelaksana</th>
+                                    <th class="text-center align-middle">Reviewer SPI</th> 
+                                    <th class="text-center align-middle">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($kegiatanpo as $d )
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$d->kode_akun}}</td> 
+                                    <td>{{$d->nama_kegiatan}}</td>  
+                                    <td>{{$d->tahun}}</td>  
+                                    <td>{{$d->kode}}</td>
+                                    <td> @foreach ($pegawai as $p)
+                                            @if($p->nip == $d->reviewer_spi)
+                                                {{ $p->nama }}       
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('kegiatanadminspi.edit', $d->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Pilih Reviewer</a>
+                                        <a href="{{ route('kegiatanadminspi.show', $d->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,7 +94,7 @@
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true,
+            "responsive":false,
             "language": {
                 "lengthMenu": "Menampilkan _MENU_ kegiatan",
                 "zeroRecords": "Tidak Ditemukan - maaf",
@@ -81,6 +104,10 @@
             }
         });
     });
+</script>
+
+<script>
+$('.alert').delay(3000).slideUp(300);
 </script>
 
 @endpush()

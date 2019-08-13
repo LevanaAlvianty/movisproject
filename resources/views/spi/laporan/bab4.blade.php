@@ -6,11 +6,9 @@
         <p style="text-align:justify">
             Uraikan semua permasalahan dan atau kendala yang dialami dalam
             pelaksanaan kegiatan, terutama penyebab terjadinya perbedaan antara pelaksanaan dengan rencana kegiatan.
+            <br><span style="color:red">* Minimal 5 kalimat</span>
         </p>
-        <textarea class="form-control mx-auto mb-2" id="permasalahan" rows="3" placeholder="" value=""></textarea>
-        <div class="row justify-content-end">
-            <label for="formGroupExampleInput" class="col-sm-3">Minimal 5 kalimat</label>
-        </div>
+        <textarea class="form-control mx-auto mb-2" id="permasalahan" name="permasalahan" rows="3">{{$laporan->permasalahan}}</textarea>
     </div>
 </div>
 
@@ -20,11 +18,8 @@
         <p style="text-align:justify">
             Uraikan tindakan yang telah diambil untuk mengatasi permasalahan dan atau kendala
             yang timbul dari setiap kegiatan dinyatakan dengan rinci, termasuk arahan dan kebijakan pimpinan perguruan tinggi untuk mengatasi
-            permasalahan dan atau kendala tersebut.</p>
-        <textarea class="form-control mx-auto mb-2" id="pemecahan" rows="3" placeholder="" value=""></textarea>
-        <div class="row justify-content-end">
-            <label for="formGroupExampleInput" class="col-sm-3">Minimal 5 kalimat</label>
-        </div>
+            permasalahan dan atau kendala tersebut. <br><span style="color:red">* Minimal 5 kalimat</span></p>
+        <textarea class="form-control mx-auto mb-2" id="pemecahan" name="pemecahan" rows="3">{{$laporan->pemecahan}}</textarea>
     </div>
 </div>
                     

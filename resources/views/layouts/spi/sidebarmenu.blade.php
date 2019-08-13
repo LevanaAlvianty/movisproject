@@ -18,10 +18,12 @@
         @endphp
 
         <li class="">
-            <a class="app-menu__item {{ Request::routeIs('pegawai.home') ? 'active':  '' }}" href="{{ route('pegawai.home') }}">
+            <a class="app-menu__item {{ Request::routeIs('pegawai.home') ? 'active':  '' }} {{ Request::routeIs('proposal.index') ? 'active':  '' }}
+            {{ Request::routeIs('laporan.index') ? 'active':  '' }}" href="{{ route('pegawai.home') }}">
                 <i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span>
             </a>
         </li>
+        
         <!-- Admin -->
         @if($admin == 1)
         <li class="treeview"><a class="app-menu__item {{ Request::is('admin/pegawai*') ? 'active':  '' }}
@@ -102,48 +104,70 @@
                     <i class="app-menu__icon fa fa-book"></i><span class="app-menu__label">Master Kel. Anggaran</span>
                 </a>
             </li>
-            <li class="">
-                <a class="app-menu__item {{ Request::is('adminperencanaan/kegiatanpo*') ? 'active':  '' }}" href="{{ route('kegiatanpo.index') }}">
-                    <i class="app-menu__icon fa fa-file-text-o"></i><span class="app-menu__label">Kegiatan PO</span>
-                </a>
-            </li>
-            
         @endif
 
         <!-- PIC --> 
         @if($pic == 1)
             <li class="">
-                <a class="app-menu__item {{ Request::is('spi/kegiatan*') ? 'active':  '' }} 
-                {{ Request::routeIs('proposal.index') ? 'active':  '' }} {{ Request::routeIs('proposal.editproposal') ? 'active':  '' }} " 
+                <a class="app-menu__item {{ Request::is('spi/kegiatan*') ? 'active':  '' }} {{ Request::routeIs('proposal.editproposal') ? 'active':  '' }} " 
                 href="{{ route('kegiatan.index') }}">
                     <i class="app-menu__icon fa fa-file-text-o"></i><span class="app-menu__label">Daftar Kegiatan</span>
                 </a>
             </li>
-            @endif
+        @endif
 
-            @if($pimpinan == 1)
+        @if($pimpinan == 1)
             <li class="">
                 <a class="app-menu__item {{ Request::is('pimpinan/kegiatanpimpinan*') ? 'active':  '' }}" href="{{ route('kegiatanpimpinan.index') }}">
                     <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Kegiatan PO</span>
                 </a>
             </li>
-            @endif
+        @endif
 
-            @if($adminspi == 1)
+        @if($adminperencanaan == 1)
+            <li class="">
+                <a class="app-menu__item {{ Request::is('adminperencanaan/kegiatanpo*') ? 'active':  '' }}" href="{{ route('kegiatanpo.index') }}">
+                    <i class="app-menu__icon fa fa-file-text-o"></i><span class="app-menu__label">Kegiatan PO</span>
+                </a>
+            </li>
+        @endif
+
+        @if($adminspi == 1)
             <li class="">
                 <a class="app-menu__item {{ Request::is('adminspi/kegiatanadminspi*') ? 'active':  '' }}" href="{{ route('kegiatanadminspi.index') }}">
                     <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Kegiatan PO</span>
                 </a>
             </li>
-            @endif
+        @endif
 
-            @if($kabagkeuangan == 1)
+        @if($kabagkeuangan == 1)
             <li class="">
                 <a class="app-menu__item {{ Request::is('kabagkeuangan/kegiatankabagkeuangan*') ? 'active':  '' }}" href="{{ route('kegiatankabagkeuangan.index') }}">
                     <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Kegiatan PO</span>
                 </a>
             </li>
-            @endif
+        @endif
+
+        @if($reviewerspi == 1)
+            <li class="">
+                <a class="app-menu__item {{ Request::is('reviewerspi/reviewproposal*') ? 'active':  '' }}" href="{{ route('reviewproposal.index') }}">
+                    <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Review Proposal Kegiatan</span>
+                </a>
+            </li>
+            <li class="">
+                <a class="app-menu__item {{ Request::is('reviewerspi/reviewlaporan*') ? 'active':  '' }}" href="{{ route('reviewerspi.reviewlaporan.index') }}">
+                    <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Review Laporan Kegiatan</span>
+                </a>
+            </li>
+        @endif
+
+        @if($revieweranggaran == 1)
+            <li class="">
+                <a class="app-menu__item {{ Request::is('reviewerspi/reviewproposal*') ? 'active':  '' }}" href="{{ route('reviewproposal.index') }}">
+                    <i class="app-menu__icon fa fa-list-ul"></i><span class="app-menu__label">Review Proposal Kegiatan</span>
+                </a>
+            </li>
+        @endif
 
             <li class="">
                 <a class="app-menu__item {{ Request::is('profil*') ? 'active':  '' }} 

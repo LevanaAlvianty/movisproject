@@ -22,20 +22,7 @@ class KegiatanController extends Controller
     public function index(Request $request)
     {
         $pic = Auth::guard('pegawai')->user()->nip;
-        // $kegiatan= DB::table('kegiatanpo')
-        //             ->leftJoin('jurbagnitpus','jurbagnitpus.kode','=','kegiatanpo.id_jurbagnitpus')
-        //             ->leftJoin('pegawai','pegawai.nip','=','kegiatanpo.nip_pic')
-        //             ->leftjoin('kelompokanggaran','kelompokanggaran.kelompokanggaran','=','kegiatanpo.sumber')
-        //             ->select('kegiatanpo.*','kegiatanpo.id as id_kegiatan','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nip','pegawai.nama','kelompokanggaran.kelompokanggaran')
-        //             ->where('kegiatanpo.nip_pic','=',$pic)
-        //             ->get(); 
-        // $proposal=DB::table('proposal')
-        //             ->select('proposal.*')
-        //             ->get(); 
-        
-        $data['kegiatanpos'] = KegiatanPO::with('proposal')->where('nip_pic', $pic)->get();
-        dump($data);
-
+        $data['kegiatanpos'] = KegiatanPO::with('proposal','laporan')->where('nip_pic', $pic)->get();
         return view('spi.kegiatan.index', $data);
     }
 

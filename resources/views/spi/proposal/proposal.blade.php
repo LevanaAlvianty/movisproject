@@ -67,11 +67,11 @@
      /*progressbar connectors*/
      #progressbar li:after {
         content: '';
-        width: 60%;
+        width: 68%;
         height: 2px;
         background: lightgrey;
         position: absolute;
-        left: -30%;
+        left: -34%;
         top: 15px;
         z-index: 1; /*put it behind the numbers*/
     }
@@ -88,7 +88,7 @@
 
     .textarea-none-resize{
         width: 100px;
-        height: 50px;
+        height: 210px;
         resize: none;
     }
 </style>
@@ -109,115 +109,674 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
-            <!-- progressbar -->
-            @if ($proposal)
-                <form id="msform" action="{{ route('proposal.update', $proposal->id) }}" method="POST" enctype="multipart/form-data">
-                    {{csrf_field()}}
-                    {{method_field('PUT')}}
+        <div class="col-md-12">
+            @if ($proposal->id)
+                @if($proposal->getStatusIsNotSubmitted())
+                    <form id="msform" action="{{ route('proposal.update', $proposal->id) }}" method="POST" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        {{method_field('PUT')}}
+
+                        <!-- progressbar -->
+                        <ul id="progressbar" style="padding-left:0px">
+                            <li class="active">Sampul Depan</li>
+                            <li>Halaman Pengesahan</li>
+                            <li>Latar Belakang</li>
+                            <li>Tujuan</li>
+                            <li>Mekanisme Kegiatan</li>
+                            <li>Personil</li>
+                            <li>Luaran</li>
+                            <li>Jadwal Kegiatan</li>
+                            <li>Anggaran</li>
+                            <li>Penutup</li>
+                        </ul>
+
+                        @if(count($errors)>0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error )
+                                        <li>{{ $error}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+                                    
+                            @if(Session::has('success'))
+                                <div class="alert alert-success">
+                                    {{Session::get('success')}}
+                                </div>
+                            @endif
+                            
+                            @if(Session::has('error'))
+                                <div class="alert alert-danger">
+                                    {{Session::get('error')}}
+                                </div>
+                            @endif
+                    
+                        <fieldset>
+                            @include('spi.proposal.sampul')
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+                        
+                        <fieldset>
+                            @include('spi.proposal.pengesahan')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+                        
+                        <fieldset>
+                            @include('spi.proposal.latar')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.proposal.tujuan')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.proposal.mekanisme')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.proposal.personil')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.proposal.luaran')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.proposal.jadwal')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.proposal.anggaran')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            @include('spi.proposal.penutup')<br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        </fieldset> <br>
+
+                        <a href="{{route('kegiatan.index')}}" class="btn btn-danger btn-sm" style="float:right;"><i class="fa fa-home fa-lg"></i> Kembali ke Halaman Index</a> 
+                        <button type="submit" id="submit" class="btn btn-success btn-sm submit mr-2" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
+                    </form>
+                
+                @elseif ($proposal->getStatusRevisi())
+                    <form id="msform" action="{{ route('proposal.update', $proposal->id) }}" method="POST" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        {{method_field('PUT')}}
+
+                        <!-- progressbar -->
+                        <ul id="progressbar" style="padding-left:0px">
+                            <li class="active">Sampul Depan</li>
+                            <li>Halaman Pengesahan</li>
+                            <li>Latar Belakang</li>
+                            <li>Tujuan</li>
+                            <li>Mekanisme Kegiatan</li>
+                            <li>Personil</li>
+                            <li>Luaran</li>
+                            <li>Jadwal Kegiatan</li>
+                            <li>Anggaran</li>
+                            <li>Penutup</li>
+                        </ul>
+
+                        @if(count($errors)>0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error )
+                                        <li>{{ $error}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+                                    
+                            @if(Session::has('success'))
+                                <div class="alert alert-success">
+                                    {{Session::get('success')}}
+                                </div>
+                            @endif
+                            
+                            @if(Session::has('error'))
+                                <div class="alert alert-danger">
+                                    {{Session::get('error')}}
+                                </div>
+                            @endif
+                    
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.proposal.sampul')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Sampul</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_sampul" id="r_sampul" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" 
+                                                            disabled>{{ $proposal->review->r_sampul }}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.proposal.pengesahan')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Pengesahan</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <textarea name="r_pengesahan" id="r_pengesahan" cols="30" rows="10" 
+                                                            class="form-control form-control-sm textarea-none-resize" 
+                                                            disabled>{{ $proposal->review->r_pengesahan }}
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.proposal.latar')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:80px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Paragraf 1</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_latar1" id="r_latar1" cols="30" rows="10" 
+                                                        class="form-control form-control-sm textarea-none-resize" 
+                                                        disabled>{{ $proposal->review->r_latar1 }}</textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br style = "line-height:320px;">
+
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Paragraf 2</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_latar2" id="r_latar2" cols="30" rows="10" 
+                                                        class="form-control form-control-sm textarea-none-resize" 
+                                                        disabled>{{ $proposal->review->r_latar2 }}</textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br style = "line-height:290px;">
+
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Paragraf 3</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_latar3" id="r_latar3" cols="30" rows="10" 
+                                                        class="form-control form-control-sm textarea-none-resize" 
+                                                        disabled>{{ $proposal->review->r_latar3 }}</textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.proposal.tujuan')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:70px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Tujuan</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_tujuan" id="r_tujuan" cols="30" rows="10" 
+                                                    class="form-control form-control-sm textarea-none-resize" 
+                                                    disabled>{{ $proposal->review->r_tujuan}}</textarea>
+                                                </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div> <br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.proposal.mekanisme')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:70px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Mekanisme</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_mekanisme" id="r_mekanisme" cols="30" rows="10" 
+                                                    class="form-control form-control-sm textarea-none-resize" 
+                                                    disabled>{{ $proposal->review->r_mekanisme}}</textarea>
+                                                </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.proposal.personil')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                    <br style = "line-height:60px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Panitia Dalam</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_panitiadalam" id="r_panitiadalam" cols="30" rows="10" 
+                                                        class="form-control form-control-sm textarea-none-resize" 
+                                                        disabled>{{ $proposal->review->r_panitiadalam }}</textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br style = "line-height:40px;">
+
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Panitia Luar</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_panitialuar" id="r_panitialuar" cols="30" rows="10" 
+                                                        class="form-control form-control-sm textarea-none-resize" 
+                                                        disabled>{{ $proposal->review->r_panitialuar }}</textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br>
+
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Peserta</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_peserta" id="r_peserta" cols="30" rows="10" 
+                                                        class="form-control form-control-sm textarea-none-resize" 
+                                                        disabled>{{ $proposal->review->r_peserta }}</textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.proposal.luaran')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:70px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Luaran</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_luaran" id="r_luaran" cols="30" rows="10" 
+                                                    class="form-control form-control-sm textarea-none-resize" 
+                                                    disabled>{{ $proposal->review->r_luaran }}</textarea></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                         @include('spi.proposal.jadwal')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:70px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Jadwal</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_jadwal" id="r_jadwal" cols="30" rows="10" 
+                                                    class="form-control form-control-sm textarea-none-resize" 
+                                                    disabled>{{ $proposal->review->r_jadwal }}</textarea></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div>
+                           <br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.proposal.anggaran')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:55px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Anggaran</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_anggaran" id="r_anggaran" cols="30" rows="10" 
+                                                    class="form-control form-control-sm textarea-none-resize" 
+                                                    disabled>{{ $proposal->review->r_anggaran }}</textarea></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div><br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                            <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                                <i class="fa fa-caret-right fa-lg"></i></button>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tile">
+                                        @include('spi.proposal.penutup')
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <table class="responsive">
+                                        <br style = "line-height:70px;">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-dark">
+                                                <th>Komentar Penutup</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><textarea name="r_penutup" id="r_penutup" cols="30" rows="10" 
+                                                    class="form-control form-control-sm textarea-none-resize" 
+                                                    disabled>{{ $proposal->review->r_penutup }}</textarea></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </table>
+                                </div>
+                            </div>
+                            <br>
+                            <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                                <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        </fieldset><br>
+
+                        <a href="{{route('kegiatan.index')}}" class="btn btn-danger btn-sm" style="float:right;"><i class="fa fa-home fa-lg"></i> Kembali ke Halaman Index</a> 
+                        <button type="submit" id="submit" class="btn btn-success btn-sm submit mr-2" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
+                    </form>
+                @endif
+
             @else
                 <form id="msform" action="{{ route('proposal.insert',$kegiatan->id) }}" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
                     {{method_field('POST')}}    
-            @endif
+                
+                    <!-- progressbar -->
+                    <ul id="progressbar" style="padding-left:0px">
+                        <li class="active">Sampul Depan</li>
+                        <li>Halaman Pengesahan</li>
+                        <li>Latar Belakang</li>
+                        <li>Tujuan</li>
+                        <li>Mekanisme Kegiatan</li>
+                        <li>Personil</li>
+                        <li>Luaran</li>
+                        <li>Jadwal Kegiatan</li>
+                        <li>Anggaran</li>
+                        <li>Penutup</li>
+                    </ul>
 
-                <!-- progressbar -->
-                <ul id="progressbar" style="padding-left:0px">
-                    <li class="active">Sampul Depan</li>
-                    <li>Halaman Pengesahan</li>
-                    <li>Latar Belakang</li>
-                    <li>Tujuan</li>
-                    <li>Mekanisme Kegiatan</li>
-                    <li>Personil</li>
-                    <li>Luaran</li>
-                    <li>Jadwal Kegiatan</li>
-                    <li>Anggaran</li>
-                    <li>Penutup</li>
-                </ul>
-
-                @if(count($errors)>0)
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error )
-                                <li>{{ $error}}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endif
-                               
-                    @if(Session::has('success'))
-                        <div class="alert alert-success">
-                            {{Session::get('success')}}
-                        </div>
-                    @endif
-                    @if(Session::has('error'))
+                    @if(count($errors)>0)
                         <div class="alert alert-danger">
-                            {{Session::get('error')}}
+                            <ul>
+                                @foreach ($errors->all() as $error )
+                                    <li>{{ $error}}</li>
+                                @endforeach
+                            </ul>
                         </div>
-                    @endif
+                        @endif
+                                
+                        @if(Session::has('success'))
+                            <div class="alert alert-success">
+                                {{Session::get('success')}}
+                            </div>
+                        @endif
+                        
+                        @if(Session::has('error'))
+                            <div class="alert alert-danger">
+                                {{Session::get('error')}}
+                            </div>
+                        @endif
                 
-                <!-- fieldsets -->
-                <fieldset>
-                    @include('spi.proposal.sampul')
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-                
-                <fieldset>
-                    @include('spi.proposal.pengesahan')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
-                
-                <fieldset>
-                    @include('spi.proposal.latar')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                    <fieldset>
+                        @include('spi.proposal.sampul')
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                            <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+                    
+                    <fieldset>
+                        @include('spi.proposal.pengesahan')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                            <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                            <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
+                    
+                    <fieldset>
+                        @include('spi.proposal.latar')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                            <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                            <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
 
-                <fieldset>
-                    @include('spi.proposal.tujuan')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                    <fieldset>
+                        @include('spi.proposal.tujuan')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                            <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                            <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
 
-                <fieldset>
-                    @include('spi.proposal.mekanisme')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                    <fieldset>
+                        @include('spi.proposal.mekanisme')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                            <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                            <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
 
-                <fieldset>
-                    @include('spi.proposal.personil')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                    <fieldset>
+                        @include('spi.proposal.personil')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                            <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                            <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
 
-                 <fieldset>
-                    @include('spi.proposal.luaran')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                    <fieldset>
+                        @include('spi.proposal.luaran')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                            <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                            <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
 
-                <fieldset>
-                    @include('spi.proposal.jadwal')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                    <fieldset>
+                        @include('spi.proposal.jadwal')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                            <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                            <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
 
-                <fieldset>
-                    @include('spi.proposal.anggaran')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next <i class="fa fa-caret-right fa-lg"></i></button>
-                </fieldset>
+                    <fieldset>
+                        @include('spi.proposal.anggaran')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                            <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                        <button id="next" class="btn btn-info btn-sm next" style="float:right;" type="button">Next 
+                            <i class="fa fa-caret-right fa-lg"></i></button>
+                    </fieldset>
 
-                 <fieldset>
-                    @include('spi.proposal.penutup')<br>
-                    <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;"><i class="fa fa-caret-left fa-lg"></i> Previous</button>
-                    <button type="submit" id="submit" class="btn btn-success btn-sm submit" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
-                    <button class="btn btn-danger btn-sm mr-2" style="float:right;"><i class="fa fa-floppy-o fa-lg"></i> Simpan</button>
-                </fieldset>
-            </form>
-            <a href="{{route('kegiatan.index')}}" class="btn btn-danger btn-sm" style="float:right;"><i class=""></i> Kembali</a> 
+                    <fieldset>
+                        @include('spi.proposal.penutup')<br>
+                        <button id="previous" class="btn btn-info btn-sm previous" type="button" style="float:left;">
+                            <i class="fa fa-caret-left fa-lg"></i> Previous</button>
+                    </fieldset><br>
+                    
+                    <a href="{{route('kegiatan.index')}}" class="btn btn-danger btn-sm" style="float:right;"><i class="fa fa-home fa-lg"></i> Kembali ke Halaman Index</a> 
+                    <button type="submit" id="submit" class="btn btn-success btn-sm submit mr-2" style="float:right;" type="button">Submit <i class="fa fa-caret-right fa-lg"></i></button>
+                </form>
+            @endif
+           
         </div>
     </div>
 </div>

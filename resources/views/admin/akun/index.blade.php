@@ -48,8 +48,8 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_1"><br>
-                                    <div class="table responsive">
-                                    <table class="table table-bordered table-striped dt-responsive " id="tabelakun">
+                                    <div class="table-responsive">
+                                    <table class="table table-bordered table-striped dt-responsive" id="tabelakun">
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th class="text-center">No</th>
@@ -68,9 +68,9 @@
                                                 <td>{{$akun->akun}}</td> 
                                                 <td>{{$akun->nama_akun}}</td> 
                                                 <td>
-                                                    <a href="{{ route('akun.edit', $akun->id_akun) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i></a>
-                                                    <a href="{{ route('akun.show', $akun->id_akun) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i></a>
-                                                    <button class="btn btn-sm btn-danger" data-akunid="{{$akun->id_akun}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i></button>
+                                                    <a href="{{ route('akun.edit', $akun->id_akun) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Ubah</a>
+                                                    <a href="{{ route('akun.show', $akun->id_akun) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
+                                                    <button class="btn btn-sm btn-danger" data-akunid="{{$akun->id_akun}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -163,7 +163,7 @@
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true,
+            "responsive":false,
             "language": {
                 "lengthMenu": "Menampilkan _MENU_ data",
                 "zeroRecords": "Tidak Ditemukan - maaf",

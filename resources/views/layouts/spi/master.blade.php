@@ -25,14 +25,20 @@
   <!-- /page content -->
 
   <!-- footer content -->
-    <footer class="main-footer">
+    <div class="footer-copyright text-right py-4">
+        <strong>MOVIS | &copy; 2019  - Politeknik Negeri Semarang</strong>
+    </div>
+  <!-- /footer content -->
+
+<!-- <footer class="main-footer"> -->
       <!-- To the right -->
-        <div class="pull-right hidden-xs">
+        <!-- <div class="pull-right hidden-xs">
             E-Office
         </div>
         <strong>MOVIS | &copy; 2019  - Politeknik Negeri Semarang</strong>
-    </footer>
-  <!-- /footer content -->
+    </footer> -->
+
+    
 
 @include('layouts.spi.footer')
   

@@ -18,9 +18,6 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="tile">
-                <!-- <div class="page-header">
-                    <h2 class="mb-3 line-head" id="">Data Kelompok Anggaran</h2>
-                </div> -->
                 <div class="tile-body">
                     @if(count($errors)>0)
                     <div class="alert alert-danger">
@@ -51,7 +48,7 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_1"><br>
-                                    <div class="table responsive">
+                                    <div class="table-responsive">
                                     <table class="table table-bordered table-striped dt-responsive " id="tabelkelang">
                                         <thead class="thead-dark">
                                             <tr>
@@ -66,7 +63,7 @@
                                                 <td>{{$k->id_kelang}}</td>
                                                 <td>{{$k->kelompokanggaran}}</td> 
                                                 <td>
-                                                 <a href="{{ route('kelang.edit', $k->id_kelang) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Edit</a>
+                                                 <a href="{{ route('kelang.edit', $k->id_kelang) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Ubah</a>
                                                     <button class="btn btn-sm btn-danger" data-kelangid="{{$k->id_kelang}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
@@ -148,7 +145,7 @@
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true,
+            "responsive":false,
             "language": {
                 "lengthMenu": "Menampilkan _MENU_ data",
                 "zeroRecords": "Tidak Ditemukan - maaf",

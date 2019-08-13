@@ -1,87 +1,53 @@
 <h2 class="text-center my-5">Lampiran</h2>
-
-@if(count($errors) > 0)
-<div class="alert alert-danger">
-    @foreach ($errors->all() as $error)
-        {{ $error }} <br/>
-    @endforeach
-</div>
-@endif
-  
+	<label for="">Inputkan file dalam bentuk PDF untuk masing-masing kategori lampiran di bawah ini</label><br>
     <div class="table-responsive">
-        <table class="table table-striped table-hover">
-            <thead class="thead-dark">
-                <tr>
-                    <th width="" class="text-center">Lampiran (.pdf)</th>
-                    <th width="" class="text-center"></th>
-                    <th width="" class="text-center">Aksi</th>
-                </tr>
-            </thead>
-            <tbody id="lampiran">
-                <tr>
-                    <td width="40%"><input type="file" name="gambar_input[0]"  class="btn btn-small btn-default" ></td>
-                    <td width="50%"><input name="keterangan_input[0]" class="form-control form-control-sm" /></td>
-                    <td width="10%"></td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td></td> <td></td> 
-                    <td>
-                        <button class="btn btn-sm btn-success" onclick="add(); return false"><i class="fa fa-lg fa-plus"></i></button>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-        <input type="submit" value="Upload" class="btn btn-primary">
+        <table class="table table-bordered table-striped table-hover">
+			<tbody>
+				<tr>
+					<td width="50%">Foto-foto Pelaksanaan</td>
+					<td width="50%">
+						<input name="foto_laporan_hidden" type="hidden" value="{{$laporan->foto_laporan}}" />
+                                <label>{{$laporan->foto_laporan}}</label><br>
+						<input type="file" name="foto_laporan" class="btn btn-small btn-default" id="foto_laporan">
+					</td>
+				</tr>
+				<tr>
+					<td width="50%">Surat Keputusan</td>
+					<td width="50%">
+						<input name="surat_laporan_hidden" type="hidden" value="{{$laporan->surat_laporan}}" />
+                            <label>{{$laporan->surat_laporan}}</label><br>
+						<input type="file" name="surat_laporan" class="btn btn-small btn-default" id="surat_laporan">
+					</td>
+				</tr>
+				<tr>
+					<td width="50%">Materi kegiatan(dokumentasi desain, dokumen hasil loka karya, dll)</td>
+					<td width="50%">
+						<input name="materi_laporan_hidden" type="hidden" value="{{$laporan->materi_laporan}}" />
+                            <label>{{$laporan->materi_laporan}}</label><br>
+						<input type="file" name="materi_laporan" class="btn btn-small btn-default" id="materi_laporan">
+					</td>
+				</tr>
+				<tr>
+					<td width="50%">Luaran Kegiatan (buku/dokumen/moduk/sertifikat/jobsheet/produk lain)</td>
+					<td width="50%">
+						<input name="luaran_laporan_hidden" type="hidden" value="{{$laporan->luaran_laporan}}" />
+                            <label>{{$laporan->luaran_laporan}}</label><br>
+						<input type="file" name="luaran_laporan" class="btn btn-small btn-default" id="luaran_laporan">
+					</td>
+					</tr>
+				<tr>
+					<td width="50%">Berita acara serah terima barang/jasa (<b>jika ada</b>)</td>
+					<td width="50%">
+						<input name="berita_laporan_hidden" type="hidden" value="{{$laporan->berita_laporan}}" />
+                            <label>{{$laporan->berita_laporan}}</label><br>
+						<input type="file" name="berita_laporan" class="btn btn-small btn-default" id="berita_laporan">
+					</td>
+				</tr>
+			</tbody>
+		</table>
     </div>
-    
 
 @push('js')
 <script>
-    var i = 1;
-    function add() {
-    //menentukan target append
-    var itemlist = document.getElementById('lampiran');
-                    
-    //membuat element
-    var row = document.createElement('tr');
-    var gambar = document.createElement('td');
-    var keterangan = document.createElement('td');
-    var aksi = document.createElement('td');
-     
-    //meng append element
-    itemlist.appendChild(row);
-    row.appendChild(gambar);
-    row.appendChild(keterangan);
-    row.appendChild(aksi);
-     
-    //membuat element input
-    var gambar_input = document.createElement('input');
-    gambar_input.setAttribute('name', 'gambar_input[' + i + ']');
-    gambar_input.setAttribute('class', 'btn btn-small btn-default');
-    gambar_input.setAttribute('type','file');
-
-    var keterangan_input = document.createElement('input');
-    keterangan_input.setAttribute('name', 'keterangan_input[' + i + ']');
-    keterangan_input.setAttribute('class', 'form-control form-control-sm');
-
-    var hapus = document.createElement('span');
-     
-    //meng append element input
-    // no.appendChild(no_input);
-    gambar.appendChild(gambar_input);
-    keterangan.appendChild(keterangan_input);
-    aksi.appendChild(hapus);
-    
-    hapus.innerHTML = '<button class="btn btn-sm btn-danger"><i class="fa fa-lg fa-times"></i></button>';
-
-    //  membuat aksi delete element
-        hapus.onclick = function () {
-            row.parentNode.removeChild(row);
-        };
-        
-        i++;
-    }
 </script> 
 @endpush()

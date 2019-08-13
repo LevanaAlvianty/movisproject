@@ -25,22 +25,22 @@
         </thead>
         <tbody id="jadwalpo" class="jadwalpo">
             @if($proposal->jadwalpos)
-                @foreach($proposal->jadwalpos as $jadwal)
-                        <tr id="row_jadwal_{{ $jadwal->id }}" class="dynamic-added">
-                            <td width="59%"><input name="nama_kegiatan[]" class="form-control form-control-sm" value="{{$jadwal->kegiatan}}"/></td>
-                            <td width="3%"><input type="checkbox" name="januari[]" class="" value="{{$jadwal->stat_jan}}" {{($jadwal->stat_jan == '1') ? 'checked' : ''}} /></td>
-                            <td width="3%"><input type="checkbox" name="februari[]" class="" value="{{$jadwal->stat_feb}}" {{($jadwal->stat_feb == '1') ? 'checked' : ''}} /></td>
-                            <td width="3%"><input type="checkbox" name="maret[]" class="" value="{{$jadwal->stat_mar}}" {{($jadwal->stat_mar == '1') ? 'checked' : ''}} /></td>
-                            <td width="3%"><input type="checkbox" name="april[]" class="" value="{{$jadwal->stat_april}}" {{($jadwal->stat_april == '1') ? 'checked' : ''}} /></td>
-                            <td width="3%"><input type="checkbox" name="mei[]" class="" value="{{$jadwal->stat_mei}}" {{($jadwal->stat_mei == '1') ? 'checked' : ''}} /></td>
-                            <td width="3%"><input type="checkbox" name="juni[]" class="" value="{{$jadwal->stat_jun}}" {{($jadwal->stat_jun == '1') ? 'checked' : ''}} /></td>
-                            <td width="3%"><input type="checkbox" name="juli[]" class="" value="{{$jadwal->stat_jul}}" {{($jadwal->stat_jul == '1') ? 'checked' : ''}} /></td>
-                            <td width="3%"><input type="checkbox" name="agustus[]" class="" value="{{$jadwal->stat_agust}}" {{($jadwal->stat_agust == '1') ? 'checked' : ''}} /></td>
-                            <td width="3%"><input type="checkbox" name="september[]" class="" value="{{$jadwal->stat_sept}}" {{($jadwal->stat_sept == '1') ? 'checked' : ''}} /></td>
-                            <td width="3%"><input type="checkbox" name="oktober[]" class="" value="{{$jadwal->stat_okt}}" {{($jadwal->stat_okt == '1') ? 'checked' : ''}} /></td>
-                            <td width="3%"><input type="checkbox" name="november[]" class="" value="{{$jadwal->stat_nov}}" {{($jadwal->stat_nov == '1') ? 'checked' : ''}} /></td>
-                            <td width="3%"><input type="checkbox" name="desember[]" class="" value="{{$jadwal->stat_des}}" {{($jadwal->stat_des == '1') ? 'checked' : ''}} /></td>
-                            <td width="5%" class="text-center"><a href="#" id="" class="btn btn-danger btn-sm removeJadwal"><i class="fa fa-lg fa-times"></i></a></td>
+                @foreach($proposal->jadwalpos as $i => $jadwal)
+                        <tr id="row_jadwal_{{ $i }}" class="dynamic-added jadwal-tr">
+                            <td width="59%"><input name="kegiatan[{{ $i }}]" class="form-control form-control-sm" value="{{$jadwal->kegiatan}}"/></td>
+                            <td width="3%"><input type="checkbox" name="januari[{{ $i }}]" class="" value="1" {{($jadwal->stat_jan == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="februari[{{ $i }}]" class="" value="1" {{($jadwal->stat_feb == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="maret[{{ $i }}]" class="" value="1" {{($jadwal->stat_mar == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="april[{{ $i }}]" class="" value="1" {{($jadwal->stat_april == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="mei[{{ $i }}]" class="" value="1" {{($jadwal->stat_mei == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="juni[{{ $i }}]" class="" value="1" {{($jadwal->stat_jun == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="juli[{{ $i }}]" class="" value="1" {{($jadwal->stat_jul == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="agustus[{{ $i }}]" class="" value="1" {{($jadwal->stat_agust == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="september[{{ $i }}]" class="" value="1" {{($jadwal->stat_sept == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="oktober[{{ $i }}]" class="" value="1" {{($jadwal->stat_okt == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="november[{{ $i }}]" class="" value="1" {{($jadwal->stat_nov == '1') ? 'checked' : ''}} /></td>
+                            <td width="3%"><input type="checkbox" name="desember[{{ $i }}]" class="" value="1" {{($jadwal->stat_des == '1') ? 'checked' : ''}} /></td>
+                            <td width="5%" class="text-center"><a href="#" id="{{ $i }}" class="btn btn-danger btn-sm removeJadwal"><i class="fa fa-lg fa-times"></i></a></td>
                         </tr>
                 @endforeach
             @endif
@@ -57,26 +57,26 @@
 
 @push('js')
  <script type="text/javascript">
-    var i = 0; 
+    var i = $('tr.jadwal-tr').length;
     $('#addJadwal').click(function(){ 
-        i++; 
-        var tr = '<tr id="row_jadwal_'+i+'" class="dynamic-added">'+
-                    '<td width="59%"><input name="nama_kegiatan['+i+']" class="form-control form-control-sm" /></td>'+
-                    '<td width="3%"><input type="checkbox" name="januari['+i+']" class="" /></td>'+
-                    '<td width="3%"><input type="checkbox" name="februari['+i+']" class="" /></td>'+
-                    '<td width="3%"><input type="checkbox" name="maret['+i+']" class=""/></td>'+
-                    '<td width="3%"><input type="checkbox" name="april['+i+']" class="" /></td>'+
-                    '<td width="3%"><input type="checkbox" name="mei['+i+']" class="" /></td>'+
-                    '<td width="3%"><input type="checkbox" name="juni['+i+']" class="" /></td>'+
-                    '<td width="3%"><input type="checkbox" name="juli['+i+']" class="" /></td>'+
-                    '<td width="3%"><input type="checkbox" name="agustus['+i+']" class="" /></td>'+
-                    '<td width="3%"><input type="checkbox" name="september['+i+']" class="" /></td>'+
-                    '<td width="3%"><input type="checkbox" name="oktober['+i+']" class="" /></td>'+
-                    '<td width="3%"><input type="checkbox" name="november['+i+']" class="" /></td>'+
-                    '<td width="3%"><input type="checkbox" name="desember['+i+']" class="" /></td>'+
+        var tr = '<tr id="row_jadwal_'+i+'" class="dynamic-added jadwal-tr">'+
+                    '<td width="59%"><input name="kegiatan['+i+']" class="form-control form-control-sm" value="" /></td>'+
+                    '<td width="3%"><input type="checkbox" name="januari['+i+']" class="" value="1" /></td>'+
+                    '<td width="3%"><input type="checkbox" name="februari['+i+']" class="" value="1" /></td>'+
+                    '<td width="3%"><input type="checkbox" name="maret['+i+']" class="" value="1"/></td>'+
+                    '<td width="3%"><input type="checkbox" name="april['+i+']" class="" value="1" /></td>'+
+                    '<td width="3%"><input type="checkbox" name="mei['+i+']" class="" value="1" /></td>'+
+                    '<td width="3%"><input type="checkbox" name="juni['+i+']" class="" value="1" /></td>'+
+                    '<td width="3%"><input type="checkbox" name="juli['+i+']" class="" value="1" /></td>'+
+                    '<td width="3%"><input type="checkbox" name="agustus['+i+']" class="" value="1" /></td>'+
+                    '<td width="3%"><input type="checkbox" name="september['+i+']" class="" value="1" /></td>'+
+                    '<td width="3%"><input type="checkbox" name="oktober['+i+']" class="" value="1" /></td>'+
+                    '<td width="3%"><input type="checkbox" name="november['+i+']" class="" value="1" /></td>'+
+                    '<td width="3%"><input type="checkbox" name="desember['+i+']" class="" value="1" /></td>'+
                     '<td width="5%" class="text-center"><a href="#" name="removeJadwal" id="'+i+'" class="btn btn-danger btn-sm removeJadwal"><i class="fa fa-lg fa-times"></i></a></td>'+
                 '</tr>';
         $('.jadwalpo').append(tr);
+        i++;
     });  
 
       $(document).on('click', '.removeJadwal', function(){  

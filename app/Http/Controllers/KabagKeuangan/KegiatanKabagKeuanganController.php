@@ -21,8 +21,8 @@ class KegiatanKabagKeuanganController extends Controller
     {
         $kegiatanpo= DB::table('kegiatanpo')
                     ->join('jurbagnitpus','jurbagnitpus.kode','=','kegiatanpo.id_jurbagnitpus')
-                    ->join('pegawai','pegawai.jurusan','=','kegiatanpo.id_jurbagnitpus')
-                    ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nama')
+                    ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode')
+                    ->groupBy('kegiatanpo.id')
                     ->orderBy('kegiatanpo.tahun','desc')
                     ->orderBy('kegiatanpo.id','asc')
                     ->get(); 

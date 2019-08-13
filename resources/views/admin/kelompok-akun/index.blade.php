@@ -50,7 +50,7 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_1"><br>
-                                    <div class="table responsive">
+                                    <div class="table-responsive">
                                     <table class="table table-bordered table-striped dt-responsive " id="tabelkelompok">
                                         <thead class="thead-dark">
                                             <tr>
@@ -68,9 +68,9 @@
                                                 <td>{{ ++$j }}</td>
                                                 <td>{{$k->kelompok}}</td> 
                                                 <td>
-                                                    <a href="{{ route('kelompok-akun.edit', $k->id_kelompok) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i></a>
-                                                    <a href="{{ route('kelompok-akun.show', $k->id_kelompok) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i></a>
-                                                    <button class="btn btn-sm btn-danger" data-kelompokid="{{$k->id_kelompok}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i></button>
+                                                    <a href="{{ route('kelompok-akun.edit', $k->id_kelompok) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Ubah</a>
+                                                    <a href="{{ route('kelompok-akun.show', $k->id_kelompok) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
+                                                    <button class="btn btn-sm btn-danger" data-kelompokid="{{$k->id_kelompok}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -163,7 +163,7 @@
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true,
+            "responsive":false,
             "language": {
                 "lengthMenu": "Menampilkan _MENU_ data",
                 "zeroRecords": "Tidak Ditemukan - maaf",

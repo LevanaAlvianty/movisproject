@@ -50,7 +50,7 @@ class AkunController extends Controller
        $akuns->save();
 
         return redirect()->route('akun.index')
-                    ->with('success','Akun created successfully');
+                    ->with('success','Akun Berhasil Dibuat!');
     }
 
     /**
@@ -94,7 +94,7 @@ class AkunController extends Controller
         $akun = Akun::where('id_akun',$id)->update($input);
 
         return redirect()->route('akun.index')
-                    ->with('success','Akun updated successfully');
+                    ->with('success','Akun Berhasil Diperbarui!');
     }
 
     /**
@@ -106,6 +106,6 @@ class AkunController extends Controller
     public function destroy(Request $request)
     {
         $akun = Akun::where('id_akun',$request->akun_id)->delete();
-        return redirect()->route('akun.index')->with('success','Akun deleted successfully');
+        return redirect()->route('akun.index')->with('success','Akun Berhasil Dihapus!');
     }
 }

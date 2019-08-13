@@ -48,7 +48,7 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_1"><br>
-                                    <div class="table responsive">
+                                    <div class="table-responsive">
                                     <table class="table table-bordered table-striped dt-responsive " id="tabelpejabat">
                                         <thead class="thead-dark">
                                             <tr>
@@ -65,7 +65,8 @@
                                                 <td>{{$p->name}}</td> 
                                                 <td>{{$p->jabatan}}</td>
                                                 <td>
-                                                    <a href="{{ route('pejabat.edit', $p->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Edit</a>
+                                                    <a href="{{ route('pejabat.edit', $p->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Ubah</a>
+                                                    <a href="{{ route('pejabat.show', $p->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
                                                     <button class="btn btn-sm btn-danger" data-pejabatid="{{$p->id}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
@@ -159,7 +160,7 @@
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true,
+            "responsive":false,
             "language": {
                 "lengthMenu": "Menampilkan _MENU_ data",
                 "zeroRecords": "Tidak Ditemukan - maaf",

@@ -51,7 +51,7 @@ class PejabatController extends Controller
         $pejabat->save();
 
         return redirect()->route('pejabat.index')
-                    ->with('success','Pejabat created successfully');
+                    ->with('success','Pejabat Berhasil Dibuat!');
     }
 
     /**
@@ -62,7 +62,8 @@ class PejabatController extends Controller
      */
     public function show($id)
     {
-        //
+        $pejabat = Pejabat::find($id);
+        return view('admin.pejabat.show', compact('pejabat'));
     }
 
     /**
@@ -99,7 +100,7 @@ class PejabatController extends Controller
         $pejabat->update();
 
         return redirect()->route('pejabat.index')
-                    ->with('success','Pejabat updated successfully');
+                    ->with('success','Pejabat Berhasil Diperbarui!');
     }
 
     /**
@@ -112,6 +113,6 @@ class PejabatController extends Controller
     {
         $pejabat = Pejabat::findOrfail($request->pejabat_id);
         $pejabat->delete();
-        return redirect()->route('pejabat.index')->with('success','Pejabat deleted successfully');
+        return redirect()->route('pejabat.index')->with('success','Pejabat Berhasil Dihapus!');
     }
 }

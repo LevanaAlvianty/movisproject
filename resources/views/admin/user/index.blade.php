@@ -48,7 +48,7 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_1"><br>
-                                    <div class="table responsive">
+                                    <div class="table-responsive">
                                     <table class="table table-bordered table-striped dt-responsive " id="tabeluser">
                                         <thead class="thead-dark">
                                             <tr>
@@ -73,9 +73,9 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('pegawai.edit', $p->id_pegawai) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i></a>
-                                                    <a href="{{ route('pegawai.show', $p->id_pegawai) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i></a>
-                                                    <button class="btn btn-sm btn-danger" data-userid="{{$p->id_pegawai}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i></button>
+                                                    <a href="{{ route('pegawai.edit', $p->id_pegawai) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Ubah</a>
+                                                    <a href="{{ route('pegawai.show', $p->id_pegawai) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
+                                                    <button class="btn btn-sm btn-danger" data-userid="{{$p->id_pegawai}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -231,7 +231,7 @@ $(document).ready(function() {
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true,
+            "responsive":false,
             "language": {
                 "lengthMenu": "Menampilkan _MENU_ data",
                 "zeroRecords": "Tidak Ditemukan - maaf",

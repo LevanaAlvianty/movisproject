@@ -47,7 +47,7 @@ class KelompokAnggaranController extends Controller
         $kelang->save();
 
         return redirect()->route('kelang.index')
-                    ->with('success','Kelompok anggaran created successfully');
+                    ->with('success','Kelompok Anggaran Berhasil Dibuat!');
     }
 
     /**
@@ -93,7 +93,7 @@ class KelompokAnggaranController extends Controller
                     ['kelompokanggaran' => $request->kelompokanggaran]
                 );
         return redirect()->route('kelang.index')
-                    ->with('success','Kelompok anggaran updated successfully');
+                    ->with('success','Kelompok Anggaran Berhasil Diperbarui!');
     }
 
     /**
@@ -106,6 +106,6 @@ class KelompokAnggaranController extends Controller
     {
         $kelang = DB::table('kelompokanggaran')->where('id_kelang',$request->kelang_id);
         $kelang->delete();
-        return redirect()->route('kelang.index')->with('success','Kelompok Anggaran deleted successfully');
+        return redirect()->route('kelang.index')->with('success','Kelompok Anggaran Berhasil Dihapus!');
     }
 }

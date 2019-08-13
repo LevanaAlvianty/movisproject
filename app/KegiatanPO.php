@@ -13,16 +13,21 @@ class KegiatanPO extends Model
     //     'nama_kegiatan', 'id_jurbagnitpus','pimpinan','nip_pic','reviewer_spi','reviewer_ang'
     // ];
 
-    public function kodeunit() {
-        return $this->belongsTo('App\Kodeunit');
+    public function jurbagnitpus() {
+        return $this->belongsTo(\App\Kodeunit::class, 'id_jurbagnitpus', 'kode');
     }
 
     public function pegawai() {
-        return $this->belongsto('App\Pegawai','id_pegawai');
+        return $this->belongsTo(\App\Pegawai::class,'nip_pic','nip');
     }
 
     public function proposal()
     {
         return $this->hasOne(\App\Proposal::class, 'id_kegiatan', 'id');
+    }
+
+    public function laporan()
+    {
+        return $this->hasOne(\App\Laporan::class, 'id_kegiatan', 'id');
     }
 }

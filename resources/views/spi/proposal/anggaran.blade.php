@@ -19,10 +19,10 @@
                                 </thead>
                                 <tbody class="anggaran">
                                     @if($proposal->anggaranpos)
-                                        @foreach($proposal->anggaranpos as $angg)
-                                            <tr id="row_anggaran_{{ $angg->id }}">
+                                        @foreach($proposal->anggaranpos as $i => $angg)
+                                            <tr id="row_anggaran_{{ $i }}" class="anggaran-tr">
                                                 <td width="30%" >
-                                                <select class="form-control barang" name="barang[]" id="barang" placeholder="Pilih Barang" style="width: 100%">
+                                                <select class="form-control barang" name="barang[{{ $i }}]" id="barang" placeholder="Pilih Barang" style="width: 100%">
                                                     @foreach ($barang as $brg)
                                                         <option value="{{ $brg->id_standartbiaya }}"
                                                             @if($brg->id_standartbiaya == $angg->id_barang )
@@ -31,12 +31,12 @@
                                                         {{ $brg->namabarang }}</option>
                                                     @endforeach
                                                 </select>
-                                                <td width="" ><input type="number" name="jml1[]" class="form-control form-control-sm jml1" value="{{$angg->jml1}}"/></td>
-                                                <td width="" ><input type="number" name="jml2[]" class="form-control form-control-sm jml2" value="{{$angg->jml2}}"/></td>
-                                                <td width="" ><input type="number" name="jml3[]" class="form-control form-control-sm jml3" value="{{$angg->jml3}}"/></td>
-                                                <td width="" ><input type="number" id="hrg" name="hrg[]" class="form-control form-control-sm hrg" value="{{$angg->harga}}"/></td>
-                                                <td width="" ><input type="number" name="total[]" class="form-control form-control-sm total" value="{{$angg->total}}"/></td>
-                                                <td width="5%" class="text-center"><a href="#" id="{{ $angg->id }}" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>
+                                                <td width="" ><input type="text" name="jml1[{{ $i }}]" class="form-control form-control-sm jml1" value="{{$angg->jml1}}"/></td>
+                                                <td width="" ><input type="text" name="jml2[{{ $i }}]" class="form-control form-control-sm jml2" value="{{$angg->jml2}}"/></td>
+                                                <td width="" ><input type="text" name="jml3[{{ $i }}]" class="form-control form-control-sm jml3" value="{{$angg->jml3}}"/></td>
+                                                <td width="" ><input type="text" id="hrg" name="hrg[{{ $i }}]" class="form-control form-control-sm hrg" value="{{$angg->harga}}"/></td>
+                                                <td width="" ><input type="text" name="total[{{ $i }}]" class="form-control form-control-sm total" value="{{$angg->total}}"/></td>
+                                                <td width="5%" class="text-center"><a href="#" id="{{ $i }}" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>
                                             </tr>  
                                         @endforeach
                                     @endif
@@ -134,26 +134,25 @@ $(document).ready(function(){
     findRowNum('.hrg');
     
     //-----------------------------------add row------------------------------------------ 
-    var i = 0;  
-    $('#add').click(function(){ 
-        i++; 
-        var tr = '<tr id="row_anggaran_'+i+'" class="dynamic-added">'+
+    var anggaran_i = $('tr.anggaran-tr').length;  
+    $('#add').click(function(){
+        var tr = '<tr id="row_anggaran_'+anggaran_i+'" class="dynamic-added anggaran-tr">'+
                         '<td width="30%" >'+
-                        '<select class="form-control barang" name="barang[]" id="barang" placeholder="Pilih Barang" style="width: 100%">'+
+                        '<select class="form-control barang" name="barang['+anggaran_i+']" id="barang" placeholder="Pilih Barang" style="width: 100%">'+
                                 '@foreach ($barang as $brg)'+
                                 '<option value="{{ $brg->id_standartbiaya }}">{{ $brg->namabarang }}</option>'+
                             '@endforeach'+
                         '</select>'+
                         '</td>'+
                         
-                        '<td width="" ><input type="number" name="jml1[]" class="form-control form-control-sm jml1" /></td>'+
-                        '<td width="" ><input type="number" name="jml2[]" class="form-control form-control-sm jml2" /></td>'+
-                        '<td width="" ><input type="number" name="jml3[]" class="form-control form-control-sm jml3" /></td>'+
-                        '<td width="" ><input type="number" name="hrg[]" class="form-control form-control-sm hrg" /></td>'+
-                        '<td width="" ><input type="number" name="total[]" class="form-control form-control-sm total" /></td>'+
-                        '<td width="5%" class="text-center"><a href="#" name="remove" id="'+i+'" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>'+
+                        '<td width="" ><input type="text" name="jml1['+anggaran_i+']" class="form-control form-control-sm jml1" /></td>'+
+                        '<td width="" ><input type="text" name="jml2['+anggaran_i+']" class="form-control form-control-sm jml2" /></td>'+
+                        '<td width="" ><input type="text" name="jml3['+anggaran_i+']" class="form-control form-control-sm jml3" /></td>'+
+                        '<td width="" ><input type="text" name="hrg['+anggaran_i+']" class="form-control form-control-sm hrg" /></td>'+
+                        '<td width="" ><input type="text" name="total['+anggaran_i+']" class="form-control form-control-sm total" /></td>'+
+                        '<td width="5%" class="text-center"><a href="#" name="remove" id="'+anggaran_i+'" class="btn btn-danger btn-sm remove"><i class="fa fa-lg fa-times"></i></a></td>'+
                     '</tr>';
-        $('.anggaran').append(tr);
+        $('.anggaran').append(tr); 
 
         // Inisialisasi Select2
         $(".barang").select2({
@@ -166,6 +165,7 @@ $(document).ready(function(){
             $('.barang').css('width', "100%");
         });
         // End Select2
+        anggaran_i++;
     });  
 
     //------------------------------remove row-----------------------------------

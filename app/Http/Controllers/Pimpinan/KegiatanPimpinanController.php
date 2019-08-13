@@ -19,14 +19,16 @@ class KegiatanPimpinanController extends Controller
      */
     public function index()
     {
-        $pimpinan= Auth::guard('pegawai')->user()->jurusan;
+        $pimpinan_jurusan= Auth::guard('pegawai')->user()->jurusan;
+        $pimpinan_nip= Auth::guard('pegawai')->user()->nip;
         $data= DB::table('kegiatanpo')
                     ->join('jurbagnitpus','jurbagnitpus.kode','=','kegiatanpo.id_jurbagnitpus')
                     ->join('pegawai','pegawai.jurusan','=','kegiatanpo.id_jurbagnitpus')
                     ->select('kegiatanpo.*','jurbagnitpus.jurbagnitpus','jurbagnitpus.kode','pegawai.nip','pegawai.nama')
+                    ->where('kegiatanpo.id_jurbagnitpus','=',$pimpinan_jurusan) 
+                    ->where('pegawai.nip','=',$pimpinan_nip) 
                     ->orderBy('kegiatanpo.tahun','desc')
                     ->orderBy('kegiatanpo.id','asc')
-                    ->where('kegiatanpo.id_jurbagnitpus','=',$pimpinan)
                     ->get(); 
                     // dd($data);
         $pegawai = DB::table('pegawai')
@@ -106,7 +108,7 @@ class KegiatanPimpinanController extends Controller
         $kegiatanpo = KegiatanPO::find($id);
         $kegiatanpo->nip_pic = $request->pic;
         $kegiatanpo->update();
-        return redirect()->route('kegiatanpimpinan.index')->with("success","Data Berhasil Diperbarui !");
+        return redirect()->route('kegiatanpimpinan.index')->with("success","PIC Berhasil Diset !");
     }
 
     /**

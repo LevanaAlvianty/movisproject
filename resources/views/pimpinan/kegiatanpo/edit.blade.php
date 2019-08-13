@@ -48,7 +48,7 @@
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <a href="{{ route('kegiatanpimpinan.index')}}" class="btn btn-sm btn-danger">Batal</a>
-                        <button type="submit" class="btn btn-sm btn-info">Assign PIC</button>
+                        <button type="submit" class="btn btn-sm btn-info">Set PIC</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>

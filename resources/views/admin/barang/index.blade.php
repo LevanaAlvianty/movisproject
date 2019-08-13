@@ -50,7 +50,7 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_1"><br>
-                                    <div class="table responsive">
+                                    <div class="table-responsive">
                                     <table class="table table-bordered table-striped dt-responsive " id="tabelbarang">
                                         <thead class="thead-dark">
                                             <tr>
@@ -86,9 +86,9 @@
                                                 <td>{{$brg->namabarang}}</td> 
                                                 <td class="text-center">{{$brg->hargasatuan}}</td> 
                                                 <td>
-                                                    <a href="{{ route('barang.edit', $brg->id_standartbiaya) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i></a>
-                                                    <a href="{{ route('barang.show', $brg->id_standartbiaya) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i></a>
-                                                    <button class="btn btn-sm btn-danger" data-barangid="{{$brg->id_standartbiaya}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i></button>
+                                                    <a href="{{ route('barang.edit', $brg->id_standartbiaya) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Ubah</a>
+                                                    <a href="{{ route('barang.show', $brg->id_standartbiaya) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
+                                                    <button class="btn btn-sm btn-danger" data-barangid="{{$brg->id_standartbiaya}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -217,7 +217,7 @@
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true,
+            "responsive":false,
             "language": {
                 "lengthMenu": "Menampilkan _MENU_ data",
                 "zeroRecords": "Tidak Ditemukan - maaf",

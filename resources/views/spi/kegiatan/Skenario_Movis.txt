@@ -1,0 +1,8 @@
+Proposal
+1. Create proposal, status = 0 (not submitted), status_proposal = 0.
+2. Fill and complete proposal, status = 1 (submitted), status_proposal = 0.
+3. If reviewer's proposal agree, reviewproposalpo.status_proposal = 0 become status_proposal = 1.
+4. If reviewer's proposal is not agree, reviewproposalpo.status_proposal = 2, proposal.status = 2 (revision).
+6. If budgeter's proposal agree, reviewproposalpo.status_anggaran = 0 become status_anggaran = 1.
+4. If budgeter's proposal is not agree, reviewproposalpo.status_anggaran = 2, proposal.status = 2 (revision).
+8. If reviewproposalpo.status_proposal = 1 and reviewproposalpo.status_anggaran = 1, status = 3 (completed).

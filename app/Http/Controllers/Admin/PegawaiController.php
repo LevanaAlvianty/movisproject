@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Pegawai;
+use App\KegiatanPO;
 use App\Kodeunit;
+use App\Pegawai;
 use App\Role;
 use DB;
 use Hash;
+use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
 {
@@ -22,7 +23,7 @@ class PegawaiController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     
+    
     public function index(Request $request)
     {
         $pegawai=Pegawai::all();
@@ -72,7 +73,7 @@ class PegawaiController extends Controller
         $pegawai->roles()->attach($role_pegawai);
 
         return redirect()->route('pegawai.index')
-                    ->with('success','Pegawai created successfully');
+                    ->with('success','Pegawai Berhasil Dibuat!');
     }
    
     /**
@@ -136,7 +137,7 @@ class PegawaiController extends Controller
             $pegawai->roles()->attach($value);
         }
         return redirect()->route('pegawai.index')
-                        ->with('success','Pegawai updated successfully');
+                        ->with('success','Pegawai Berhasil Diperbarui!');
     }
     
     /**
@@ -150,6 +151,6 @@ class PegawaiController extends Controller
         $pegawai = Pegawai::findOrfail($request->user_id);
         $pegawai->delete();
         DB::table('pegawai_role')->where('pegawai_id', $request->user_id)->delete();
-        return redirect()->route('pegawai.index')->with('success','Pegawai deleted successfully');
+        return redirect()->route('pegawai.index')->with('success','Pegawai Berhasil Dihapus!');
     }
 }

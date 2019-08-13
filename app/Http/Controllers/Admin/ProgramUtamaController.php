@@ -54,7 +54,7 @@ class ProgramUtamaController extends Controller
         $program->save();
 
         return redirect()->route('programutama.index')
-                    ->with('success','Data created successfully');
+                    ->with('success','Data Berhasil Dibuat!');
     }
 
     /**
@@ -99,7 +99,7 @@ class ProgramUtamaController extends Controller
 
         $input = request()->except(['_token','_method']);
         $program = ProgramUtama::where('id_dirprogutama',$id)->update($input);
-        return redirect()->route('programutama.index')->with("success","Data Updated Successfully!");
+        return redirect()->route('programutama.index')->with("success","Data Berhasil Diperbarui!");
     }
 
     /**
@@ -112,6 +112,6 @@ class ProgramUtamaController extends Controller
     {   
         $program = DB::table('dirprogutama')->where('id_dirprogutama',$request->prog_id);
         $program->delete();
-        return redirect()->route('programutama.index')->with("success","Data Deleted Successfully!");
+        return redirect()->route('programutama.index')->with("success","Data Berhasil Dihapus!");
     }
 }

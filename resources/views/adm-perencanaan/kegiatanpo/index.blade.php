@@ -25,9 +25,9 @@
                             {{Session::get('success')}}
                         </div>
                     @endif
-                    <a href="{{ route('kegiatanpo.create') }}" class="btn btn-sm btn-success pull-right ml-2"><i class="icon fa fa-plus"></i></a>
+                    <a href="{{ route('kegiatanpo.create') }}" class="btn btn-sm btn-success pull-right ml-2"><i class="icon fa fa-plus"></i> Tambah</a>
                     <button type="button" class="btn btn-sm btn-primary pull-right" data-toggle="modal" data-target="#importExcel">
-                        <i class="icon fa fa-upload"></i>
+                        <i class="icon fa fa-upload"></i> Import
                     </button>
     
                     <!-- Modal Import Excel -->
@@ -60,36 +60,39 @@
                         </div>
                     </div>
                     
-                    <a href="/kegiatan/export_excel" class="btn btn-sm btn-info pull-right mr-2" target="_blank"><i class="icon fa fa-download"></i></a>
-                    <table class="table table-hover table-bordered dt-responsive" id="tabelkegiatan">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th class="text-center align-middle">No</th>
-                                <th class="text-center align-middle">Akun</th>
-                                <th class="text-center align-middle">Tahun</th> 
-                                <th class="text-center align-middle">Nama Kegiatan</th> 
-                                <th class="text-center align-middle">Unit Pelaksana</th>
-                                <th class="text-center align-middle">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php $i = 0; ?>
-                        @foreach ($kegiatanpo as $kpo )
-                            <tr>
-                                <td>{{++$i}}</td>
-                                <td>{{$kpo->kode_akun}}</td> 
-                                <td>{{$kpo->tahun}}</td> 
-                                <td>{{$kpo->nama_kegiatan}}</td> 
-                                <td>{{$kpo->id_jurbagnitpus}}</td>
-                                <td>
-                                    <a href="{{ route('kegiatanpo.edit', $kpo->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i></a>
-                                    <a href="{{ route('kegiatanpo.show', $kpo->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i></a>
-                                    <button class="btn btn-sm btn-danger" data-kegid="{{$kpo->id}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i></button>
-                                    </td>
+                    <a href="{{url('/kegiatan/export_excel')}}" class="btn btn-sm btn-info pull-right mr-2" target="_blank"><i class="icon fa fa-download"></i> Export</a>
+                    <br>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered dt-responsive" id="tabelkegiatan">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="text-center align-middle">No</th>
+                                    <th class="text-center align-middle">Akun</th>
+                                    <th class="text-center align-middle">Tahun</th> 
+                                    <th class="text-center align-middle">Nama Kegiatan</th> 
+                                    <th class="text-center align-middle">Unit Pelaksana</th>
+                                    <th class="text-center align-middle">Aksi</th>
                                 </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            <?php $i = 0; ?>
+                            @foreach ($kegiatanpo as $kpo )
+                                <tr>
+                                    <td>{{++$i}}</td>
+                                    <td>{{$kpo->kode_akun}}</td> 
+                                    <td>{{$kpo->tahun}}</td> 
+                                    <td>{{$kpo->nama_kegiatan}}</td> 
+                                    <td>{{$kpo->id_jurbagnitpus}}</td>
+                                    <td>
+                                        <a href="{{ route('kegiatanpo.edit', $kpo->id) }}" class="btn btn-sm btn-primary"><i class="icon fa fa-edit"></i> Ubah</a>
+                                        <a href="{{ route('kegiatanpo.show', $kpo->id) }}" class="btn btn-sm btn-warning"><i class="icon fa fa-eye"></i> Detail</a>
+                                        <button class="btn btn-sm btn-danger" data-kegid="{{$kpo->id}}" data-toggle="modal" data-target="#deleteData"><i class="icon fa fa-trash"></i> Hapus</button>
+                                        </td>
+                                    </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,7 +140,14 @@
             "searching" : true,
             "autoWidth" : false,
             "LengthChange" : false,
-            "responsive":true
+            "responsive":false,
+            "language": {
+                "lengthMenu": "Menampilkan _MENU_ kegiatan",
+                "zeroRecords": "Tidak Ditemukan - maaf",
+                "info":"Menampilkan _START_ sampai _END_ dari _TOTAL_ kegiatan",
+                "infoEmpty":"Menampilkan 0 sampai 0 dari 0 kegiatan",
+                "search":"Cari :",
+            }
         });
     });
 

@@ -8,7 +8,7 @@
         <script src="{{asset('/vali_admin/docs/js/plugins/pace.min.js')}}"></script>
         
         <!-- Page specific javascripts-->
-        <script type="text/javascript" src="{{asset('/vali_admin/docs/js/plugins/chart.js')}}"></script>
+        <!-- <script type="text/javascript" src="{{asset('/vali_admin/docs/js/plugins/chart.js')}}"></script> -->
 
         <!-- Data table plugin-->
         <script type="text/javascript" src="{{asset('/vali_admin/docs/js/plugins/jquery.dataTables.min.js')}}"></script>
@@ -23,7 +23,11 @@
         <script src="{{asset('js/movis/select2.min.js')}}"></script>
 
         <!-- TinyMCE -->
-        <script src="{{asset('/vali_admin/plugins/tinymce/js/tinymce/tinymce.min.js')}}"></script>
+        <script src="{{asset('/vendor/tinymce/js/tinymce/tinymce.min.js')}}"></script>
+        <!-- <script src="{{asset('/vendor/laravel-filemanager/js/lfm.js')}}"></script> -->
+        <!-- <script src="{{asset('/vali_admin/plugins/tinymce/js/tinymce/tinymce.min.js')}}"></script> -->
+       
+         
         
         <!-- Animate Easing -->
         <script src="{{ asset('/js/movis/jquery.easing.min.js')}}"></script>

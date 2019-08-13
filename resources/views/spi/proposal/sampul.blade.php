@@ -1,7 +1,7 @@
 
 <div class="row justify-content-end">
-    <div class="col-sm-3">
-        <input type="text" class="form-control form-control-sm mr-sm-2" id="kodeunit" name="kodeunit" placeholder="Masukkan Kode Unit" value="{{$kegiatan->kode}}">
+    <div class="col-sm-2">
+        <input type="text" class="form-control form-control-sm mr-sm-2 text-center" id="kodeunit" name="kodeunit" placeholder="Masukkan Kode Unit" value="{{$kegiatan->kode}}">
     </div>
 </div><br><br>
 
@@ -12,13 +12,13 @@
 
 <div class="row justify-content-center">
     <div class="col-sm-6 mb-2">
-        <input type="text" class="form-control form-control-sm" id="judulprop" name="judulprop" placeholder="Masukkan Judul Kegiatan" value="{{$kegiatan->nama_kegiatan}}">
+        <input type="text" class="form-control form-control-sm text-center" id="judulprop" name="judulprop" placeholder="Masukkan Judul Kegiatan" value="{{$kegiatan->nama_kegiatan}}">
     </div>
 </div><br><br>
 
 <div class="row justify-content-center">
     <div class="col-sm-6 mb-2 mr-sm-2 ml-sm-2">
-        <input type="text" class="form-control form-control-sm" id="ketuplak" name="ketuplak" placeholder="Nama Ketua Pelaksana" value="{{Auth::guard('pegawai')->user()->nama}}">
+        <input type="text" class="form-control form-control-sm text-center" id="ketuplak" name="ketuplak" placeholder="Nama Ketua Pelaksana" value="{{Auth::guard('pegawai')->user()->nama}}">
     </div>
 </div>
 
@@ -31,7 +31,7 @@
     </div>
 </div><br><br>
 
-<h6 style="text-align:center"><b>Didanai oleh DIPA Polines Tahun 2019</b></h6>
+<h6 style="text-align:center"><b>Didanai oleh DIPA Polines Tahun {{$kegiatan->tahun}}</b></h6>
                         
 <div class="row justify-content-center">
     <div class="col-sm-1 mb-2">
@@ -49,7 +49,7 @@
             <option class="active">RM/BOPTN/PNBP</option>
             @foreach($kelang as $kel)
                 <option value="{{ $kel->id_kelang}}"
-                    @if($kel->id_kelang == $proposal->id_kelang )
+                    @if($kel->kelompokanggaran == $kegiatan->sumber )
                         selected
                     @endif>               
                         {{ $kel->kelompokanggaran }}
@@ -63,7 +63,7 @@
 <div class="row justify-content-end">
     <div class="form-inline mx-auto">
         <label for="formGroupExampleInput" class="mr-sm-3"><b>TAHUN</b></label>
-        <input style="width:85px;" type="text" class="form-control form-control-sm" id="tahunang" name="tahun" placeholder="Tahun" value="{{$proposal->thn_anggaran}}">
+        <input style="width:85px;" type="text" class="form-control form-control-sm" id="tahunang" name="tahun" placeholder="Tahun" value="{{$kegiatan->tahun}}">
     </div>
 </div>
 

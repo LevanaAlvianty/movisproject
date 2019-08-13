@@ -43,7 +43,7 @@ class RolesController extends Controller
         $roles->desc = $request->desc;
         $roles->save();
         return redirect()->route('role.index')
-                    ->with('success','Role created successfully');
+                    ->with('success','Role Berhasil Dibuat!');
     }
 
     /**
@@ -84,7 +84,7 @@ class RolesController extends Controller
         $roles->desc = $request->desc;
         $roles->update();
         return redirect()->route('role.index')
-                    ->with('success','Role updated successfully');
+                    ->with('success','Role Berhasil Diperbarui!');
     }
 
     /**
@@ -98,6 +98,6 @@ class RolesController extends Controller
         $roles = Role::findOrfail($request->role_id);
         $roles->delete();
        
-        return redirect()->route('role.index')->with('success','Role deleted successfully');
+        return redirect()->route('role.index')->with('success','Role Berhasil Dihapus!');
     }
 }

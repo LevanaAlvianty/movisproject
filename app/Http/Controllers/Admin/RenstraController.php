@@ -53,7 +53,7 @@ class RenstraController extends Controller
         $renstra->save();
 
         return redirect()->route('renstra.index')
-                    ->with('success','Data created successfully');
+                    ->with('success','Data Berhasil Dibuat!');
     }
 
     /**
@@ -92,7 +92,7 @@ class RenstraController extends Controller
         $input = request()->except(['_token','_method']);
         $renstra = Renstra::where('id_renstra',$id)->update($input);
         return redirect()->route('renstra.index')
-                    ->with('success','Data updated successfully');
+                    ->with('success','Data Berhasil Diperbarui!');
     }
 
     /**
@@ -105,6 +105,6 @@ class RenstraController extends Controller
     {
         $renstra = DB::table('renstra')->where('id_renstra',$request->id_renstra);
         $renstra->delete();
-        return redirect()->route('programutama.index')->with("success","Data Deleted Successfully!");
+        return redirect()->route('programutama.index')->with("success","Data Berhasil Dihapus!");
     }
 }

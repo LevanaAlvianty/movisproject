@@ -4,7 +4,7 @@
             <label for="" class="">HALAMAN JUDUL</label>
         </div>
         <div class="col-sm-1">
-            <input type="text" class="form-control form-control-sm mr-sm-2">
+            <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
         </div>
     </div>
     
@@ -13,7 +13,7 @@
             <label for="" class="">HALAMAN PENGESAHAN</label>
         </div>
         <div class="col-sm-1">
-            <input type="text" class="form-control form-control-sm mr-sm-2">
+            <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
         </div>
     </div>
 
@@ -22,7 +22,7 @@
             <label for="" class="">KATA PENGANTAR</label>
         </div>
         <div class="col-sm-1">
-            <input type="text" class="form-control form-control-sm mr-sm-2">
+            <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
         </div>
     </div>
 
@@ -31,7 +31,7 @@
             <label for="" class="">DAFTAR ISI</label>
         </div>
         <div class="col-sm-1">
-            <input type="text" class="form-control form-control-sm mr-sm-2">
+            <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
         </div>
     </div>
 
@@ -40,7 +40,7 @@
             <label for="" class="">DAFTAR LAMPIRAN</label>
         </div>
         <div class="col-sm-1">
-            <input type="text" class="form-control form-control-sm mr-sm-2">
+            <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
         </div>
     </div>
 
@@ -50,7 +50,7 @@
                 <label for="" class="">BAB I        : PENDAHULUAN</label>
             </div>
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
         </div>
 
@@ -61,7 +61,7 @@
             <div class="col-sm-10">
                 <label for="" class="">1.1 Latar Belakang</label>
             </div> <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
 
             <div class="col-sm-1">
@@ -71,7 +71,7 @@
                 <label for="" class="">1.2 Maksud dan Tujuan</label>
             </div>
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div> 
         </div>
     
@@ -80,7 +80,7 @@
                 <label for="" class="">BAB II       : PELAKSANAAN KEGIATAN</label>
             </div>
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
         </div>
         
@@ -93,7 +93,7 @@
             </div>
         
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
             <div class="col-sm-1">
                 <label for="" class=""></label>
@@ -103,7 +103,7 @@
             </div>
         
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
             <div class="col-sm-1">
                 <label for="" class=""></label>
@@ -113,7 +113,7 @@
             </div>
         
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
         </div>
     
@@ -122,7 +122,7 @@
                 <label for="" class="">BAB III      : LUARAN YANG DICAPAI</label>
             </div>
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
         </div>
 
@@ -135,7 +135,7 @@
             </div>
             
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
             <div class="col-sm-1">
                 <label for="" class=""></label>
@@ -145,7 +145,7 @@
             </div>
         
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
         </div>
 
@@ -167,7 +167,7 @@
             </div>
                 
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
             <div class="col-sm-1">
                 <label for="" class=""></label>
@@ -177,7 +177,7 @@
             </div>
         
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
         </div>
 
@@ -186,7 +186,7 @@
                 <label for="" class="">BAB V        : PENUTUP</label>
             </div>
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
         </div>
 
@@ -199,7 +199,7 @@
             </div>
                 
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
             <div class="col-sm-1">
                 <label for="" class=""></label>
@@ -209,7 +209,7 @@
             </div>
         
             <div class="col-sm-1">
-                <input type="text" class="form-control form-control-sm mr-sm-2">
+                <input type="text" class="form-control form-control-sm mr-sm-2" disabled>
             </div>
         </div>
         <div class="row justify-content-between">

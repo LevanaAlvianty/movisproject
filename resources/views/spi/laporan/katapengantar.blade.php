@@ -5,7 +5,24 @@
             Uraikan rangkuman informasi singkat tentang pelaksanaan, dan hasil 
             kegiatan yang telah dicapai, dan apresiasi terhadap semua pihak yang terlibat dalam kegiatan!
         </p>
-        <textarea class="form-control mx-auto mb-2" id="katapengantar" rows="3" placeholder="" value=""></textarea>                  
+        <textarea class="form-control mx-auto mb-2" id="katapengantar" name="katapengantar" rows="3">{{$laporan->katapengantar}}</textarea><br>
+
+        <div class="row justify-content-end">
+            <div class="col-sm-2">
+                <label for="formGroupExampleInput" >Semarang, </label>
+            </div>
+            <div class="col-sm-4">
+                <input type="date" class="form-control form-control-sm" id="tgl" name="tgltulis" placeholder="Tanggal Bulan Tahun" 
+                value="{{$laporan->tgltulis}}" />
+            </div>
+        </div><br><br><br>
+        <div class="row justify-content-end">
+            <div class="col-sm-2">
+                <label for="formGroupExampleInput" >Penulis</label>
+            </div>
+            <div class="col-sm-4">
+            </div>
+        </div>                      
     </div>
 </div>
                 
@@ -14,8 +31,7 @@
 <script>
     tinymce.init({
         selector: '#katapengantar',
-        // forced_root_block : "",
-        toolbar: 'undo redo | fontselect | fontsizeselect | bold italic underline forecolor backcolor| alignleft aligncenter alignright alignjustify | formatselect image | bullist numlist outdent indent',
+        toolbar: 'undo redo | fontselect | fontsizeselect | bold italic underline forecolor backcolor| alignleft aligncenter alignright alignjustify | formatselect | bullist numlist outdent indent',
         menubar : false,
         plugins: [
         'advlist autolink lists link image charmap print preview anchor textcolor',
@@ -26,7 +42,6 @@
             '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
             '//www.tiny.cloud/css/codepen.min.css'
         ],
-        image_advtab: true,
         height: 400,
     });
 </script>

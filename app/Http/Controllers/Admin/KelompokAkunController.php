@@ -52,7 +52,7 @@ class KelompokAkunController extends Controller
         $kelompok->save();
 
         return redirect()->route('kelompok-akun.index')
-                    ->with('success','Data created successfully');
+                    ->with('success','Data Berhasil Dibuat!');
     }
 
     /**
@@ -97,7 +97,7 @@ class KelompokAkunController extends Controller
 
         $input = request()->except(['_token','_method']);
         $kelompok = KelompokAkun::where('id_kelompok',$id)->update($input);
-        return redirect()->route('kelompok-akun.index')->with("success","Data Updated Successfully!");
+        return redirect()->route('kelompok-akun.index')->with("success","Data Berhasil Diperbarui!");
     }
 
     /**
@@ -110,6 +110,6 @@ class KelompokAkunController extends Controller
     {   
         $kelompok = DB::table('kelompok')->where('id_kelompok',$request->kelompok_id);
         $kelompok->delete();
-        return redirect()->route('kelompok-akun.index')->with("success","Data Deleted Successfully!");
+        return redirect()->route('kelompok-akun.index')->with("success","Data Berhasil Dihapus!");
     }
 }

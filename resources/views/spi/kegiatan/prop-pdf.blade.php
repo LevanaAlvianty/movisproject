@@ -110,7 +110,7 @@
         <div class="tulisan">
             <label>Disusun Oleh : </label><br>
             <label>{{$proposal->namapelaksana}}</label><br>
-            <label>NIP. {{$proposal->nip_pelaksana}}</label><br>
+            <label>NIP.{{$proposal->nip_pelaksana}}</label><br>
         </div><br><br><br>
 
         <div  class="tulisan">

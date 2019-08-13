@@ -26,7 +26,7 @@
                     <img class="img-fluid rounded-circle" width="150px" height="150px" src="{{asset('gambar/profil/'. $pegawai->photo)}}" alt="User Image" /><hr>
                     <div class="box-body">
                     
-                        <div class="table responsive">
+                        <div class="table-responsive">
                             <table class="table table-bordered table-striped">
                                 <tbody>
                                     <tr>
